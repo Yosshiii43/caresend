@@ -10,15 +10,12 @@
 ////object
 //component
 @use "object/component/hamburger";
-@use "object/component/scrollePgeTop";
 @use "object/component/button";
 @use "object/component/icon";
 
 //project
 @use "object/project/nav";
-@use "object/project/modal";
 @use "object/project/accordion";
-@use "object/project/tab";
 
 //utility
 @use "object/utility/hiddn";

@@ -30,7 +30,7 @@
           align-items: center;
           cursor: pointer;
           padding: 16px 24px;
-          border: 1px solid $color-ac;
+          border: 1px solid $color-text;
           font-weight: 700;
           color: $color-text;
           /* Safariで表示されるデフォルトの三角形アイコンを消します */
@@ -40,7 +40,7 @@
         }
 
         &__content{
-          background: $color-acl;
+          background: $color-bg2;
           padding: 24px 48px;
         }
       }

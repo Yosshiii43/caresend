@@ -9,7 +9,7 @@ mxin
 ベース
 ******************************/
 :root {
-  --header-h: 64px;
+  --header-h: 96px;
 }
 
 html, body {
@@ -17,18 +17,46 @@ html, body {
 }
 
 html {
-  font-size: 100%;
+  font-size: 16;
   scroll-padding-top: var(--header-h);
 }
 
 body {
+  min-width: 320px;
+  width: 100%;
   margin: 0;
-  color: #333;
   background: #fff;
-  font-family: system-ui, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #333;
+  line-height: 1.8;
 }
 body.is-scrollLock {
   overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 *:focus {
@@ -37,16 +65,6 @@ body.is-scrollLock {
 
 [id] {
   scroll-margin-top: var(--header-h);
-}
-
-/* テンプレ確認用 */
-.section {
-  height: 100vh;
-  padding: 2.5rem 1.25rem;
-}
-
-.section--alt {
-  background: #f5f7fa;
 }
 
 /******************************
@@ -158,65 +176,6 @@ body {
 }
 
 /******************************
-Topへ戻るボタン
-******************************/
-.c-scrollPageTop {
-  transition: opacity 1s;
-  visibility: hidden;
-  opacity: 0;
-  position: fixed;
-  right: 12px;
-  bottom: 12px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background-color: #c4c4c4;
-  color: #fff;
-  font-size: 12px;
-  line-height: 1;
-  cursor: pointer;
-}
-.c-scrollPageTop.is-fadein {
-  visibility: visible;
-  opacity: 1;
-}
-.c-scrollPageTop:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.5);
-}
-.c-scrollPageTop:before {
-  content: "";
-  position: absolute;
-  top: 16px;
-  left: 50%;
-  width: 10px;
-  height: 10px;
-  border-top: solid 2px #fff;
-  border-right: solid 2px #fff;
-  transform: translateX(-50%) rotate(-45deg);
-}
-.c-scrollPageTop::after {
-  content: "TOP";
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.c-scrollPageTop:focus {
-  outline: 2px solid #2684ff;
-  outline-offset: 3px;
-}
-.c-scrollPageTop:focus-visible {
-  outline: 2px solid #2684ff;
-  outline-offset: 3px;
-}
-@supports selector(:focus-visible) {
-  .c-scrollPageTop:focus:not(:focus-visible) {
-    outline: none;
-  }
-}
-
-/******************************
 ボタン
 ******************************/
 .c-button {
@@ -269,7 +228,7 @@ Topへ戻るボタン
   display: block;
   width: 15px;
   height: 3px;
-  background-color: #71c8e5;
+  background-color: #333;
   transition: transform 0.2s;
 }
 .c-icon--arrow::before {
@@ -331,61 +290,6 @@ Topへ戻るボタン
 }
 
 /******************************
-モーダル
-******************************/
-.p-modal {
-  position: fixed;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  background-color: rgba(0, 0, 0, 0.6);
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.25S ease;
-  z-index: 9000;
-}
-.p-modal.is-open {
-  visibility: visible;
-  opacity: 1;
-}
-.p-modal__content {
-  width: min(90%, 480px);
-  max-height: 80vh;
-  overflow-y: auto;
-  background-color: #fff;
-  border-radius: 8px;
-  padding: clamp(1rem, 3vw, 2rem);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-.p-modal__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-.p-modal__close {
-  font-size: 1.5rem;
-  line-height: 1;
-  cursor: pointer;
-  background: none;
-  border: none;
-  /* フォーカスリングをつける */
-}
-.p-modal__close:focus {
-  outline: 2px solid #2684ff;
-  outline-offset: 3px;
-}
-.p-modal__close:focus-visible {
-  outline: 2px solid #2684ff;
-  outline-offset: 3px;
-}
-@supports selector(:focus-visible) {
-  .p-modal__close:focus:not(:focus-visible) {
-    outline: none;
-  }
-}
-
-/******************************
 アコーディオン
 ******************************/
 .p-accordionSection .inner {
@@ -411,7 +315,7 @@ Topへ戻るボタン
   align-items: center;
   cursor: pointer;
   padding: 16px 24px;
-  border: 1px solid #71c8e5;
+  border: 1px solid #333;
   font-weight: 700;
   color: #333;
   /* Safariで表示されるデフォルトの三角形アイコンを消します */
@@ -420,7 +324,7 @@ Topへ戻るボタン
   display: none;
 }
 .p-accordionSection .inner .p-accordion__wrapper .p-accordion__content {
-  background: #d5eaf1;
+  background: #F9F9F9;
   padding: 24px 48px;
 }
 .p-accordionSection .inner .p-accordion__wrapper .p-accordion[open] .c-icon--arrow::before {
@@ -430,43 +334,6 @@ Topへ戻るボタン
 .p-accordionSection .inner .p-accordion__wrapper .p-accordion[open] .c-icon--arrow::after {
   right: 0;
   transform: rotate(45deg);
-}
-
-/******************************
-タブ
-******************************/
-.p-tab {
-  max-width: 800px;
-  margin: 0 auto;
-}
-.p-tab h2 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-.p-tab__menus {
-  display: flex;
-  gap: 8px;
-}
-.p-tab__menus .p-tab__menu {
-  padding: 8px 20px;
-  border: 1px solid #71c8e5;
-  border-bottom: none;
-  border-radius: 4px 4px 0 0;
-}
-.p-tab__menus .p-tab__menu.is-active {
-  background: #71c8e5;
-}
-.p-tab__menus .p-tab__menu:focus-visible {
-  outline: 2px solid #2684ff;
-  outline-offset: 3px;
-}
-.p-tab__contents .p-tab__content {
-  display: none;
-}
-.p-tab__contents .p-tab__content.is-active {
-  display: block;
-  padding: 20px 32px;
-  border: 1px solid #71c8e5;
 }
 
 /******************************

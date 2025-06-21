@@ -6,9 +6,10 @@
 //color
 $color-text:  #333;
 $color-bg:    #fff;
-$color-ac:    #71c8e5;
-$color-acl:   #d5eaf1;
-$color-accent:#1282c2;
+$color-bg2:   #F9F9F9;
+$color-white: #fff;
+$color-main:  #007FC6;
+$color-accent: #F47500;
 
 //z-index設定
 $z-header     : 1000;
@@ -16,7 +17,7 @@ $z-navPanel  : 1100;
 $z-hamburger  : 1200;
 
 //header
-$header-h: 64px;
+$header-h: 96px;
 $header-mode: fixed; // fixed or sticky
 
 //オリジナルのフォーカスリング
