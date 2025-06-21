@@ -1,0 +1,13 @@
+/******************************
+padding
+******************************/
+@use "../../foundation/forwards" as *;
+
+.u-py-lg { padding-block: 3rem; } 
+
+.u-px-mg { 
+  padding-inline: 5%;
+  @include mq("tab"){
+    padding-inline: 6rem;
+  }
+}

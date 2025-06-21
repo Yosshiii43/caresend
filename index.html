@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Responsive Nav Template</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="l-header" id="header">
+    <div class="l-inner">
+      <p><a href="@@TODO_REPLACE@@">サイトタイトル</a></p>
+      
+      <button class="c-hamburger" id="js-hamburger"
+              aria-controls="global-nav" aria-expanded="false"
+              aria-label="メニューを開閉">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="p-nav" id="global-nav" aria-label="グローバルメニュー" aria-hidden="true">
+        <ul class="p-nav__list">
+          <li class="p-nav__item"><a class="p-nav__link" href="#first">first</a></li>
+          <li class="p-nav__item"><a class="p-nav__link" href="#second">second</a></li>
+          <li class="p-nav__item"><a class="p-nav__link" href="#third">third</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="l-main">
+
+    
+    <!-- アコーディオン -->
+    <section class="p-accordionSection u-py-lg u-px-mg">
+      <div class="inner">
+      <div class="p-accordion__wrapper">
+        <h2>アコーディオン1</h2>
+        <details name="accordion1" class="p-accordion">
+          <summary class="p-accordion__summary">
+            アコーディオン1-1<span class="c-icon--arrow"></span>
+          </summary>
+          <div class="p-accordion__content">
+            中身のテキスト中身のテキスト中身のテキスト
+          </div>
+        </details>
+        <details name="accordion1" class="p-accordion">
+          <summary class="p-accordion__summary">
+            アコーディオン1-2<span class="c-icon--arrow"></span>
+          </summary>
+          <div class="p-accordion__content">
+            中身のテキスト中身のテキスト中身のテキスト
+          </div>
+        </details>
+        <details name="accordion1" class="p-accordion">
+          <summary class="p-accordion__summary">
+            アコーディオン1-3<span class="c-icon--arrow"></span>
+          </summary>
+          <div class="p-accordion__content">
+            中身のテキスト中身のテキスト中身のテキスト
+          </div>
+        </details>
+      </div><!-- .p-accordion__wrapper -->
+        <div class="p-accordion__wrapper">
+          <h2>アコーディオン2</h2>
+          <details name="accordion2" class="p-accordion">
+            <summary class="p-accordion__summary">
+              アコーディオン2-1<span class="c-icon--arrow"></span>
+            </summary>
+            <div class="p-accordion__content">
+              中身のテキスト中身のテキスト中身のテキスト
+            </div>
+          </details>
+          <details name="accordion2" class="p-accordion">
+            <summary class="p-accordion__summary">
+              アコーディオン2-1<span class="c-icon--arrow"></span>
+            </summary>
+            <div class="p-accordion__content">
+              中身のテキスト中身のテキスト中身のテキスト
+            </div>
+          </details>
+          <details name="accordion2" class="p-accordion">
+            <summary class="p-accordion__summary">
+              アコーディオン2-1<span class="c-icon--arrow"></span>
+            </summary>
+            <div class="p-accordion__content">
+              中身のテキスト中身のテキスト中身のテキスト
+            </div>
+          </details>
+        </div><!-- .p-accordion__wrapper -->
+      </div><!-- .inner -->
+    </section>
+
+  </main>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

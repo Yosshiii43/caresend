@@ -1,0 +1,43 @@
+/******************************
+ベース
+******************************/
+@use "forwards" as *;
+
+:root {
+  --header-h: #{$header-h};
+}
+
+html, body {
+  overscroll-behavior: none;
+}
+
+html  {
+  font-size: 100%;
+  scroll-padding-top: var(--header-h);//固定ヘッダーの高さ分ずらす
+
+}
+
+body  {
+  margin: 0;
+  color: $color-text;
+  background: $color-bg;
+  font-family: system-ui, "Helvetica Neue", Arial, sans-serif;
+
+  &.is-scrollLock { overflow: hidden; }
+}
+
+*:focus {
+  scroll-margin-top: var(--header-h);
+}
+
+[id] {
+  scroll-margin-top: var(--header-h);
+}
+
+/* テンプレ確認用 */
+.section      { 
+  height: 100vh; 
+  padding: rem(40) rem(20); }
+.section--alt { 
+  background: #f5f7fa; 
+}

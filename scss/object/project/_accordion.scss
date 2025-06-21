@@ -1,0 +1,63 @@
+/******************************
+アコーディオン
+******************************/
+@use "../../foundation/forwards" as *;
+@use "sass:math";
+
+.p-accordionSection {
+  .inner{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    .p-accordion__wrapper{
+      flex: 1 1 calc(50% - #{math.div(24px, 2)}); //gap24pxの場合
+      min-width: 320px;
+      display: flex;
+      gap: 16px;
+      flex-direction: column;
+
+
+
+      .p-accordion {
+        &__summary{
+          /* display: list-item;以外を指定してデフォルトの三角形アイコンを消します */
+          display: grid;//初期値のdisplay:
+          grid-template-columns: 1fr 24px;
+          gap: 8px;
+          align-items: center;
+          cursor: pointer;
+          padding: 16px 24px;
+          border: 1px solid $color-ac;
+          font-weight: 700;
+          color: $color-text;
+          /* Safariで表示されるデフォルトの三角形アイコンを消します */
+          &::-webkit-details-marker {
+            display: none;
+          }
+        }
+
+        &__content{
+          background: $color-acl;
+          padding: 24px 48px;
+        }
+      }
+
+      /* アコーディオンが開いた時 */
+      .p-accordion[open] {
+        .c-icon--arrow {
+          &::before {
+            left: 0;
+            transform: rotate(-45deg);
+          }
+          &::after {
+            right: 0;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}

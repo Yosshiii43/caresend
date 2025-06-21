@@ -1,0 +1,29 @@
+/******************************
+アイコン
+******************************/
+@use "../../foundation/forwards" as *;
+
+.c-icon--arrow {
+  display: block;
+  position: relative;
+  width: 24px;
+  
+    &::before, 
+    &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 3px;
+    background-color: $color-ac;
+    transition: transform .2s;
+  }
+  &::before {
+    left: 0;
+    transform: rotate(45deg);
+  }
+  &::after {
+    right: 0;
+    transform: rotate(-45deg);
+  }
+}
