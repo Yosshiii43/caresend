@@ -7,11 +7,11 @@
 .p-header {
   h1 {
     width: rem(139);
-    height: auto;
-    aspect-ratio: auto;
+    padding-left: rem(16);
     img {
-      width: 100%;
-    }
+      width: auto;
+      height: auto;
+      }
   }
 
   &__actions {

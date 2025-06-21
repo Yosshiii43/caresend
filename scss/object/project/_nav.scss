@@ -7,16 +7,21 @@
 .p-nav {
   position: fixed;
   z-index: $z-navPanel;
-  inset: 0 0 0 auto;  // 右サイドパネル
-  width: min(80%, rem(280));
+  //inset: 0 0 0 auto;  // 右サイドパネル
+  //width: 100%;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  height: calc(100vh - var(--header-h));
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: rem(80) rem(24);
-  background: $color-bg;
-  transform: translateX(100%);
+  //padding: rem(80) rem(24);
+  background: $color-main;
+  transform: translateY(calc(-100% - var(--header-h)));
   transition: transform .3s ease;
 
-  &.is-open { transform: translateX(0); }
+  &.is-open { transform: translateY(0); }
 
   &__list {
     margin: 0;
@@ -39,6 +44,7 @@
     flex-direction: row;
     width: auto;
     padding: 0;
+    background: $color-white;
     gap: rem(32);
 
     &__list{

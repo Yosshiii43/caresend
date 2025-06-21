@@ -77,7 +77,6 @@ a {
   right: 0;
   z-index: 1000;
   background: #fff;
-  border-bottom: 1px solid rgba(51, 51, 51, 0.1);
 }
 
 body {
@@ -93,11 +92,9 @@ body {
 .l-inner {
   max-width: 1600px;
   margin-inline: auto;
-  padding-inline: 1rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4rem;
 }
 
 /******************************
@@ -274,11 +271,11 @@ body {
 ******************************/
 .p-header h1 {
   width: 8.6875rem;
-  height: auto;
-  aspect-ratio: auto;
+  padding-left: 1rem;
 }
 .p-header h1 img {
-  width: 100%;
+  width: auto;
+  height: auto;
 }
 .p-header__actions {
   display: flex;
@@ -309,17 +306,19 @@ body {
 .p-nav {
   position: fixed;
   z-index: 1100;
-  inset: 0 0 0 auto;
-  width: min(80%, 17.5rem);
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  height: calc(100vh - var(--header-h));
+  width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 5rem 1.5rem;
-  background: #fff;
-  transform: translateX(100%);
+  background: #007FC6;
+  transform: translateY(calc(-100% - var(--header-h)));
   transition: transform 0.3s ease;
 }
 .p-nav.is-open {
-  transform: translateX(0);
+  transform: translateY(0);
 }
 .p-nav__list {
   margin: 0;
@@ -343,6 +342,7 @@ body {
     flex-direction: row;
     width: auto;
     padding: 0;
+    background: #fff;
     gap: 2rem;
   }
   .p-nav__list {

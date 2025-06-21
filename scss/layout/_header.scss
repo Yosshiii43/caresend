@@ -9,13 +9,11 @@
     top: 0; left: 0; right: 0;
     z-index: $z-header;
     background: $color-bg;
-    border-bottom: 1px solid rgba($color-text, .1);
   } @else {
     position: sticky;
     top: 0;
     z-index: $z-header;
     background: $color-bg;
-    border-bottom: 1px solid rgba($color-text, .1);
   }
 }
 body {
