@@ -3,7 +3,7 @@
 @use "foundation/base";
 
 ////layout
-@use "layout/header";
+@use "layout/header" as lh;
 @use "layout/main";
 @use "layout/inner";
 
@@ -12,8 +12,10 @@
 @use "object/component/hamburger";
 @use "object/component/button";
 @use "object/component/icon";
+@use "object/component/fadeIn";
 
 //project
+@use "object/project/header" as ph;
 @use "object/project/nav";
 @use "object/project/accordion";
 

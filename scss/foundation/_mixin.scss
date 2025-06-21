@@ -12,7 +12,12 @@ $base-font-size: 16;
 /// Breakpoints  (min‑width ベース = SPファースト)
 $breakpoints: (
   "tab": 768px,
-  "pc" : 1024px
+  "pc" : 1024px,
+
+  "min-md": 768,
+  "min-lg": 992,
+  "min-xl": 1200,
+  "min-xxl": 1600 
 );
 
 @mixin mq($name) {

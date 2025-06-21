@@ -3,30 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Responsive Nav Template</title>
+  <meta name="description" content="介護派遣サービスなら、業界最安値水準の成約手数料12%で利用できるCareSend。認定介護福祉士など高スキル人材が揃っており、最短即日の派遣実績もあり！" >
+  <meta name="robots" content="noindex">
+  <title>CareSend | 有資格介護人材が集まる介護派遣サービス</title>
+  <link rel="icon" href="./img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="l-header" id="js-header">
+  <header class="l-header p-header" id="js-header">
     <div class="l-inner">
-      <p><a href="@@TODO_REPLACE@@">サイトタイトル</a></p>
-      
-      <button class="c-hamburger" id="js-hamburger"
-              aria-controls="global-nav" aria-expanded="false"
-              aria-label="メニューを開閉">
-        <span></span><span></span><span></span>
-      </button>
+      <h1><a href="@@TODO_REPLACE@@"><img src="assets/img/logo.png" alt="CareSend"></a></h1>
+      <div class="p-header__actions">
+        <a href="#request">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.2764 3.22632H0.723656C0.324469 3.22632 0 3.55079 0 3.95068V5.37526L12 13.4165L24 5.37451V3.95068C24 3.55079 23.6755 3.22632 23.2764 3.22632Z" fill="white"/>
+            <path d="M0 8.3445V17.8785C0 19.4781 1.29567 20.7737 2.89598 20.7737H21.104C22.7044 20.7737 24 19.4781 24 17.8785V8.34375L12 16.3858L0 8.3445Z" fill="white"/>
+          </svg>
+          <span>資料請求</span>
+        </a>
+        <button class="c-hamburger" id="js-hamburger"
+                aria-controls="global-nav" 
+                aria-expanded="false"
+                aria-label="メニューを開閉">
+          <span class="c-hamburger__bar"></span>
+          <span class="c-hamburger__bar"></span>
+          <span class="c-hamburger__bar"></span>
+          <span class="c-hamburger__text js-hamburger__text">メニュー</span>
+        </button>
+      </div>
 
       <nav class="p-nav" id="global-nav" aria-label="グローバルメニュー" aria-hidden="true">
         <ul class="p-nav__list">
-          <li class="p-nav__item"><a class="p-nav__link" href="#first">first</a></li>
-          <li class="p-nav__item"><a class="p-nav__link" href="#second">second</a></li>
-          <li class="p-nav__item"><a class="p-nav__link" href="#third">third</a></li>
+          <li class="p-nav__item"><a class="p-nav__link" href="#about">CareSendについて</a></li>
+          <li class="p-nav__item"><a class="p-nav__link" href="#features">CareSendの特徴</a></li>
+          <li class="p-nav__item"><a class="p-nav__link" href="#examples">導入事例</a></li>
+          <li class="p-nav__item"><a class="p-nav__link" href="#fee">料金</a></li>
+          <li class="p-nav__item"><a class="p-nav__link" href="#faq">よくある質問</a></li>
+          <li class="p-nav__item p-nav__item-request"><a class="p-nav__link" href="#request">
+            <a href="#request">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.2764 3.22632H0.723656C0.324469 3.22632 0 3.55079 0 3.95068V5.37526L12 13.4165L24 5.37451V3.95068C24 3.55079 23.6755 3.22632 23.2764 3.22632Z" fill="white"/>
+                <path d="M0 8.3445V17.8785C0 19.4781 1.29567 20.7737 2.89598 20.7737H21.104C22.7044 20.7737 24 19.4781 24 17.8785V8.34375L12 16.3858L0 8.3445Z" fill="white"/>
+              </svg>
+              <span>資料請求</span>
+            </a>
+        </li>
         </ul>
       </nav>
+
     </div>
   </header>
 
@@ -93,13 +120,13 @@
       </div><!-- .inner -->
     </section>
 
-    <section id="first" class="section section--alt" style="height: 550px;">
+    <section id="first" class="section section--alt c-fadeIn js-fadeIn" style="height: 550px;">
       <h2>Section1</h2>
     </section>
-    <section id="second" class="section" style="height: 550px;">
+    <section id="second" class="section c-fadeIn js-fadeIn" style="height: 550px;">
       <h2>Section 2</h2>
     </section>
-    <section id="third" class="section section--alt" style="height: 550px;">
+    <section id="third" class="section section--alt c-fadeIn js-fadeIn" style="height: 550px;">
       <h2>Section 3</h2>
       <a href="@@TODO_REPLACE@@">ダミーページへ</a>
     </section>

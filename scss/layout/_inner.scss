@@ -4,11 +4,11 @@
 @use "../foundation/forwards" as *;
 
 .l-inner {
-  max-width: 1000px;
+  max-width: 1600px;
   margin-inline: auto;
-  padding-inline: rem(20);
+  padding-inline: rem(16) 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  //height: rem(64);
+  height: rem(64);
 }

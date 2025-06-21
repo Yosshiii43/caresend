@@ -1,0 +1,40 @@
+/******************************
+ヘッダー
+******************************/
+@use "../../foundation/forwards" as *;
+@use "sass:math";
+
+.p-header {
+  h1 {
+    width: rem(139);
+    height: auto;
+    aspect-ratio: auto;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    > a[href="#request"] {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+      width: 64px;
+      height: 64px;
+      background-color: $color-main;
+      color: $color-white;
+      font-size: 10px;
+
+      @include mq("pc") {
+        display: none;
+      }
+
+    }
+  }
+}

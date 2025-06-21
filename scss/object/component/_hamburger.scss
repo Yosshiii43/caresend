@@ -3,13 +3,15 @@
 ******************************/
 @use "../../foundation/forwards" as *;
 
-.c-hamburger {
-  --bar-h: 2px;
-  --gap: 6px;
+.c-hamburger { 
+  --bar-w: 32px;
+  --bar-h: 1px;
+  --gap: 8px;
 
   display: block;          // ← モバイルで表示
-  width: rem(32);
-  height: calc(var(--bar-h) * 3 + var(--gap) * 2);;
+  width: rem(64);
+  height: rem(64);
+  background-color: $color-text;
   position: relative;
   z-index: $z-hamburger;
 
@@ -17,9 +19,7 @@
   appearance: none;
   padding   : 0;
   border    : 0;
-  background: none;
   cursor    : pointer;
-  line-height: 0;
 
   /* フォーカスリングをつける */
     &:focus {
@@ -38,29 +38,44 @@
   //閉じた状態
   span {
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 50%;
+  }
+
+  &__bar {
+    width: var(--bar-w);
     height: calc(var(--bar-h) * 2);
-    background: $color-text;
-    transform: scaleY(.5);
-    transform-origin: top;
+    transform: translateX(-50%) scaleY(.5);
+    -webkit-transform: translateX(-50%) scaleY(.5);
+    -ms-transform: translateX(-50%) scaleY(.5);
+    background: $color-white;
     transition: transform .3s ease, opacity .3s ease;
     
-  &:nth-child(1){ top: 0; }
-  &:nth-child(2){ top: calc(var(--bar-h) + var(--gap)); }
-  &:nth-child(3){ top: calc((var(--bar-h) + var(--gap)) * 2); }
+  &:nth-child(1){ top: 13px; }
+  &:nth-child(2){ top: 22px; }
+  &:nth-child(3){ top: 31px; }
+  }
+
+  &__text {
+    top: 40px;
+    font-size: 10px;
+    line-height: 1;
+    color: $color-white;
+    width: max-content;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
   }
 
   //開いた状態
   &[aria-expanded="true"] {
-    span:nth-child(1),
-    span:nth-child(3){
-      top: 50%;
+    .c-hamburger__bar:nth-child(1),
+    .c-hamburger__bar:nth-child(3){
+      top: 22px;
       transform-origin:center; //支点を中央
     }
-    span:nth-child(1){ transform:translateY(-50%) rotate(45deg) scaleY(.5); }
-    span:nth-child(2) { opacity: 0; }
-    span:nth-child(3) { transform:translateY(-50%) rotate(-45deg) scaleY(.5); }
+    .c-hamburger__bar:nth-child(1){ transform:translateX(-50%) rotate(45deg) scaleY(.5); }
+    .c-hamburger__bar:nth-child(2) { opacity: 0; }
+    .c-hamburger__bar:nth-child(3) { transform:translateX(-50%) rotate(-45deg) scaleY(.5); }
   }
 
   // PC では非表示
