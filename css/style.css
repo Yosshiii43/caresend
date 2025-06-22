@@ -96,6 +96,32 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+@media (min-width: 1024px) {
+  .l-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 0 24px;
+  }
+}
+.l-inner h1 {
+  flex: 1 1 auto;
+}
+@media (min-width: 1024px) {
+  .l-inner h1 {
+    justify-content: start;
+  }
+}
+@media (min-width: 1024px) {
+  .l-inner nav {
+    justify-content: center;
+  }
+}
+@media (min-width: 1024px) {
+  .l-inner .p-header__actions {
+    justify-self: end;
+  }
+}
 
 /******************************
 ハンバーガーメニュー
@@ -169,7 +195,7 @@ body {
 }
 .c-hamburger[aria-expanded=true] .c-hamburger__bar:nth-child(1),
 .c-hamburger[aria-expanded=true] .c-hamburger__bar:nth-child(3) {
-  top: 22px;
+  top: 24px;
   transform-origin: center;
 }
 .c-hamburger[aria-expanded=true] .c-hamburger__bar:nth-child(1) {
@@ -283,15 +309,9 @@ body {
   z-index: 1100;
 }
 .p-header h1 {
-  flex: 1 1 auto;
   height: 100%;
   display: flex;
   background-color: #fff;
-}
-@media (min-width: 1024px) {
-  .p-header h1 {
-    flex: 0 1 auto;
-  }
 }
 .p-header h1 > a {
   display: inline-flex;
@@ -324,12 +344,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1px;
+  gap: 4px;
   width: 64px;
   height: 64px;
   background-color: #007FC6;
   color: #fff;
   font-size: 10px;
+  line-height: 1;
 }
 @media (min-width: 1024px) {
   .p-header__actions > a[href="#request"] {
@@ -337,21 +358,17 @@ body {
     gap: 7px;
     width: auto;
     height: var(--header-h);
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2.7994791667vw;
+    padding-right: 2.7994791667vw;
     font-size: 1rem;
     font-weight: 700;
   }
 }
-@media (min-width: 1200px) {
-  .p-header__actions > a[href="#request"] {
-    padding-left: 2.6875rem;
-    padding-right: 2.6875rem;
+@media (min-width: 1024px) {
+  .p-header__actions > a[href="#request"] > svg {
+    width: 2rem;
+    height: 2rem;
   }
-}
-.p-header__actions > a[href="#request"] > svg {
-  width: 2rem;
-  height: 2rem;
 }
 
 /******************************
@@ -394,10 +411,13 @@ body {
 .p-nav__list .p-nav__item .p-nav__link:hover {
   opacity: 0.7;
 }
+.p-nav__list .p-nav__item-request .p-nav__link {
+  padding: 1.21875rem 0 1.21875rem 1rem;
+}
 @media (min-width: 1024px) {
   .p-nav {
     position: static;
-    height: auto;
+    height: var(--header-h);
     transform: none;
     background-color: transparent;
     padding: 0;
@@ -405,19 +425,21 @@ body {
   .p-nav__list {
     display: flex;
     flex-direction: row;
-    gap: 3.125rem;
     font-weight: 700;
-    gap: 1.75rem;
+    -moz-column-gap: 28px;
+         column-gap: 28px;
     color: #007FC6;
     height: 100%;
   }
   .p-nav__list .p-nav__item:last-child {
     display: none;
   }
-  .p-nav__list .p-nav__link {
+  .p-nav__list .p-nav__item .p-nav__link {
     height: var(--header-h);
+    padding: 0;
     display: flex;
     align-items: center;
+    color: #007FC6;
   }
 }
 

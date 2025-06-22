@@ -9,4 +9,30 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include mq("pc") {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;   // ← 中央列だけ “auto”
+    align-items: center;                   // 縦位置そろえ
+    gap: 0 24px;      
+  }
+
+  h1 {
+    flex: 1 1 auto;
+    @include mq("pc"){
+      justify-content: start;
+    }
+  }
+
+  nav {
+    @include mq("pc") {
+      justify-content: center;
+    }
+  }
+
+  .p-header__actions { 
+    @include mq("pc"){
+      justify-self: end;
+    } 
+  }
 }

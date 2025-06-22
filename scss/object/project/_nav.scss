@@ -44,13 +44,16 @@
           &:hover { opacity: .7; }
         }
     }
+    .p-nav__item-request .p-nav__link {
+      padding: rem(19.5) 0 rem(19.5) rem(16);
+    }
   }
 
 
   // ─── Desktop inline menu ─────────────────────
   @include mq("pc") {
     position: static;
-    height: auto;
+    height: var(--header-h);
     transform: none;
     background-color: transparent;
     padding: 0;
@@ -58,20 +61,23 @@
     &__list{
       display: flex;
       flex-direction: row;
-      gap: rem(50);
       font-weight: 700;
-      gap: rem(28);
+      column-gap: 28px;
       color: $color-main;
       height: 100%;
 
-      .p-nav__item:last-child {
-        display: none;
-      }
+      .p-nav__item {
+        &:last-child {
+          display: none;
+        }
 
-      .p-nav__link {
-        height: var(--header-h);
-        display: flex;
-        align-items: center;
+        .p-nav__link {
+          height: var(--header-h);
+          padding: 0;
+          display: flex;
+          align-items: center;
+          color: $color-main;
+        }
       }
     }
 

@@ -3,6 +3,7 @@ mxin
 ******************************/
 @use "sass:math";
 
+///pxからremを算出
 $base-font-size: 16;
 
 @function rem($px) {
@@ -25,4 +26,24 @@ $breakpoints: (
   @media (min-width: $min) {
     @content;
   }
+}
+
+///pxからvewを算出
+$pcDesignSize: 1536;
+$tabDesignSize: 768;
+$spDesignSize: 375;
+
+//PCデザイン用
+@function pc-vw($pixelsVw) {
+    @return math.div($pixelsVw , $pcDesignSize) * 100vw;
+}
+
+//tabletデザイン用
+@function tab-vw($pixelsVw) {
+    @return math.div($pixelsVw , $tabDesignSize) * 100vw;
+}
+
+//SPデザイン用
+@function sp-vw($pixelsVw) {
+    @return math.div($pixelsVw , $spDesignSize) * 100vw;
 }
