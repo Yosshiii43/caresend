@@ -269,13 +269,50 @@ body {
 /******************************
 ヘッダー
 ******************************/
-.p-header h1 {
-  width: 8.6875rem;
-  padding-left: 1rem;
+.p-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #fff;
 }
-.p-header h1 img {
-  width: auto;
+.p-header h1,
+.p-header .p-header__actions {
+  position: relative;
+  z-index: 1100;
+}
+.p-header h1 {
+  flex: 1 1 auto;
+  height: 100%;
+  display: flex;
+  background-color: #fff;
+}
+@media (min-width: 1024px) {
+  .p-header h1 {
+    flex: 0 1 auto;
+  }
+}
+.p-header h1 > a {
+  display: inline-flex;
+  align-items: center; /* ロゴを垂直中央 */
+  width: 139px;
+  height: var(--header-h);
+  margin-left: 1rem;
+}
+@media (min-width: 1024px) {
+  .p-header h1 > a {
+    width: 227px;
+    height: 52px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    margin-left: 1.25rem;
+  }
+}
+.p-header h1 > a img {
+  width: 100%;
   height: auto;
+  aspect-ratio: auto;
 }
 .p-header__actions {
   display: flex;
@@ -305,17 +342,16 @@ body {
 ******************************/
 .p-nav {
   position: fixed;
-  z-index: 1100;
   top: var(--header-h);
   left: 0;
   right: 0;
   height: calc(100vh - var(--header-h));
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background: #007FC6;
   transform: translateY(calc(-100% - var(--header-h)));
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease;
+  overflow-y: auto;
+  background: #007FC6;
+  padding: 1.5rem;
+  z-index: 900;
 }
 .p-nav.is-open {
   transform: translateY(0);
@@ -338,17 +374,18 @@ body {
 @media (min-width: 1024px) {
   .p-nav {
     position: static;
+    height: auto;
     transform: none;
-    flex-direction: row;
-    width: auto;
+    background-color: transparent;
     padding: 0;
-    background: #fff;
-    gap: 2rem;
   }
   .p-nav__list {
     display: flex;
     flex-direction: row;
     gap: 3.125rem;
+  }
+  .p-nav__list .p-nav__item:last-child {
+    display: none;
   }
 }
 

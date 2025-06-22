@@ -5,13 +5,46 @@
 @use "sass:math";
 
 .p-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: $z-header;
+  background-color: #fff;
+
+  h1,
+  .p-header__actions {
+    position: relative;
+    z-index: $z-headerTitle;
+  }
+
   h1 {
-    width: rem(139);
-    padding-left: rem(16);
-    img {
-      width: auto;
-      height: auto;
+    flex: 1 1 auto;
+    height: 100%;
+    display: flex;
+    background-color: #fff;
+    @include mq("pc") { 
+      flex: 0 1 auto;
+    }
+    
+    > a {
+      display: inline-flex;
+      align-items: center;     /* ロゴを垂直中央 */
+      width: 139px;
+      height: var(--header-h);
+      margin-left: 1rem;
+      @include mq("pc") {
+        width: 227px;
+        height: 52px;
+        margin-top: 22px;
+        margin-bottom: 22px;
+        margin-left: rem(20);
       }
+
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        }
+    }
   }
 
   &__actions {

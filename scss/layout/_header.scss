@@ -16,6 +16,7 @@
     background: $color-bg;
   }
 }
+
 body {
   @if $header-mode == fixed {
     padding-top: var(--header-h);

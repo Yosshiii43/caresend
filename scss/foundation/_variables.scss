@@ -12,9 +12,10 @@ $color-main:  #007FC6;
 $color-accent: #F47500;
 
 //z-index設定
-$z-header     : 1000;
-$z-navPanel  : 1100;
-$z-hamburger  : 1200;
+$z-header : 1000;
+$z-headerTitle: 1100;
+$z-navPanel : 900;
+$z-hamburger : 1200;
 
 //header
 $header-h: 64px; //JSが走らない場合のフォールバック用
