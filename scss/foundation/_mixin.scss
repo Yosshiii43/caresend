@@ -14,10 +14,10 @@ $breakpoints: (
   "tab": 768px,
   "pc" : 1024px,
 
-  "min-md": 768,
-  "min-lg": 992,
-  "min-xl": 1200,
-  "min-xxl": 1600 
+  "min-md": 768px,
+  "min-lg": 992px,
+  "min-xl": 1200px,
+  "min-xxl": 1600px 
 );
 
 @mixin mq($name) {

@@ -8,9 +8,9 @@
   --bar-h: 1px;
   --gap: 8px;
 
-  display: block;          // ← モバイルで表示
-  width: rem(64);
-  height: rem(64);
+  display: block;
+  width: 64px;
+  height: 64px;
   background-color: $color-text;
   position: relative;
   z-index: $z-hamburger;

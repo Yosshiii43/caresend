@@ -105,8 +105,8 @@ body {
   --bar-h: 1px;
   --gap: 8px;
   display: block;
-  width: 4rem;
-  height: 4rem;
+  width: 64px;
+  height: 64px;
   background-color: #333;
   position: relative;
   z-index: 1200;
@@ -297,7 +297,7 @@ body {
   display: inline-flex;
   align-items: center; /* ロゴを垂直中央 */
   width: 139px;
-  height: var(--header-h);
+  height: 64px;
   margin-left: 1rem;
 }
 @media (min-width: 1024px) {
@@ -333,8 +333,25 @@ body {
 }
 @media (min-width: 1024px) {
   .p-header__actions > a[href="#request"] {
-    display: none;
+    flex-direction: row;
+    gap: 7px;
+    width: auto;
+    height: var(--header-h);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
   }
+}
+@media (min-width: 1200px) {
+  .p-header__actions > a[href="#request"] {
+    padding-left: 2.6875rem;
+    padding-right: 2.6875rem;
+  }
+}
+.p-header__actions > a[href="#request"] > svg {
+  width: 2rem;
+  height: 2rem;
 }
 
 /******************************
@@ -350,7 +367,6 @@ body {
   transition: transform 0.35s ease;
   overflow-y: auto;
   background: #007FC6;
-  padding: 1.5rem;
   z-index: 900;
 }
 .p-nav.is-open {
@@ -361,14 +377,21 @@ body {
   padding: 0;
   list-style: none;
 }
-.p-nav__link {
-  display: block;
-  padding: 0.75rem 0;
-  color: inherit;
+.p-nav__list .p-nav__item {
+  border-bottom: 1px solid #fff;
+}
+.p-nav__list .p-nav__item .p-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.46875rem 0 1.46875rem 1rem;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
   text-decoration: none;
   transition: opacity 0.2s;
 }
-.p-nav__link:hover {
+.p-nav__list .p-nav__item .p-nav__link:hover {
   opacity: 0.7;
 }
 @media (min-width: 1024px) {
@@ -383,9 +406,18 @@ body {
     display: flex;
     flex-direction: row;
     gap: 3.125rem;
+    font-weight: 700;
+    gap: 1.75rem;
+    color: #007FC6;
+    height: 100%;
   }
   .p-nav__list .p-nav__item:last-child {
     display: none;
+  }
+  .p-nav__list .p-nav__link {
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
   }
 }
 

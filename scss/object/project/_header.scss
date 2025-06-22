@@ -29,7 +29,7 @@
       display: inline-flex;
       align-items: center;     /* ロゴを垂直中央 */
       width: 139px;
-      height: var(--header-h);
+      height: 64px;
       margin-left: 1rem;
       @include mq("pc") {
         width: 227px;
@@ -65,9 +65,24 @@
       font-size: 10px;
 
       @include mq("pc") {
-        display: none;
+        flex-direction: row;
+        gap: 7px;
+        width: auto;
+        height: var(--header-h);
+        padding-left: rem(24);
+        padding-right: rem(24);
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      @include mq("min-xl"){
+        padding-left: rem(43);
+        padding-right: rem(43);
       }
 
+      > svg {
+        width: rem(32);
+        height: rem(32);
+      }
     }
   }
 }
