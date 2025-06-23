@@ -1,5 +1,5 @@
 /******************************
-mxin
+mixin
 ******************************/
 @use "sass:math";
 
@@ -28,7 +28,7 @@ $breakpoints: (
   }
 }
 
-///pxからvewを算出
+///pxからvwを算出
 $pcDesignSize: 1536;
 $tabDesignSize: 768;
 $spDesignSize: 375;

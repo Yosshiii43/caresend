@@ -1,0 +1,15 @@
+/******************************
+インナー
+******************************/
+@use "../../foundation/forwards" as *;
+@use "sass:math";
+
+.c-inner {
+  padding-inline: 16px;
+  @include mq("tab") {
+    padding-inline: 60px;
+  }
+  @include mq("pc") {
+    padding-inline: 256px;
+  }
+}

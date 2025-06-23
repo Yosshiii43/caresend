@@ -5,21 +5,27 @@
 ////layout
 @use "layout/header" as lh;
 @use "layout/main";
-@use "layout/inner";
+@use "layout/inner" as li;
 
 ////object
 //component
 @use "object/component/hamburger";
 @use "object/component/button";
 @use "object/component/icon";
+@use "object/component/inner" as ci;
 @use "object/component/fadeIn";
+@use "object/component/list";
+@use "object/component/annotationMark";
 
 //project
 @use "object/project/header" as ph;
 @use "object/project/nav";
+@use "object/project/hero";
 @use "object/project/accordion";
+
 
 //utility
 @use "object/utility/hiddn";
 @use "object/utility/flex";
 @use "object/utility/padding";
+@use "object/utility/fontSize";

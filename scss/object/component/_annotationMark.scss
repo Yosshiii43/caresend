@@ -1,0 +1,11 @@
+/******************************
+星つき数字
+******************************/
+@use "../../foundation/forwards" as *;
+
+.c-annotationMark {
+  font-size: rem(12);
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: top;
+}
