@@ -196,12 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const btn  = document.getElementById('dlBtn');
   const msg  = document.getElementById('thanksMsg');
 
-    // ★ 要素が見つからなければ何もしないで終了
-  if (!form || !btn || !msg) {
-    console.warn('dlForm / dlBtn / thanksMsg が見つかりません');
-    return;
-  }
-
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
