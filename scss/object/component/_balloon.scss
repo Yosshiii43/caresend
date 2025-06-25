@@ -11,7 +11,7 @@ balloon（吹き出し）
   background-color: $color-main;
   border-radius: 5px;
   color: $color-white;
-  font-size: rem(16);
+  font-size: clamp(1rem, 0.758rem + 1.03vw, 1.75rem);
   font-weight: 700;
   line-height: 1;
   text-align: center;

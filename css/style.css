@@ -356,6 +356,10 @@ body {
 .c-form__item input {
   display: block;
 }
+.c-form__item label {
+  font-size: 0.875rem;
+  line-height: 1;
+}
 .c-form__item input {
   border-radius: 5px;
   border: 1px solid #CED4DA;
@@ -373,7 +377,7 @@ balloon（吹き出し）
   background-color: #007FC6;
   border-radius: 5px;
   color: #fff;
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.758rem + 1.03vw, 1.75rem);
   font-weight: 700;
   line-height: 1;
   text-align: center;

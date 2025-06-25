@@ -11,6 +11,11 @@
       display: block;
     }
 
+    label {
+      font-size: rem(14);
+      line-height: 1;
+    }
+
     input {
       border-radius: 5px;
       border: 1px solid #CED4DA;
