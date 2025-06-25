@@ -193,9 +193,14 @@ document.addEventListener('DOMContentLoaded', () => {
  *************************************************************************/
 (() => {
   const form = document.getElementById('dlForm');
-  const wrapper = form.querySelector('.c-form__body');
+  const body = form.querySelector('.c-form__body');
   const btn  = document.getElementById('dlBtn');
   const msg  = document.getElementById('thanksMsg');
+
+  if (!form || !btn || !msg || !body) {
+    console.warn('フォーム部品が見つかりません');
+    return;
+  }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -206,22 +211,28 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.classList.add('is-disabled'); 
 
     try {
+      /** 1) HTTP レイヤーのエラーを確認 */
       const res = await fetch(form.action, {
         method: 'POST',
         body  : new FormData(form),
         credentials: 'same-origin'
       });
 
-      if (res.ok) {
-        body.style.display = 'none';     // 入力ブロックを丸ごと隠す
-        msg.style.display  = 'block';    // サンクス表示
-      } else {
-        throw new Error('server');
-      }
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      /** 2) JSON をパースしてアプリケーションエラーを確認 */
+      const data = await res.json();               // ← ここで壊れた JSON なら catch へ
+      if (data.status !== 'ok') throw new Error('API status NG');
+
+      /** 3) 成功処理 */
+      body.style.display = 'none';                 // 入力・ボタン・注意書きを隠す
+      msg.style.display  = 'block';                // サンクスメッセージ表示
+
     } catch (err) {
       alert('送信に失敗しました。時間をおいて再度お試しください');
       btn.disabled = false;
       btn.classList.remove('is-disabled');
+      console.error(err);                          // console で原因を確認できる
     }
   });
 })();
