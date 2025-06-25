@@ -20,6 +20,12 @@
       border-radius: 5px;
       border: 1px solid #CED4DA;
       background: #F5F8FA;
+      padding: rem(16) rem(8);
+      line-height: 1;
+
+      &::placeholder{
+        color: #aaa;
+      }
     }
   }
 

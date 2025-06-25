@@ -351,6 +351,14 @@ body {
   border-radius: 5px;
   border: 1px solid #CED4DA;
   background: #F5F8FA;
+  padding: 1rem 0.5rem;
+  line-height: 1;
+}
+.c-form__item input::-moz-placeholder {
+  color: #aaa;
+}
+.c-form__item input::placeholder {
+  color: #aaa;
 }
 .c-form__btn {
   padding: 0.8125rem 1.6875rem;
