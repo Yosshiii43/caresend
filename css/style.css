@@ -365,14 +365,16 @@ body {
   border-radius: 5px;
   border: 1px solid #CED4DA;
   background: #F5F8FA;
-  padding: 1rem 0.5rem;
+  padding: 0.9375rem 0.4375rem;
   line-height: 1;
 }
 .c-form__item input::-moz-placeholder {
   color: #aaa;
+  line-height: 1;
 }
 .c-form__item input::placeholder {
   color: #aaa;
+  line-height: 1;
 }
 .c-form__itemGroup {
   display: flex;
@@ -607,8 +609,8 @@ balloon（吹き出し）
 .p-hero {
   background: linear-gradient(287deg, #02D1FF 0%, #007FC6 100%);
   position: relative;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 @media (min-width: 1024px) {
   .p-hero {
@@ -670,7 +672,7 @@ balloon（吹き出し）
   }
 }
 .p-hero__inner .p-hero__catchDescription {
-  max-width: 31.25rem;
+  max-width: 20em;
   font-size: clamp(0.875rem, 0.754rem + 0.52vw, 1.25rem);
   line-height: 1.8;
   margin-bottom: 1rem;

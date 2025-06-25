@@ -35,11 +35,12 @@
       border-radius: 5px;
       border: 1px solid #CED4DA;
       background: #F5F8FA;
-      padding: rem(16) rem(8);
+      padding: rem(15) rem(7);
       line-height: 1;
 
       &::placeholder{
         color: #aaa;
+        line-height: 1;
       }
     }
   }

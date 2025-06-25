@@ -200,25 +200,32 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    if (!form.reportValidity()) return;  // 必須・型チェック
+
     btn.disabled = true;
     btn.classList.add('is-disabled'); 
 
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      credentials: 'same-origin'
-    });
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body  : new FormData(form),
+        credentials: 'same-origin'
+      });
 
-    if (res.ok) {
-      wrapper.style.display = 'none';
-      msg.style.display = 'block';
-    } else {
+      if (res.ok) {
+        body.style.display = 'none';     // 入力ブロックを丸ごと隠す
+        msg.style.display  = 'block';    // サンクス表示
+      } else {
+        throw new Error('server');
+      }
+    } catch (err) {
       alert('送信に失敗しました。時間をおいて再度お試しください');
       btn.disabled = false;
       btn.classList.remove('is-disabled');
     }
   });
 })();
+
 
 /*************************************************************************
  * アコーディオン

@@ -7,8 +7,8 @@
 .p-hero {
   background: linear-gradient(287deg, $color-lightblue 0%, $color-main 100%);
   position: relative;
-  padding-right: rem(8);
-  padding-left: rem(8);
+  padding-right: rem(16);
+  padding-left: rem(16);
   @include mq("pc") {
     padding-right: 0;
     padding-left: 0;
@@ -62,7 +62,7 @@
       }
 
       &Description {
-        max-width: rem(500);
+        max-width: 20em;
         font-size: clamp(0.875rem, 0.754rem + 0.52vw, 1.25rem);
         line-height: 1.8;
         margin-bottom: rem(16);
