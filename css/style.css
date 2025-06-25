@@ -337,19 +337,6 @@ body {
 }
 
 /******************************
-フォームラッパー
-******************************/
-.c-formWrapper {
-  width: 100%;
-  max-width: 25rem;
-  padding: 0.5rem 0.5rem 1.1875rem;
-  margin: 0 auto;
-  line-height: 1.5;
-  background-color: #fff;
-  border-radius: 5px;
-}
-
-/******************************
 フォーム
 ******************************/
 .c-form__item label,
@@ -399,7 +386,7 @@ balloon（吹き出し）
   .c-balloon {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    font-size: 1.25rem;
+    font-size: clamp(1.125rem, 0.875rem + 0.39vw, 1.25rem);
   }
 }
 .c-balloon::after {
@@ -587,9 +574,13 @@ balloon（吹き出し）
 @media (min-width: 1024px) {
   .p-hero__inner {
     padding-top: 5.25rem;
-    padding-right: 10.5rem;
+    padding-right: 1.25rem;
     padding-bottom: 7.9375rem;
-    padding-left: 10.5rem;
+    padding-left: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1.875rem, -14.5rem + 25.59vw, 10.063rem);
   }
 }
 .p-hero__inner .p-hero__catch {
@@ -671,7 +662,7 @@ balloon（吹き出し）
 @media (min-width: 1024px) {
   .p-hero__inner .p-hero__catch .p-hero__stats .p-hero__statsItems {
     justify-content: flex-start;
-    gap: 1.375rem;
+    gap: 1.4322916667vw;
     margin-left: 0.3125rem;
     margin-bottom: 1.6875rem;
   }
@@ -768,6 +759,15 @@ balloon（吹き出し）
   width: 100%;
   height: auto;
   aspect-ratio: auto;
+}
+.p-hero__inner .p-hero__form .p-form__inner {
+  width: 100%;
+  max-width: 25rem;
+  padding: 0.5rem 0.5rem 1.1875rem;
+  margin: 0 auto;
+  line-height: 1.5;
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 /******************************

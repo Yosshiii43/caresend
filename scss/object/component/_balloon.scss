@@ -18,7 +18,7 @@ balloon（吹き出し）
   @include mq("pc") {
     padding-top: rem(16);
     padding-bottom: rem(16);
-    font-size: rem(20);
+    font-size: clamp(1.125rem, 0.875rem + 0.39vw, 1.25rem);
   }
   &::after{
     content: "";

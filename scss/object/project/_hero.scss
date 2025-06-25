@@ -13,9 +13,13 @@
     padding-bottom: rem(26);
     @include mq("pc") {
       padding-top: rem(84);
-      padding-right: rem(168);
+      padding-right: rem(20);
       padding-bottom: rem(127);
-      padding-left: rem(168);
+      padding-left: rem(20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(1.875rem, -14.5rem + 25.59vw, 10.063rem);
     }
 
     .p-hero__catch {
@@ -91,7 +95,7 @@
 
         @include mq("pc") {
           justify-content: flex-start;
-          gap: rem(22);
+          gap: pc-vw(22);
           margin-left: rem(5);
           margin-bottom: rem(27);
         }
@@ -186,5 +190,17 @@
         }
       } //.p-hero__img
     } //.p-hero__catch
+
+    .p-hero__form{
+      .p-form__inner{
+        width:100%;
+        max-width: rem(400);
+        padding: rem(8) rem(8) rem(19);
+        margin:0 auto;
+        line-height:1.5;
+        background-color: $color-white;
+        border-radius: 5px;
+      }
+    }
   } //.p-hero__inner
 }
