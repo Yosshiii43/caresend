@@ -1,0 +1,40 @@
+/******************************
+balloon（吹き出し）
+******************************/
+@use "../../foundation/forwards" as *;
+
+.c-balloon {
+  position: relative;
+  padding-top: rem(18);
+  padding-bottom: rem(18);
+  margin-bottom: rem(25);
+  background-color: $color-main;
+  border-radius: 5px;
+  color: $color-white;
+  font-size: rem(16);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  @include mq("pc") {
+    padding-top: rem(16);
+    padding-bottom: rem(16);
+    font-size: rem(20);
+  }
+  &::after{
+    content: "";
+    width: 16px;
+    height: 17px;
+    background-image: url(../../../assets/img/img_triangle-sp.png);
+    background-position: top center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    @include mq("pc") {
+      height: 16px;
+      background-image: url(../../../assets/img/img_triangle-pc.png);
+    }
+  }
+}

@@ -337,9 +337,9 @@ body {
 }
 
 /******************************
-フォーム
+フォームラッパー
 ******************************/
-.c-form {
+.c-formWrapper {
   width: 100%;
   max-width: 25rem;
   padding: 0.5rem 0.5rem 1.1875rem;
@@ -347,6 +347,62 @@ body {
   line-height: 1.5;
   background-color: #fff;
   border-radius: 5px;
+}
+
+/******************************
+フォーム
+******************************/
+.c-form__item label,
+.c-form__item input {
+  display: block;
+}
+.c-form__item input {
+  border-radius: 5px;
+  border: 1px solid #CED4DA;
+  background: #F5F8FA;
+}
+
+/******************************
+balloon（吹き出し）
+******************************/
+.c-balloon {
+  position: relative;
+  padding-top: 1.125rem;
+  padding-bottom: 1.125rem;
+  margin-bottom: 1.5625rem;
+  background-color: #007FC6;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .c-balloon {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+}
+.c-balloon::after {
+  content: "";
+  width: 16px;
+  height: 17px;
+  background-image: url(../../../assets/img/img_triangle-sp.png);
+  background-position: top center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (min-width: 1024px) {
+  .c-balloon::after {
+    height: 16px;
+    background-image: url(../../../assets/img/img_triangle-pc.png);
+  }
 }
 
 /******************************

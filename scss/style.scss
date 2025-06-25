@@ -16,7 +16,9 @@
 @use "object/component/fadeIn";
 @use "object/component/list";
 @use "object/component/annotationMark";
+@use "object/component/formWrapper";
 @use "object/component/form";
+@use "object/component/balloon";
 
 //project
 @use "object/project/header" as ph;
