@@ -4,8 +4,14 @@
 @use "../../foundation/forwards" as *;
 
 .c-form{
-  
+
   &__item{
+    margin-bottom: rem(15);
+
+    &:last-of-type{
+      margin-bottom: rem(24);
+    }
+
     label,
     input {
       display: block;
@@ -14,6 +20,14 @@
     label {
       font-size: rem(14);
       line-height: 1;
+      margin-bottom: rem(8);
+
+      &::after {
+        content: "*";
+        font-size: rem(14);
+        line-height: 1;
+        color: $color-red;
+      }
     }
 
     input {
@@ -30,16 +44,27 @@
     }
   }
 
-  &__itemGroup{
+  &__itemGroup {
     display: flex;
     justify-content: space-between;
+    margin-bottom: rem(15);
   
-     .c-form__item{
+     .c-form__item {
       width: calc(50% - 4px);
     }
   }
 
-  &__btn{
+  &__pp {
+    margin-bottom: rem(40);
+    font-size: rem(12);
+    line-height: 1.5;
+    @include mq("pc") {
+      font-size: rem(14);
+      margin-bottom: rem(31);
+    }
+  }
+
+  &__btn {
       padding: rem(13) rem(27);
       color: $color-white;
       font-weight: 700;

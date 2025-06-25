@@ -339,6 +339,12 @@ body {
 /******************************
 フォーム
 ******************************/
+.c-form__item {
+  margin-bottom: 0.9375rem;
+}
+.c-form__item:last-of-type {
+  margin-bottom: 1.5rem;
+}
 .c-form__item label,
 .c-form__item input {
   display: block;
@@ -346,6 +352,13 @@ body {
 .c-form__item label {
   font-size: 0.875rem;
   line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.c-form__item label::after {
+  content: "*";
+  font-size: 0.875rem;
+  line-height: 1;
+  color: #f90000;
 }
 .c-form__item input {
   width: 100%;
@@ -364,9 +377,21 @@ body {
 .c-form__itemGroup {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0.9375rem;
 }
 .c-form__itemGroup .c-form__item {
   width: calc(50% - 4px);
+}
+.c-form__pp {
+  margin-bottom: 2.5rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+@media (min-width: 1024px) {
+  .c-form__pp {
+    font-size: 0.875rem;
+    margin-bottom: 1.9375rem;
+  }
 }
 .c-form__btn {
   padding: 0.8125rem 1.6875rem;
@@ -582,6 +607,14 @@ balloon（吹き出し）
 .p-hero {
   background: linear-gradient(287deg, #02D1FF 0%, #007FC6 100%);
   position: relative;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+@media (min-width: 1024px) {
+  .p-hero {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 .p-hero__inner {
   padding-top: 2.5rem;

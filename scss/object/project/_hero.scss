@@ -7,6 +7,12 @@
 .p-hero {
   background: linear-gradient(287deg, $color-lightblue 0%, $color-main 100%);
   position: relative;
+  padding-right: rem(8);
+  padding-left: rem(8);
+  @include mq("pc") {
+    padding-right: 0;
+    padding-left: 0;
+  }
 
   &__inner {
     padding-top: rem(40);
