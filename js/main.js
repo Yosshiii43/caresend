@@ -193,6 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
  *************************************************************************/
 (() => {
   const form = document.getElementById('dlForm');
+  const wrapper = form.querySelector('.c-form__body');
   const btn  = document.getElementById('dlBtn');
   const msg  = document.getElementById('thanksMsg');
 
@@ -209,6 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (res.ok) {
+      wrapper.style.display = 'none';
       msg.style.display = 'block';
     } else {
       alert('送信に失敗しました。時間をおいて再度お試しください');
