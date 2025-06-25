@@ -184,8 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // スクロールイベントを登録
-  window.addEventListener('scroll', onScroll)
-})
+  window.addEventListener('scroll', onScroll);
+});
 
 
 /*************************************************************************
@@ -195,6 +195,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('dlForm');
   const btn  = document.getElementById('dlBtn');
   const msg  = document.getElementById('thanksMsg');
+
+    // ★ 要素が見つからなければ何もしないで終了
+  if (!form || !btn || !msg) {
+    console.warn('dlForm / dlBtn / thanksMsg が見つかりません');
+    return;
+  }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
