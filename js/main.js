@@ -250,6 +250,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (data.status !== 'ok') throw new Error('API status NG');
 
       /** 3) 成功処理 */
+      const h = body.offsetHeight;                 // 現在の高さを取得
+      form.style.minHeight = `${h}px`;             // フォーム全体の最小高さを固定
       body.style.display = 'none';                 // 入力・ボタン・注意書きを隠す
       msg.style.display  = 'block';                // サンクスメッセージ表示
 

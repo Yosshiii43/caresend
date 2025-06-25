@@ -117,7 +117,7 @@
 
                 <div class="c-form__item">
                   <label for="tel">電話番号</label>
-                  <input id="tel" name="電話番号" type="tel" required inputmode="tel" autocomplete="tel-local" pattern="^\d{2,4}-\d{2,4}-\d{3,4}$" placeholder="000-0000-0000">
+                  <input id="tel" name="電話番号" type="tel" required inputmode="tel" autocomplete="tel-national" pattern="^(\d{10,11}|\d{2,4}-\d{2,4}-\d{3,4})$" placeholder="000-0000-0000">
                 </div>
 
                 <p class="c-form__pp">このフォームから送信された情報は、 プライバシーポリシー に基づいて処理されます。</p>
@@ -126,7 +126,7 @@
                 </button>
               </div>
 
-              <p id="thanksMsg" class="" style="display:none">
+              <p id="thanksMsg" class="c-form__message" style="display:none">
                 資料ダウンロードありがとうございました
               </p>
             </form>

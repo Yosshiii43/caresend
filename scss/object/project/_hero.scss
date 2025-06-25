@@ -206,6 +206,9 @@
         line-height:1.5;
         background-color: $color-white;
         border-radius: 5px;
+        @include mq("pc") {
+          width: rem(400);
+        }
       }
     }
   } //.p-hero__inner

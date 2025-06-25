@@ -4,7 +4,10 @@
 @use "../../foundation/forwards" as *;
 
 .c-form{
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   &__item{
     margin-bottom: rem(15);
 
@@ -76,7 +79,8 @@
       margin: 0 auto;
     }
 
-    &__btn.is-disabled {
-      cursor: not-allowed;
-    }
+  &__btn.is-disabled {
+    cursor: not-allowed;
+  }
+
 }

@@ -339,6 +339,11 @@ body {
 /******************************
 フォーム
 ******************************/
+.c-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .c-form__item {
   margin-bottom: 0.9375rem;
 }
@@ -819,6 +824,11 @@ balloon（吹き出し）
   line-height: 1.5;
   background-color: #fff;
   border-radius: 5px;
+}
+@media (min-width: 1024px) {
+  .p-hero__inner .p-hero__form .p-form__inner {
+    width: 25rem;
+  }
 }
 
 /******************************
