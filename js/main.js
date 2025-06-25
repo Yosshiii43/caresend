@@ -187,6 +187,31 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll);
 });
 
+/*************************************************************************
+ * 電話番号表示形式
+ *************************************************************************/
+document.addEventListener('DOMContentLoaded', () => {
+  const telField = document.getElementById('tel');
+
+  telField.addEventListener('blur', () => {
+    let v = telField.value.trim();
+
+    // +8190… → 090…
+    if (/^\+81\d{9,10}$/.test(v)) {
+      v = '0' + v.slice(3);
+    }
+
+    // ハイフンが無ければ 3-4-4 / 2-4-4 に自動整形
+    if (/^\d{10,11}$/.test(v)) {
+      v = v.length === 11
+        ? v.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3')
+        : v.replace(/(\d{2})(\d{4})(\d{4})/, '$1-$2-$3');
+    }
+
+    telField.value = v;
+  });
+});
+
 
 /*************************************************************************
  * 資料請求フォーム
