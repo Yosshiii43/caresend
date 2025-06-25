@@ -189,6 +189,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /*************************************************************************
+ * 資料請求フォーム
+ *************************************************************************/
+(() => {
+  const form = document.getElementById('dlForm');
+  const btn  = document.getElementById('dlBtn');
+  const msg  = document.getElementById('thanksMsg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    btn.disabled = true;
+    btn.classList.add('is-disabled'); 
+
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      credentials: 'same-origin'
+    });
+
+    if (res.ok) {
+      msg.style.display = 'block';
+    } else {
+      alert('送信に失敗しました。時間をおいて再度お試しください');
+      btn.disabled = false;
+      btn.classList.remove('is-disabled');
+    }
+  });
+})();
+
+/*************************************************************************
  * アコーディオン
  *************************************************************************/
 document.querySelectorAll('.js-accordionDetails').forEach(details => {

@@ -90,30 +90,41 @@
 
         <div class="p-hero__formSection c-formWrapper" id="formWrap">
           <p class="c-form__head c-balloon">派遣事例が分かる資料をダウンロード!!</p>
-          <form class="c-form" method="post" action="mail.php">
+          <form id="dlForm" class="c-form" method="post" action="mail.php">
+            <input type="hidden" name="ajax" value="1">
+
             <div class="c-form__item">
-              <label for="姓" >姓</label>
-              <input type="text" name="姓" />
+              <label for="sei">姓</label>
+              <input id="sei" name="姓" type="text" required>
             </div>
+
             <div class="c-form__item">
-              <label>名</label>
-              <input type="text" name="名" />
+              <label for="mei">名</label>
+              <input id="mei" name="名" type="text" required>
             </div>
+
             <div class="c-form__item">
-            <label>会社名</label>
-              <input type="text" name="会社名" />
+              <label for="company">会社名</label>
+              <input id="company" name="会社名" type="text" required>
             </div>
+
             <div class="c-form__item">
-              <label>メールアドレス</label>
-              <input size="30" type="text" name="Email" />
+              <label for="email">メールアドレス</label>
+              <input id="email" name="Email" type="email" required>
             </div>
+
             <div class="c-form__item">
-              <label>電話番号</label>
-              <input size="30" type="text" name="電話番号" />
+              <label for="tel">電話番号</label>
+              <input id="tel" name="電話番号" type="tel" required>
             </div>
+
             <p>このフォームから送信された情報は、 プライバシーポリシー に基づいて処理されます。</p>
-            <p align="center">
-              <input type="submit" value="　 確認 　" />　<input type="reset" value="リセット" />
+            <p>
+              <input id="dlBtn" class="c-form__btn" type="submit" value="資料ダウンロード（無料）" />
+            </p>
+
+            <p id="thanksMsg" class="" style="display:none">
+              資料ダウンロードありがとうございました
             </p>
           </form>
         </div> <!-- .p-hero__form -->

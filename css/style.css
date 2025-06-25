@@ -365,6 +365,9 @@ body {
   border: 1px solid #CED4DA;
   background: #F5F8FA;
 }
+.c-form__item__btn.is-disabled {
+  cursor: not-allowed;
+}
 
 /******************************
 balloon（吹き出し）

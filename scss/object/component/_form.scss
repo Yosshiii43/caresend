@@ -21,6 +21,10 @@
       border: 1px solid #CED4DA;
       background: #F5F8FA;
     }
+
+    &__btn.is-disabled {
+      cursor: not-allowed;
+    }
   }
 
 }

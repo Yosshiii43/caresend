@@ -76,7 +76,7 @@ $BccMail = "";
 $subject = "ホームページのお問い合わせ";
 
 // 送信確認画面の表示(する=1, しない=0)
-$confirmDsp = 1;
+$confirmDsp = 0;
 
 // 送信完了後に自動的に指定のページ(サンクスページなど)に移動する(する=1, しない=0)
 // CV率を解析したい場合などはサンクスページを別途用意し、URLをこの下の項目で指定してください。
@@ -87,12 +87,12 @@ $jumpPage = 0;
 $thanksPage = "http://xxx.xxxxxxxxx/thanks.html";
 
 // 必須入力項目を設定する(する=1, しない=0)
-$requireCheck = 0;
+$requireCheck = 1;
 
 /* 必須入力項目(入力フォームで指定したname属性の値を指定してください。（上記で1を設定した場合のみ）
 値はシングルクォーテーションで囲み、複数の場合はカンマで区切ってください。フォーム側と順番を合わせると良いです。 
 配列の形「name="○○[]"」の場合には必ず後ろの[]を取ったものを指定して下さい。*/
-$require = array('お名前','Email');
+$require = array('姓','名','会社名','Email','電話番号');
 
 
 //----------------------------------------------------------------------
@@ -188,6 +188,10 @@ if($useToken == 1 && $confirmDsp == 1){
 	session_start();
 }
 $encode = "UTF-8";//このファイルの文字コード定義（変更不可）
+
+// ★Ajax フラグ（hidden フィールド ajax=1 があるとき true） (*追加)
+$isAjax = (isset($_POST['ajax']) && $_POST['ajax'] === '1');
+
 if(isset($_GET)) $_GET = sanitize($_GET);//NULLバイト除去//
 if(isset($_POST)) $_POST = sanitize($_POST);//NULLバイト除去//
 if(isset($_COOKIE)) $_COOKIE = sanitize($_COOKIE);//NULLバイト除去//
@@ -250,6 +254,15 @@ if(($confirmDsp == 0 || $sendmail == 1) && $empty_flag != 1){
 		mail($to,$subject,$adminBody,$header,'-f'.$from);
 		if($remail == 1 && !empty($post_mail)) mail($post_mail,$re_subject,$userBody,$reheader,'-f'.$from);
 	}
+
+  /* ★ここから Ajax 専用レスポンス (*追加)---------------------------- */
+  if($isAjax){
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['status'=>'ok']);
+    exit;
+  }
+  /* ★ここまで ---------------------------------------------------- */
+
 }
 else if($confirmDsp == 1){ 
 
