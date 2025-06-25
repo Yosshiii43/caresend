@@ -21,10 +21,20 @@
       border: 1px solid #CED4DA;
       background: #F5F8FA;
     }
+  }
+
+  &__btn{
+      padding: rem(13) rem(27);
+      color: $color-white;
+      font-weight: 700;
+      line-height: 1;
+      background-color: $color-main;
+      border-radius: 40px;
+      display: block;
+      margin: 0 auto;
+    }
 
     &__btn.is-disabled {
       cursor: not-allowed;
     }
-  }
-
 }

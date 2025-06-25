@@ -365,7 +365,17 @@ body {
   border: 1px solid #CED4DA;
   background: #F5F8FA;
 }
-.c-form__item__btn.is-disabled {
+.c-form__btn {
+  padding: 0.8125rem 1.6875rem;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  background-color: #007FC6;
+  border-radius: 40px;
+  display: block;
+  margin: 0 auto;
+}
+.c-form__btn.is-disabled {
   cursor: not-allowed;
 }
 
