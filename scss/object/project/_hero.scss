@@ -163,6 +163,7 @@
         margin-top: rem(-13);
         margin-left: rem(-8.5);
         margin-right: rem(-8.5);
+        margin-bottom: rem(44);
 
         @include mq("tab") {
           width: rem(390);
@@ -171,6 +172,7 @@
           width: rem(360);
           margin-left: 0;
           margin-right: 0;
+          margin-bottom: 0;
           position: absolute;
           bottom: 0;
           left: 50%;
