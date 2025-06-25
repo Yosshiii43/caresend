@@ -87,12 +87,54 @@
           </div>
           <p class="p-hero__img"><img src="./assets/img/img-hero01.png" alt="求人票を探す男性"></p>
         </div> <!-- .p-hero__catch-->
-        <div class="p-hero__form">
 
+        <div class="p-hero__form c-form" id="formWrap">
+          <p class="c-form__head">派遣事例が分かる資料をダウンロード!!</p>
+          <form class="c-form__body" method="post" action="mail.php">
+            <table class="formTable">
+              <tr>
+                <th>お名前</th>
+                <td><input size="20" type="text" name="姓" /><input size="20" type="text" name="名" /></td>
+              </tr>
+              <tr>
+                <th>ご用件</th>
+                <td><select name="ご用件">
+                    <option value="">選択してください</option>
+                    <option value="ご質問・お問い合わせ">ご質問・お問い合わせ</option>
+                    <option value="リンクについて">リンクについて</option>
+                  </select></td>
+              </tr>
+
+              <tr>
+                <th>電話番号（半角）</th>
+                <td><input size="30" type="text" name="電話番号" /></td>
+              </tr>
+              <tr>
+                <th>Mail（半角）</th>
+                <td><input size="30" type="text" name="Email" /></td>
+              </tr>
+              <tr>
+                <th>性別</th>
+                <td><input type="radio" name="性別" value="男" /> 男　
+                  <input type="radio" name="性別" value="女" /> 女 </td>
+              </tr>
+              <tr>
+                <th>サイトを知ったきっかけ</th>
+                <td><input name="サイトを知ったきっかけ[]" type="checkbox" value="友人・知人" /> 友人・知人　
+                  <input name="サイトを知ったきっかけ[]" type="checkbox" value="検索エンジン" /> 検索エンジン</td>
+              </tr>
+              <tr>
+                <th>お問い合わせ内容<br /></th>
+                <td><textarea name="お問い合わせ内容" cols="50" rows="5"></textarea></td>
+              </tr>
+            </table>
+            <p align="center">
+              <input type="submit" value="　 確認 　" />　<input type="reset" value="リセット" />
+            </p>
+          </form>
         </div> <!-- .p-hero__form -->
       </div>
     </section> <!-- p-hero-->
-
 
     <!-- アコーディオン -->
     <section class="p-accordionSection u-py-lg u-px-mg">
