@@ -348,26 +348,6 @@ body {
   background-color: #fff;
   border-radius: 5px;
 }
-.c-form table.formTable {
-  width: 100%;
-  margin: 0 auto;
-}
-.c-form table.formTable th,
-.c-form table.formTable td {
-  display: block;
-  width: auto;
-}
-.c-form table.formTable th {
-  width: auto;
-  font-weight: normal;
-  background: #efefef;
-  text-align: left;
-}
-.c-form table.formTable td {
-  border-radius: 5px;
-  border: 1px solid #CED4DA;
-  background: #F5F8FA;
-}
 
 /******************************
 ヘッダー

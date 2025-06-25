@@ -11,26 +11,4 @@
 	line-height:1.5;
   background-color: $color-white;
   border-radius: 5px;
-
-  table.formTable{
-    width:100%;
-    margin:0 auto;
-    th,
-    td{
-      display: block;
-      width: auto;
-    }
-    th{
-      width:auto;
-      font-weight:normal;
-      background:#efefef;
-      text-align:left;
-    }
-    td{
-      border-radius: 5px;
-      border: 1px solid #CED4DA;
-      background: #F5F8FA;
-    }
-
-  }
 }
