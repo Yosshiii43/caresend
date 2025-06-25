@@ -94,20 +94,21 @@
             <form id="dlForm" class="c-form" method="post" action="mail.php">
               <div class="c-form__body">
                 <input type="hidden" name="ajax" value="1">
-                <div class="c-form__item">
-                  <label for="sei">姓</label>
-                  <input id="sei" name="姓" type="text" required autocomplete="family-name" placeholder="介護">
-                </div>
-
-                <div class="c-form__item">
-                  <label for="mei">名</label>
-                  <input id="mei" name="名" type="text" required autocomplete="given-name" placeholder="太郎">
-                </div>
-
-                <div class="c-form__item">
-                  <label for="company">会社名</label>
-                  <input id="company" name="会社名" type="text" required autocomplete="organization" placeholder="株式会社CareSend">
-                </div>
+                  <div class="c-form__itemGroup">
+                    <div class="c-form__item">
+                      <label for="sei">姓</label>
+                      <input id="sei" name="姓" type="text" required autocomplete="family-name" placeholder="介護">
+                    </div>
+                
+                    <div class="c-form__item">
+                      <label for="mei">名</label>
+                      <input id="mei" name="名" type="text" required autocomplete="given-name" placeholder="太郎">
+                    </div>
+                  </div>
+                  <div class="c-form__item">
+                    <label for="company">会社名</label>
+                    <input id="company" name="会社名" type="text" required autocomplete="organization" placeholder="株式会社CareSend">
+                  </div>
 
                 <div class="c-form__item">
                   <label for="email">メールアドレス</label>

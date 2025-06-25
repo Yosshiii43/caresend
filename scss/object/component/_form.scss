@@ -4,7 +4,7 @@
 @use "../../foundation/forwards" as *;
 
 .c-form{
-
+  
   &__item{
     label,
     input {
@@ -17,6 +17,7 @@
     }
 
     input {
+      width: 100%;
       border-radius: 5px;
       border: 1px solid #CED4DA;
       background: #F5F8FA;
@@ -26,6 +27,15 @@
       &::placeholder{
         color: #aaa;
       }
+    }
+  }
+
+  &__itemGroup{
+    display: flex;
+    justify-content: space-between;
+  
+     .c-form__item{
+      width: calc(50% - 4px);
     }
   }
 

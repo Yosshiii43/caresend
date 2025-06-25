@@ -348,6 +348,7 @@ body {
   line-height: 1;
 }
 .c-form__item input {
+  width: 100%;
   border-radius: 5px;
   border: 1px solid #CED4DA;
   background: #F5F8FA;
@@ -359,6 +360,13 @@ body {
 }
 .c-form__item input::placeholder {
   color: #aaa;
+}
+.c-form__itemGroup {
+  display: flex;
+  justify-content: space-between;
+}
+.c-form__itemGroup .c-form__item {
+  width: calc(50% - 4px);
 }
 .c-form__btn {
   padding: 0.8125rem 1.6875rem;
