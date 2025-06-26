@@ -940,6 +940,7 @@ achievements
 }
 @media (min-width: 1024px) {
   .p-achievements__title {
+    font-size: 2rem;
     margin-bottom: 2.5rem;
   }
 }
