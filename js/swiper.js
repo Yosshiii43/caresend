@@ -1,29 +1,24 @@
 const achievementsSwiper = new Swiper(".p-achievements__swiper", {
   loop: true,
 
-  /* ▼ 毎スライドの移動時間（ms）*/
-  speed: 4000,                 // 好みで調整。大きいほどゆっくり
+  speed: 4000,
 
-  /* ▼ 自動再生。delay=0 で「止まらない」*/
   autoplay: {
-    delay: 0,
+    delay: 0,                 //止まらず流れる
     disableOnInteraction: false,
   },
 
   /* 手動スワイプ不要なら触れないようにして滑らかに */
   allowTouchMove: false,
 
-  /* ------ レイアウト ------ */
-  slidesPerView: 2,            // SP 基準
+  slidesPerView: 'auto',
   spaceBetween: 63,            // ← SP の間隔
 
   centeredSlides: true,
 
   breakpoints: {
-    /* 768px 以上では設定を上書き */
     768: {
-      slidesPerView: 5,
-      spaceBetween: 80         // ← PC の間隔
+      spaceBetween: 80         // ← tab の間隔
     }
   }
 });

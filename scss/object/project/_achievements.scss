@@ -50,22 +50,24 @@ achievements
   }
 
   &__swiper {
-    /* Swiper が付与する ease を線形に上書きして
-       加速 / 減速をなくす */
-    .swiper-wrapper {
-      transition-timing-function: linear !important;
-    }
-
     width: 100%;
     height: rem(64);     // slide の高さ
+    @include mq("pc") {
+      height: rem(99);
+    }
 
-    .p-achievements__slide {
-      width: auto;
-      height: 100%;
+    .swiper-wrapper {
+      transition-timing-function: linear !important;
 
-      img {
-        height: 100%;
+      .p-achievements__slide {
         width: auto;
+        height: 100%;
+
+        img {
+          height: 100%;
+          width: auto;
+          object-fit: contain;
+        }
       }
     }
   }
