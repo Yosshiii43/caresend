@@ -25,7 +25,7 @@
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      gap: clamp(1.875rem, -14.5rem + 25.59vw, 10.063rem);
+      gap: clamp(1.25rem, -16.375rem + 27.54vw, 10.063rem);
     }
 
     .p-hero__catch {
@@ -35,8 +35,8 @@
       justify-content: center;
       color: $color-white;
       @include mq("pc") {
-        margin-left: rem(24);
-        max-width: 615px;
+        margin-left: clamp(0rem, -3rem + 4.69vw, 1.5rem);
+        max-width: rem(615);
         align-items: flex-start;
         justify-content:center;
       }
@@ -71,7 +71,7 @@
         justify-content: center;
         flex-wrap: wrap;
         @include mq("pc") {
-          max-width: rem(615);
+          max-width: rem(536);
           line-height: 1.5;
           margin-bottom: rem(37);
           justify-content: flex-start;
@@ -122,10 +122,14 @@
             gap: rem(18);
             padding-bottom: rem(2);
             @media (max-width: 370px) {
+              width: rem(105);
+              height: rem(105);
+              gap: rem(14);
+            }
+            @media (max-width: 350px) {
               width: rem(96);
               height: rem(96);
-              font-size: rem(15);
-              gap: rem(14);
+              gap: rem(12);
             }
             @include mq("pc") {
               width: rem(164);
@@ -135,6 +139,9 @@
 
             .p-hero__statKey{
               font-size: rem(16);
+              @media (max-width: 370px) {
+                font-size: rem(15);
+              }
               @include mq("pc") {
                 font-size: rem(24);
               }
@@ -144,6 +151,9 @@
               font-size: rem(18);
               .p-hero__annotationMark{
                 color: $color-text;
+              }
+              @media (max-width: 370px) {
+                font-size: rem(16);
               }
               @include mq("pc") {
                 font-size: rem(32);
@@ -170,23 +180,20 @@
       } //.p-hero__stats
 
       .p-hero__img {
-        margin-top: rem(-13);
-        margin-left: rem(-8.5);
-        margin-right: rem(-8.5);
-        margin-bottom: rem(44);
+        margin: rem(-14) rem(-9) rem(44) rem(-8);
+        max-width: rem(360);
 
-        @include mq("tab") {
-          width: rem(390);
-        }
         @include mq("pc") {
-          width: rem(360);
           margin-left: 0;
           margin-right: 0;
           margin-bottom: 0;
           position: absolute;
           bottom: 0;
-          left: 50%;
+          left: 45%;
           transform: translateX(-50%);
+        }
+        @media (min-width: 1300px) {
+          left: 50%;
         }
 
         img {
@@ -206,8 +213,11 @@
         background-color: $color-white;
         border-radius: 5px;
         @include mq("pc") {
-          width: rem(400);
+          width: rem(380);
           padding: rem(8) rem(8) rem(28);
+        }
+        @include mq("min-xl") {
+          width: rem(400);
         }
       }
     }
