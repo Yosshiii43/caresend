@@ -346,9 +346,7 @@ body {
 }
 .c-form__item {
   margin-bottom: 0.9375rem;
-}
-.c-form__item:last-of-type {
-  margin-bottom: 1.5rem;
+  line-height: 1;
 }
 .c-form__item label,
 .c-form__item input {
@@ -356,6 +354,7 @@ body {
 }
 .c-form__item label {
   font-size: 0.875rem;
+  font-weight: 700;
   line-height: 1;
   margin-bottom: 0.5rem;
 }
@@ -370,7 +369,7 @@ body {
   border-radius: 5px;
   border: 1px solid #CED4DA;
   background: #F5F8FA;
-  padding: 0.9375rem 0.4375rem;
+  padding: 0.71875rem 0.4375rem;
   line-height: 1;
 }
 .c-form__item input::-moz-placeholder {
@@ -384,12 +383,12 @@ body {
 .c-form__itemGroup {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.9375rem;
 }
 .c-form__itemGroup .c-form__item {
   width: calc(50% - 4px);
 }
 .c-form__pp {
+  margin-top: 1.5rem;
   margin-bottom: 2.5rem;
   font-size: 0.75rem;
   line-height: 1.5;
@@ -821,7 +820,6 @@ balloon（吹き出し）
   max-width: 25rem;
   padding: 0.5rem 0.5rem 1.1875rem;
   margin: 0 auto;
-  line-height: 1.5;
   background-color: #fff;
   border-radius: 5px;
 }
