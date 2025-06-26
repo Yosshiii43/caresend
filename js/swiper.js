@@ -1,18 +1,24 @@
-const achievementsSwiper = new Swiper(".p-achievements__swiper", {
+const achievementsSwiper = new Swiper('.p-achievements__swiper', {
+  /* ループを活かす（←折り返し防止） */
   loop: true,
-  speed: 12000,
-  autoplay: {
-    delay: 0,                 //止まらず流れる
-    disableOnInteraction: false,
+
+  /* ベルトコンベア式に流す */
+  freeMode: {
+    enabled : true,
+    momentum: false,     // 惰性 OFF ＝一定速度
+    momentumBounce: false
   },
-  
-  allowTouchMove: false,      // 手動スワイプ不要なら触れないようにして滑らかに 
-  slidesPerView: 'auto',
-  spaceBetween: 63,
-  centeredSlides: true,
-  breakpoints: {
-    768: {
-      spaceBetween: 80
-    }
-  }
+
+  slidesPerView : 'auto',
+  centeredSlides: false,
+  spaceBetween  : 63,
+  breakpoints   : { 768: { spaceBetween: 80 } },
+
+  speed   : 4000,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false
+  },
+
+  allowTouchMove: false
 });
