@@ -1,5 +1,5 @@
 /******************************
-ヒーロー
+achievements
 ******************************/
 @use "../../foundation/forwards" as *;
 @use "sass:math";
@@ -22,7 +22,7 @@
       font-size: rem(18);
     }
     @include mq("pc") {
-      margin-bottom: mq(40);
+      margin-bottom: rem(40);
     }
   }
 
@@ -32,17 +32,42 @@
     align-items: center;
     justify-content: center;
     gap: rem(8);
+    margin-bottom: rem(39);
     @include mq(tab) {
       flex-direction: row;
       gap: pc-vw(84);
+      margin-bottom: rem(64);
     }
 
     .p-achievements__img{
       width: rem(280);
       height: auto;
+      object-fit: contain;
       @include mq("pc") {
         width: pc-vw(428);
       }
     }
   }
+
+  &__swiper {
+    /* Swiper が付与する ease を線形に上書きして
+       加速 / 減速をなくす */
+    .swiper-wrapper {
+      transition-timing-function: linear !important;
+    }
+
+    width: 100%;
+    height: rem(64);     // slide の高さ
+
+    .p-achievements__slide {
+      width: auto;
+      height: 100%;
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
 }
+
