@@ -279,20 +279,33 @@ body {
 }
 
 /******************************
-インナー
+セクション
 ******************************/
-.c-inner {
-  padding-inline: 16px;
+.c-section {
+  padding-block: 2.25rem;
+  padding-inline: 1.0625rem;
 }
 @media (min-width: 768px) {
-  .c-inner {
-    padding-inline: 60px;
+  .c-section {
+    padding-block: 2.625rem;
+    padding-inline: 3.75rem;
   }
 }
 @media (min-width: 1024px) {
-  .c-inner {
-    padding-inline: 256px;
+  .c-section {
+    padding-block: 3rem;
+    padding-inline: clamp(3.75rem, -20.75rem + 38.28vw, 16rem);
   }
+}
+
+/******************************
+セクションタイトル
+******************************/
+.c-secTitle {
+  font-size: clamp(1.5rem, 0.008rem + 3.11vw, 2rem);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5;
 }
 
 /******************************
@@ -987,6 +1000,67 @@ achievements
   }
 }
 .p-achievements__swiper .swiper-wrapper .swiper-slide img {
+  height: 100%;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/******************************
+about
+******************************/
+.p-about__title {
+  margin-bottom: 3.9375rem;
+}
+@media (min-width: 1024px) {
+  .p-about__title {
+    margin-bottom: 3.1875rem;
+  }
+}
+.p-about__description {
+  font-size: clamp(1.25rem, 0.504rem + 1.56vw, 1.5rem);
+  font-weight: 700;
+  text-align: center;
+  max-width: 36em;
+  margin-inline: auto;
+  margin-bottom: 3.3125rem;
+}
+@media (min-width: 768px) {
+  .p-about__description {
+    margin-bottom: 2.8125rem;
+  }
+}
+.p-about__description span {
+  display: block;
+}
+@media (min-width: 768px) {
+  .p-about__description span {
+    display: inline;
+  }
+  .p-about__description span:nth-child(2)::after, .p-about__description span:nth-child(4)::after {
+    content: "\a";
+    white-space: pre;
+  }
+}
+.p-about__description span em {
+  font-size: clamp(1.5rem, 0.008rem + 3.11vw, 2rem);
+  font-style: normal;
+  color: #007FC6;
+}
+.p-about__img {
+  width: 100%;
+  background-color: #F9F9F9;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .p-about__img {
+    width: 50.5rem;
+  }
+}
+.p-about__img .p-about__imgInner img {
   height: 100%;
   width: auto;
   -o-object-fit: contain;

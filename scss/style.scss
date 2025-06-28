@@ -12,7 +12,8 @@
 @use "object/component/hamburger";
 @use "object/component/button";
 @use "object/component/icon";
-@use "object/component/inner" as ci;
+@use "object/component/section";
+@use "object/component/secTitle";
 @use "object/component/fadeIn";
 @use "object/component/list";
 @use "object/component/annotationMark";
@@ -25,6 +26,7 @@
 @use "object/project/hero";
 @use "object/project/accordion";
 @use "object/project/achievements";
+@use "object/project/about";
 
 
 //utility

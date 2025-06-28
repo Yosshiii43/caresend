@@ -1,0 +1,65 @@
+/******************************
+about
+******************************/
+@use "../../foundation/forwards" as *;
+@use "sass:math";
+
+.p-about {
+  &__title {
+    margin-bottom: rem(63);
+    @include mq("pc") {
+      margin-bottom: rem(51);
+    }
+  }
+
+  &__description {
+    font-size: clamp(1.25rem, 0.504rem + 1.56vw, 1.5rem);
+    font-weight: 700;
+    text-align: center;
+    max-width: 36em;
+    margin-inline: auto;
+    margin-bottom: rem(53);
+    @include mq("tab") {
+      margin-bottom: rem(45);
+    }
+
+    span {
+      display: block;
+      @include mq("tab") {
+        display: inline;
+
+        &:nth-child(2)::after,
+        &:nth-child(4)::after {
+          content: "\A";
+          white-space: pre;
+        }
+      }
+
+      em {
+        font-size: clamp(1.5rem, 0.008rem + 3.11vw, 2rem);
+        font-style: normal;
+        color: $color-main;
+      }
+    }
+  }
+
+  &__img {
+      width: 100%;
+      background-color: $color-bg2;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include mq("tab") {
+        width: rem(808);
+        height: rem(276);
+      }
+    .p-about__imgInner{
+      img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+      }
+    }
+  }
+}
