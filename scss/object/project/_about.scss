@@ -62,6 +62,7 @@ about
       @include mq("tab") {
         width: rem(808);
         height: rem(276);
+        margin: 0 auto;
       }
     .p-about__imgInner{
       img {

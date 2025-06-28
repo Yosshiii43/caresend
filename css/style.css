@@ -1067,6 +1067,7 @@ about
   .p-about__img {
     width: 50.5rem;
     height: 17.25rem;
+    margin: 0 auto;
   }
 }
 .p-about__img .p-about__imgInner img {
