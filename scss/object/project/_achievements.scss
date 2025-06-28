@@ -52,17 +52,18 @@ achievements
 
   &__swiper {
     width: 100%;
-    height: rem(64);     // slide の高さ
-    @include mq("pc") {
-      height: rem(99);
-    }
+
 
     .swiper-wrapper {
+      transform:translate3d(0,0,0);
       transition-timing-function: linear !important;
 
-      .p-achievements__slide {
-        width: auto;
-        height: 100%;
+      .swiper-slide {
+        width: auto !important;
+        height: rem(64);     // slide の高さ
+        @include mq("pc") {
+          height: rem(99);
+        }
 
         img {
           height: 100%;

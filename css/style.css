@@ -972,21 +972,21 @@ achievements
 }
 .p-achievements__swiper {
   width: 100%;
+}
+.p-achievements__swiper .swiper-wrapper {
+  transform: translate3d(0, 0, 0);
+  transition-timing-function: linear !important;
+}
+.p-achievements__swiper .swiper-wrapper .swiper-slide {
+  width: auto !important;
   height: 4rem;
 }
 @media (min-width: 1024px) {
-  .p-achievements__swiper {
+  .p-achievements__swiper .swiper-wrapper .swiper-slide {
     height: 6.1875rem;
   }
 }
-.p-achievements__swiper .swiper-wrapper {
-  transition-timing-function: linear !important;
-}
-.p-achievements__swiper .swiper-wrapper .p-achievements__slide {
-  width: auto;
-  height: 100%;
-}
-.p-achievements__swiper .swiper-wrapper .p-achievements__slide img {
+.p-achievements__swiper .swiper-wrapper .swiper-slide img {
   height: 100%;
   width: auto;
   -o-object-fit: contain;
