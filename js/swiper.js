@@ -10,9 +10,9 @@ window.addEventListener('load', () => {
       delay: 0,
       disableOnInteraction: false,
     },
-    speed   : 4000,
+    speed   : 10000,
     allowTouchMove: false,
-    
+
     slidesPerView : 'auto',
     centeredSlides: false,
     spaceBetween  : 63,
@@ -20,6 +20,7 @@ window.addEventListener('load', () => {
     
     
     roundLengths: true,
+    loopedSlides:20, 
     loopAdditionalSlides: 0,
   });
 });
