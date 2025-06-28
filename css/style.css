@@ -1023,7 +1023,7 @@ about
   text-align: center;
   max-width: 36em;
   margin-inline: auto;
-  margin-bottom: 3.3125rem;
+  margin-bottom: 3.375rem;
 }
 @media (min-width: 768px) {
   .p-about__description {
@@ -1033,9 +1033,17 @@ about
 .p-about__description span {
   display: block;
 }
+.p-about__description span:nth-child(4) {
+  position: relative;
+  top: 2px;
+}
 @media (min-width: 768px) {
   .p-about__description span {
     display: inline;
+  }
+  .p-about__description span:nth-child(3), .p-about__description span:nth-child(4) {
+    position: relative;
+    top: 3px;
   }
   .p-about__description span:nth-child(2)::after, .p-about__description span:nth-child(4)::after {
     content: "\a";
