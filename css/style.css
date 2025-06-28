@@ -313,7 +313,7 @@ body {
 ******************************/
 .c-fadeIn {
   transition: opacity 0.7s, transform 0.7s;
-  transform: translateY(150px);
+  transform: translateY(50px);
   opacity: 0;
 }
 
@@ -1058,6 +1058,7 @@ about
 @media (min-width: 768px) {
   .p-about__img {
     width: 50.5rem;
+    height: 17.25rem;
   }
 }
 .p-about__img .p-about__imgInner img {
