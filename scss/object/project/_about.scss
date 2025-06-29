@@ -5,6 +5,9 @@ about
 @use "sass:math";
 
 .p-about {
+  @include mq("tab") {
+    padding-bottom: rem(48) + rem(20);
+  }
   &__title {
     margin-bottom: rem(63);
     @include mq("pc") {

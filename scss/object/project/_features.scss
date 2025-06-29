@@ -5,10 +5,14 @@ features
 @use "sass:math";
 
 .p-features {
-  max-width: rem(1024) ;
-  padding-inline: rem(20);
+  max-width: rem(500) ;
+  padding-bottom: rem(31);
   margin-left: auto;
   margin-right: auto;
+  @include mq("tab") {
+    max-width: rem(1024);
+    padding-inline: rem(20);
+  }
 
   &__title {
     margin-bottom: rem(51);
@@ -24,7 +28,13 @@ features
 
     .p-features__item {
       border: 1px solid $color-main;
-      padding: rem(108) rem(29) rem(21);
+      padding: rem(110) rem(29) rem(21);
+      @include mq("tab") {
+        padding: rem(108) rem(31) rem(22);
+      }
+      &:first-child {
+        padding-top: rem(109);
+      }
       h3 {
         font-size: rem(20);
         font-weight: 700;
@@ -36,8 +46,9 @@ features
         justify-content: center;
         margin-bottom: rem(19);
         position: relative;
-        @include mq (pc) {
+        @include mq (tab) {
           flex-direction: row;
+          margin-bottom: rem(18);
         }
 
           &::before{
@@ -57,6 +68,10 @@ features
         height: rem(76);
         background-image: url(../img/img-feature01.png);
         top: calc(rem(-76) + rem(-19));
+        @include mq("tab") {
+          height: rem(77);
+          top: calc(rem(-77) + rem(-19));
+        }
       }
       &:nth-child(2) h3::before {
         background-image: url(../img/img-feature02.png);

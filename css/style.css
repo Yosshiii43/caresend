@@ -1009,6 +1009,11 @@ achievements
 /******************************
 about
 ******************************/
+@media (min-width: 768px) {
+  .p-about {
+    padding-bottom: 4.25rem;
+  }
+}
 .p-about__title {
   margin-bottom: 3.9375rem;
 }
@@ -1081,10 +1086,16 @@ about
 features
 ******************************/
 .p-features {
-  max-width: 64rem;
-  padding-inline: 1.25rem;
+  max-width: 31.25rem;
+  padding-bottom: 1.9375rem;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 768px) {
+  .p-features {
+    max-width: 64rem;
+    padding-inline: 1.25rem;
+  }
 }
 .p-features__title {
   margin-bottom: 3.1875rem;
@@ -1101,7 +1112,15 @@ features
 }
 .p-features__container .p-features__item {
   border: 1px solid #007FC6;
-  padding: 6.75rem 1.8125rem 1.3125rem;
+  padding: 6.875rem 1.8125rem 1.3125rem;
+}
+@media (min-width: 768px) {
+  .p-features__container .p-features__item {
+    padding: 6.75rem 1.9375rem 1.375rem;
+  }
+}
+.p-features__container .p-features__item:first-child {
+  padding-top: 6.8125rem;
 }
 .p-features__container .p-features__item h3 {
   font-size: 1.25rem;
@@ -1115,9 +1134,10 @@ features
   margin-bottom: 1.1875rem;
   position: relative;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .p-features__container .p-features__item h3 {
     flex-direction: row;
+    margin-bottom: 1.125rem;
   }
 }
 .p-features__container .p-features__item h3::before {
@@ -1136,6 +1156,12 @@ features
   height: 4.75rem;
   background-image: url(../img/img-feature01.png);
   top: -5.9375rem;
+}
+@media (min-width: 768px) {
+  .p-features__container .p-features__item:first-child h3::before {
+    height: 4.8125rem;
+    top: -6rem;
+  }
 }
 .p-features__container .p-features__item:nth-child(2) h3::before {
   background-image: url(../img/img-feature02.png);
