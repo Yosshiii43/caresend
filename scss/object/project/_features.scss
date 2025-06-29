@@ -30,7 +30,7 @@ features
       border: 1px solid $color-main;
       padding: rem(110) rem(29) rem(21);
       @include mq("tab") {
-        padding: rem(108) rem(31) rem(22);
+        padding: rem(108) rem(31) rem(22.5);
       }
       &:first-child {
         padding-top: rem(109);
