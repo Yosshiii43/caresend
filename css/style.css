@@ -1071,6 +1071,7 @@ about
 @media (min-width: 768px) {
   .p-about__img {
     width: 50.5rem;
+    max-width: 100%;
     height: 17.25rem;
     margin: 0 auto;
   }

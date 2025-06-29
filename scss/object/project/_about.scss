@@ -64,6 +64,7 @@ about
       align-items: center;
       @include mq("tab") {
         width: rem(808);
+        max-width: 100%;
         height: rem(276);
         margin: 0 auto;
       }
