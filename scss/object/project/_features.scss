@@ -1,0 +1,72 @@
+/******************************
+features
+******************************/
+@use "../../foundation/forwards" as *;
+@use "sass:math";
+
+.p-features {
+  max-width: rem(1024) ;
+  padding-inline: rem(20);
+  margin-left: auto;
+  margin-right: auto;
+
+  &__title {
+    margin-bottom: rem(51);
+  }
+
+  &__container {
+    display: grid;
+    gap: rem(24);
+    @include mq("tab") {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    .p-features__item {
+      border: 1px solid $color-main;
+      padding: rem(108) rem(29) rem(21);
+      h3 {
+        font-size: rem(20);
+        font-weight: 700;
+        line-height: 1.5;
+        color: $color-accent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: rem(19);
+        position: relative;
+        @include mq (pc) {
+          flex-direction: row;
+        }
+
+          &::before{
+          content: "";
+          display: block;
+          width: rem(116);
+          height: rem(77);
+          background-size: contain;
+          background-repeat: no-repeat;
+          position: absolute;
+          top: calc(rem(-77) + rem(-19));
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      &:first-child h3::before {
+        height: rem(76);
+        background-image: url(../img/img-feature01.png);
+        top: calc(rem(-76) + rem(-19));
+      }
+      &:nth-child(2) h3::before {
+        background-image: url(../img/img-feature02.png);
+      }
+      &:nth-child(3) h3::before {
+        background-image: url(../img/img-feature03.png);
+      }
+      &:last-child h3::before {
+        background-image: url(../img/img-feature04.png);
+      }
+    }
+  }
+}
