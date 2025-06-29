@@ -471,7 +471,7 @@ balloon（吹き出し）
   content: "";
   width: 16px;
   height: 17px;
-  background-image: url(../../../img/img_triangle-sp.png);
+  background-image: url(../../../img/img-triangle_sp.png);
   background-position: top center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -483,7 +483,7 @@ balloon（吹き出し）
 @media (min-width: 1024px) {
   .c-balloon::after {
     height: 16px;
-    background-image: url(../../../img/img_triangle-pc.png);
+    background-image: url(../../../img/img-triangle_pc.png);
   }
 }
 
@@ -1236,6 +1236,89 @@ CTA
 /******************************
 examples
 ******************************/
+.p-examples {
+  padding-left: 0;
+  padding-right: 0;
+}
+.p-examples h2 {
+  margin-bottom: 2.9375rem;
+}
+@media (min-width: 1024px) {
+  .p-examples h2 {
+    margin-bottom: 3.9375rem;
+  }
+}
+.p-examples__swiper {
+  padding: 0.625rem 2rem 0.625rem;
+}
+@media (min-width: 768px) {
+  .p-examples__swiper {
+    width: 880px;
+    max-width: 100%;
+  }
+}
+.p-examples__swiper .swiper-wrapper {
+  width: 100%;
+  height: auto;
+}
+.p-examples__swiper .swiper-wrapper .swiper-slide {
+  position: relative;
+  width: calc(100% - 64px);
+  max-width: 25.3125rem;
+  height: auto;
+  padding: 1.9375rem 0.625rem 1.25rem;
+  border-radius: 30px 0px;
+  background-color: #fff;
+  box-shadow: 0px 5px 8px 3px rgba(51, 51, 51, 0.25);
+}
+.p-examples__swiper .swiper-wrapper .swiper-slide h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.p-examples__swiper .swiper-wrapper .swiper-slide h3 em {
+  font-style: normal;
+  color: #007FC6;
+}
+.p-examples__swiper .swiper-wrapper .swiper-slide p {
+  font-size: 0.75rem;
+  margin-bottom: 8.25rem;
+}
+.p-examples__swiper .swiper-wrapper .swiper-slide img {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 0.625rem;
+  width: auto;
+  aspect-ratio: auto;
+}
+.p-examples__swiper .swiper-wrapper .swiper-slide:first-of-type img, .p-examples__swiper .swiper-wrapper .swiper-slide:nth-of-type(2) img {
+  height: 4rem;
+}
+.p-examples__swiper .swiper-wrapper .swiper-slide:nth-of-type(3) img {
+  height: 5.0625rem;
+}
+.p-examples__swiper .swiper-wrapper .swiper-slide:last-of-type img {
+  height: 4.0625rem;
+}
+.p-examples__swiper .swiper-button-next,
+.p-examples__swiper .swiper-button-prev {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+.p-examples__swiper .swiper-button-next::after,
+.p-examples__swiper .swiper-button-prev::after {
+  display: none;
+}
+.p-examples__swiper .swiper-button-next {
+  right: 0.375rem;
+  background-image: url(../img/icon-arrow_right.png);
+}
+.p-examples__swiper .swiper-button-prev {
+  left: 0.375rem;
+  background-image: url(../img/icon-arrow_left.png);
+}
+
 /******************************
 hidden
 ******************************/
