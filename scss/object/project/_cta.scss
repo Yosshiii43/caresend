@@ -1,0 +1,49 @@
+/******************************
+CTA
+******************************/
+@use "../../foundation/forwards" as *;
+@use "sass:math";
+
+.p-cta {
+  width: 100%;
+  padding-top: rem(40);
+  padding-bottom: rem(40);
+  background-image: url(../img/bg_cta--sp.jpg);
+  background-size: cover;
+  @include mq("tab") {
+    background-image: url(../img/bg_cta--pc.jpg);
+  }
+
+  &__title {
+    font-size: rem(24);
+    font-weight: 700;
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: rem(39);
+    @include mq("tab") {
+      flex-direction: row;
+      margin-bottom: rem(24);
+    }
+  }
+
+  &__button {
+    line-height: 1;
+    font-size: rem(20);
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    a {
+      display: block;
+      font-weight: 700;
+      line-height: 1;
+      color: $color-main;
+      background-color: $color-white;
+      border-radius: 25px;
+      padding: rem(16) rem(50);
+    }
+  }
+
+}
