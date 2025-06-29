@@ -1314,7 +1314,7 @@ examples
 .p-examples__swiper .swiper-button-prev::after {
   display: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .p-examples__swiper .swiper-button-next,
 .p-examples__swiper .swiper-button-prev {
     width: 2.125rem;
@@ -1325,7 +1325,7 @@ examples
   right: 0.375rem;
   background-image: url(../img/icon-arrow_right.png);
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .p-examples__swiper .swiper-button-next {
     right: 1.25rem;
   }
@@ -1334,9 +1334,9 @@ examples
   left: 0.375rem;
   background-image: url(../img/icon-arrow_left.png);
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .p-examples__swiper .swiper-button-prev {
-    right: 1.25rem;
+    left: 1.25rem;
   }
 }
 

@@ -71,7 +71,7 @@ examples
       height: rem(20);
       background-size: contain;
       &::after { display: none; }
-      @include mq(tab) {
+      @include mq(pc) {
         width: rem(34);
         height: rem(34);
       }
@@ -79,12 +79,12 @@ examples
     .swiper-button-next {
       right: rem(6);
       background-image: url(../img/icon-arrow_right.png);
-      @include mq(tab) { right: rem(20); }
+      @include mq(pc) { right: rem(20); }
     }
     .swiper-button-prev {
       left: rem(6);
       background-image: url(../img/icon-arrow_left.png);
-      @include mq(tab) { right: rem(20); }
+      @include mq(pc) { left: rem(20); }
     }
   }
 }
