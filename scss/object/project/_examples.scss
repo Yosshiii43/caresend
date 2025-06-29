@@ -14,18 +14,15 @@ examples
     }  
   }
   &__swiper{
-    padding: rem(10) rem(32) rem(10);
+    margin-inline: auto;
+    padding: rem(10) rem(32);
     
-    @include mq("tab") {
-      width: 880px;
-      max-width: 100%;
+    @include mq("pc") {
+      width: rem(1024);
     }
-    .swiper-wrapper{
-      width: 100%;
-      height: auto;
 
+    .swiper-wrapper{
       .swiper-slide {
-        position: relative;
         width: calc(100% - 32px * 2 );
         max-width: rem(405);
         height: auto;
@@ -72,20 +69,33 @@ examples
     }
     .swiper-button-next,
     .swiper-button-prev {
-      width: 20px;
-      height: 20px;
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      width: rem(20);
+      height: rem(20);
       background-size: contain;
       &::after {
         display: none;
+      }
+      @include mq(tab) {
+        width: rem(34);
+        height: rem(34);
       }
     }
     .swiper-button-next {
       right: rem(6);
       background-image: url(../img/icon-arrow_right.png);
+      @include mq(tab) {
+        right: rem(20);
+      }
     }
     .swiper-button-prev {
       left: rem(6);
       background-image: url(../img/icon-arrow_left.png);
+      @include mq(tab) {
+        right: rem(20);
+      }
     }
   }
 }
