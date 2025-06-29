@@ -25,7 +25,7 @@ balloon（吹き出し）
     content: "";
     width: 16px;
     height: 17px;
-    background-image: url(../../../img/img_triangle-sp.png);
+    background-image: url(../../../img/img-triangle_sp.png);
     background-position: top center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -35,7 +35,7 @@ balloon（吹き出し）
     transform: translateX(-50%);
     @include mq("pc") {
       height: 16px;
-      background-image: url(../../../img/img_triangle-pc.png);
+      background-image: url(../../../img/img-triangle_pc.png);
     }
   }
 }
