@@ -4,6 +4,18 @@ examples
 @use "../../foundation/forwards" as *;
 @use "sass:math";
 
+/* ─── 共通変数 ─────────────────── */
+$arrow-w-sp-n : 20;   $arrow-w-sp : $arrow-w-sp-n * 1px;
+$gap-in-sp-n  : 6;    $gap-in-sp  : $gap-in-sp-n  * 1px;
+$gap-out-sp-n : 6;    $gap-out-sp : $gap-out-sp-n * 1px;
+$zone-sp-n : $arrow-w-sp-n + $gap-in-sp-n + $gap-out-sp-n; // 32
+$zone-sp   : $zone-sp-n * 1px;                             // 32px
+
+$arrow-w-pc-n : 34;   $arrow-w-pc : $arrow-w-pc-n * 1px;
+$gap-in-pc-n  : 20;   $gap-in-pc  : $gap-in-pc-n  * 1px;
+$zone-pc-n    : $arrow-w-pc-n + $gap-in-pc-n;              // 54
+$zone-pc      : $zone-pc-n * 1px;                          // 54px
+
 .p-examples {
   h2 {
     margin-bottom: rem(47);
@@ -11,22 +23,21 @@ examples
   }
   &__swiper{
     width: 100%;
-    max-width: rem(405);
+    max-width : #{rem(405 + $zone-sp-n * 2)};
     margin-inline: auto;
-    padding: rem(10);
-    @include mq("pc") {
+    overflow  : hidden; 
+     @include mq("pc") { 
       width: rem(1024); 
-      max-width: rem(1024);
-      padding: rem(10) rem(32); 
+      max-width:none; 
     }
 
     .swiper-wrapper{
+      padding-block: rem(10);
       .swiper-slide {
-        width: 100%;
+        width: clamp( 0px,
+                      calc(100% - #{$zone-sp * 2}),
+                      #{rem(405)});
         max-width: rem(405);
-        @include mq(pc) {
-          width: rem(405);
-        }
         height: auto;
         padding: rem(31) rem(10) rem(20);
         border-radius: 30px 0;
@@ -76,24 +87,24 @@ examples
       position: absolute;
       top: 50%;
       translate: 0 -50%;
-      width: rem(20);
-      height: rem(20);
+      width : rem($arrow-w-sp-n);
+      height: rem($arrow-w-sp-n);
       background-size: contain;
-      &::after { display: none; }
       @include mq(pc) {
-        width: rem(34);
-        height: rem(34);
+        width : rem($arrow-w-pc-n);
+        height: rem($arrow-w-pc-n);
       }
+      &::after { display: none; }
     }
     .swiper-button-next {
-      right: rem(6);
+      right: $gap-out-sp;
       background-image: url(../img/icon-arrow_right.png);
-      @include mq(pc) { right: rem(20); }
+      @include mq(pc) { right: rem(18); }
     }
     .swiper-button-prev {
-      left: rem(6);
+      left: $gap-out-sp;
       background-image: url(../img/icon-arrow_left.png);
-      @include mq(pc) { left: rem(20); }
+      @include mq(pc) { left: rem(18); }
     }
   }
 }

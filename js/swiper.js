@@ -29,43 +29,59 @@ window.addEventListener('load', () => {
 });
 
 
-/*************************************************************************
- * examples-swiper
- *************************************************************************/
+/* -----------------------------------------------------------
+   examples-swiper.js  –  ページ内に複数 Swiper がある前提
+----------------------------------------------------------- */
 window.addEventListener('load', () => {
-  const examplesSwiper = new Swiper('.p-examples__swiper', {
-    /* 共通設定 ------------------------------------------------ */
-    loop           : true,
-    speed          : 600,
-    navigation     : {
-      nextEl : '.swiper-button-next',
-      prevEl : '.swiper-button-prev',
-    },
+  const sel = '.p-examples__swiper';
+  const wrap = document.querySelector(sel);
+  if (!wrap) return;
 
-    /* ----- 画面幅別の表示枚数 ----- */
-    breakpoints : {
-      /*── SP / Tab ───────────────────────*/
-      0 : {
-        slidesPerView  : 1,
-        slidesPerGroup : 1,
-        centeredSlides : false,   // ← OFF にするのがキモ
-        spaceBetween   : 0,
-      },
-      1024: {         // 1024px〜（PC）
-        slidesPerView   : 2,
-        slidesPerGroup  : 2,
-        centeredSlides  : false,  // 2 枚セットを手動で中央へ
-        spaceBetween    : 70,
-        slidesOffsetBefore : 72,  // (1024 - 880) / 2
-        slidesOffsetAfter  : 72,
-      },
-    },
+  const SLIDE_MAX     = 405;
+  const ZONE_SP       = 32;   // 6 + 20 + 6
+  const GUTTER_PC     = 70;
+  const DESKTOP_MIN   = 1024;
 
-    /* リサイズに追従させる（仕様 1-⑤） ----------------------- */
+  function setParams(swp){
+    const w = wrap.clientWidth;
+    const isPC = innerWidth >= DESKTOP_MIN;
+
+    if (isPC){
+      /* ─ PC ─ 2枚 + 70px、中央に配置 ─ */
+      const offset = (1024 - (SLIDE_MAX*2 + GUTTER_PC)) / 2; // = 72
+      Object.assign(swp.params, {
+        slidesPerView        : 2,
+        slidesPerGroup       : 2,
+        spaceBetween         : GUTTER_PC,
+        slidesOffsetBefore   : offset,
+        slidesOffsetAfter    : offset,
+      });
+    } else {
+      /* ─ SP / Tab ─ 1枚、左右64pxを除いた幅で中央 ─ */
+      const slideW = Math.min(SLIDE_MAX, w - ZONE_SP*2);
+      const offset = (w - slideW) / 2;
+      Object.assign(swp.params, {
+        slidesPerView        : 1,
+        slidesPerGroup       : 1,
+        spaceBetween         : 0,
+        slidesOffsetBefore   : offset,
+        slidesOffsetAfter    : offset,
+      });
+    }
+  }
+
+  const examplesSwiper = new Swiper(sel, {
+    loop   : true,
+    speed  : 600,
+    navigation: {
+      nextEl : `${sel} .swiper-button-next`,
+      prevEl : `${sel} .swiper-button-prev`,
+    },
+    on: {
+      beforeInit: setParams,
+      resize    : swp => { setParams(swp); swp.update(); },
+    },
     observer       : true,
     observeParents : true,
   });
-
-  /* Safari など一部環境で resize 検知が遅い場合の保険 */
-  window.addEventListener('resize', () => swiper.update());
 });
