@@ -1183,12 +1183,19 @@ CTA
   padding-bottom: 2.5rem;
   background-image: url(../img/bg_cta--sp.jpg);
   background-size: cover;
+  margin-bottom: 2.25rem;
 }
 @media (min-width: 768px) {
   .p-cta {
     padding-top: 3.75rem;
     padding-bottom: 3.8125rem;
     background-image: url(../img/bg_cta--pc.jpg);
+    margin-bottom: 2.625rem;
+  }
+}
+@media (min-width: 1024px) {
+  .p-cta {
+    margin-bottom: 3rem;
   }
 }
 .p-cta__title {
@@ -1226,6 +1233,9 @@ CTA
   padding: 1rem 3.125rem;
 }
 
+/******************************
+examples
+******************************/
 /******************************
 hidden
 ******************************/
