@@ -5,21 +5,14 @@ examples
 @use "sass:math";
 
 .p-examples {
-  padding-left: 0;
-  padding-right: 0;
   h2 {
     margin-bottom: rem(47);
-    @include mq("pc") {
-      margin-bottom: rem(63);
-    }  
+    @include mq("pc") { margin-bottom: rem(63); }
   }
   &__swiper{
     margin-inline: auto;
     padding: rem(10) rem(32);
-    
-    @include mq("pc") {
-      width: rem(1024);
-    }
+    @include mq("pc") { width: rem(1024); }
 
     .swiper-wrapper{
       .swiper-slide {
@@ -35,6 +28,7 @@ examples
           font-size: rem(18);
           font-weight: 700;
           margin-bottom: rem(24);
+          @include mq("pc") { font-size: rem(24) ;}
 
           em {
             font-style: normal;
@@ -45,6 +39,7 @@ examples
         p {
           font-size: rem(12);
           margin-bottom: rem(132);
+          @include mq("pc") { font-size: rem(14) ;}
         }
         img {
           position: absolute;
@@ -75,9 +70,7 @@ examples
       width: rem(20);
       height: rem(20);
       background-size: contain;
-      &::after {
-        display: none;
-      }
+      &::after { display: none; }
       @include mq(tab) {
         width: rem(34);
         height: rem(34);
@@ -86,16 +79,12 @@ examples
     .swiper-button-next {
       right: rem(6);
       background-image: url(../img/icon-arrow_right.png);
-      @include mq(tab) {
-        right: rem(20);
-      }
+      @include mq(tab) { right: rem(20); }
     }
     .swiper-button-prev {
       left: rem(6);
       background-image: url(../img/icon-arrow_left.png);
-      @include mq(tab) {
-        right: rem(20);
-      }
+      @include mq(tab) { right: rem(20); }
     }
   }
 }

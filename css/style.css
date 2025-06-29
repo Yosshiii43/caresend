@@ -1236,10 +1236,6 @@ CTA
 /******************************
 examples
 ******************************/
-.p-examples {
-  padding-left: 0;
-  padding-right: 0;
-}
 .p-examples h2 {
   margin-bottom: 2.9375rem;
 }
@@ -1271,6 +1267,11 @@ examples
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
+@media (min-width: 1024px) {
+  .p-examples__swiper .swiper-wrapper .swiper-slide h3 {
+    font-size: 1.5rem;
+  }
+}
 .p-examples__swiper .swiper-wrapper .swiper-slide h3 em {
   font-style: normal;
   color: #007FC6;
@@ -1278,6 +1279,11 @@ examples
 .p-examples__swiper .swiper-wrapper .swiper-slide p {
   font-size: 0.75rem;
   margin-bottom: 8.25rem;
+}
+@media (min-width: 1024px) {
+  .p-examples__swiper .swiper-wrapper .swiper-slide p {
+    font-size: 0.875rem;
+  }
 }
 .p-examples__swiper .swiper-wrapper .swiper-slide img {
   position: absolute;
