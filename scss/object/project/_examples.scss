@@ -10,17 +10,26 @@ examples
     @include mq("pc") { margin-bottom: rem(63); }
   }
   &__swiper{
+    width: 100%;
+    max-width: rem(405);
     margin-inline: auto;
-    padding: rem(10) rem(32);
-    @include mq("pc") { width: rem(1024); }
+    padding: rem(10);
+    @include mq("pc") {
+      width: rem(1024); 
+      max-width: rem(1024);
+      padding: rem(10) rem(32); 
+    }
 
     .swiper-wrapper{
       .swiper-slide {
-        width: calc(100% - 32px * 2 );
+        width: 100%;
         max-width: rem(405);
+        @include mq(pc) {
+          width: rem(405);
+        }
         height: auto;
         padding: rem(31) rem(10) rem(20);
-        border-radius: 30px 0px;
+        border-radius: 30px 0;
         background-color: $color-white;
         box-shadow: 0px 5px 8px 3px rgba(51, 51, 51, 0.25);
 

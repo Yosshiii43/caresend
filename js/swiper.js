@@ -42,25 +42,21 @@ window.addEventListener('load', () => {
       prevEl : '.swiper-button-prev',
     },
 
-    /* スライド枚数・間隔 ------------------------------------ */
+    /* ----- 画面幅別の表示枚数 ----- */
     breakpoints : {
-      //  ─── SP / Tablet ───
+      /*── SP / Tab ───────────────────────*/
       0 : {
-        slidesPerView         : 1,
-        slidesPerGroup        : 1,
-        centeredSlides        : true,
-        centeredSlidesBounds  : true, // ← “はみ出し” 抑止
-        spaceBetween          : 0,
+        slidesPerView  : 1,
+        slidesPerGroup : 1,
+        centeredSlides : false,   // ← OFF にするのがキモ
+        spaceBetween   : 0,
       },
-
-      //  ─── PC ───
-      1024 : {
+      1024: {         // 1024px〜（PC）
         slidesPerView   : 2,
         slidesPerGroup  : 2,
-        centeredSlides  : false,      // ← 1枚目が中央に来ないようオフ
+        centeredSlides  : false,  // 2 枚セットを手動で中央へ
         spaceBetween    : 70,
-        /* 2枚セット全体を中央に寄せるためのオフセット */
-        slidesOffsetBefore : 72,      // (1024 - (405*2 + 70)) / 2
+        slidesOffsetBefore : 72,  // (1024 - 880) / 2
         slidesOffsetAfter  : 72,
       },
     },
@@ -69,4 +65,7 @@ window.addEventListener('load', () => {
     observer       : true,
     observeParents : true,
   });
+
+  /* Safari など一部環境で resize 検知が遅い場合の保険 */
+  window.addEventListener('resize', () => swiper.update());
 });
