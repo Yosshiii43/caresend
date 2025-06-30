@@ -1239,6 +1239,11 @@ examples
 .p-examples {
   padding-block: 2.25rem;
 }
+@media (min-width: 1024px) {
+  .p-examples {
+    padding-block: 3rem;
+  }
+}
 .p-examples h2 {
   margin-bottom: 2.3125rem;
 }
@@ -1254,15 +1259,19 @@ examples
 }
 @media (min-width: 1024px) {
   .p-examples__swiper {
-    width: 64rem;
-    max-width: 64rem;
-    padding: 0.625rem 2rem;
+    width: 61.75rem;
+    max-width: none;
   }
 }
 .p-examples__swiper .swiper-wrapper .swiper-slide {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+@media (min-width: 1024px) {
+  .p-examples__swiper .swiper-wrapper .swiper-slide {
+    width: 487px;
+  }
 }
 .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card {
   position: relative;
@@ -1277,7 +1286,7 @@ examples
 }
 @media (min-width: 1024px) {
   .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card {
-    width: 25.3125rem;
+    width: 29.3125rem;
   }
 }
 @media (min-width: 1024px) {
@@ -1325,6 +1334,12 @@ examples
 .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card:last-of-type img {
   height: 4.0625rem;
 }
+.p-examples__swiper .swiper-wrapper .swiper-slide-active .p-examples__card {
+  margin-left: 3.375rem;
+}
+.p-examples__swiper .swiper-wrapper .swiper-slide-next .p-examples__card {
+  margin-right: 3.375rem;
+}
 .p-examples__swiper .p-examplesSwiper-button-prev,
 .p-examples__swiper .p-examplesSwiper-button-next {
   position: absolute;
@@ -1333,6 +1348,7 @@ examples
   width: 1.25rem;
   height: 1.25rem;
   background-size: contain;
+  margin-top: 0;
 }
 .p-examples__swiper .p-examplesSwiper-button-prev::after,
 .p-examples__swiper .p-examplesSwiper-button-next::after {

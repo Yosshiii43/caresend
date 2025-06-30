@@ -55,7 +55,7 @@ window.addEventListener('load', () => {
         slidesPerView   : 2,
         slidesPerGroup  : 2,
         centeredSlides  : false,  // 2 枚セットを手動で中央へ
-        spaceBetween    : 50,
+        spaceBetween    : 70,
       },
     },
 

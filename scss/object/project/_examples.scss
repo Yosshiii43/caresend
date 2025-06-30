@@ -6,6 +6,7 @@ examples
 
 .p-examples {
   padding-block: rem(36);
+  @include mq("pc") { padding-block: rem(48);}
   h2 {
     margin-bottom: rem(37);
     @include mq("pc") { margin-bottom: rem(53); }
@@ -15,22 +16,25 @@ examples
     max-width: calc(rem(405) + rem(32) *2);
     margin-inline: auto;
     @include mq("pc") {
-      width: rem(1024); 
-      max-width: rem(1024);
-      padding: rem(10) rem(32); 
+      width: rem(988); 
+      max-width: none;
     }
 
     .swiper-wrapper{
       .swiper-slide {
         width: 100%;
-          display: flex;
-          justify-content: center;
+        display: flex;
+        justify-content: center;
+        @include mq("pc") {
+          width: 487px;
+        }
+
         .p-examples__card{
           position: relative;
           width: calc(100% - rem(32) * 2);
           max-width: calc(rem(405) + rem(32) *2);
-          @include mq(pc) {
-            width: rem(405);
+          @include mq("pc") {
+            width: calc(rem(405) + rem(54) + rem(10));
           }
           height: rem(471);
           padding: rem(31) rem(10) rem(20);
@@ -81,6 +85,9 @@ examples
           }
         }
       }
+
+      .swiper-slide-active .p-examples__card { margin-left: rem(54);}
+      .swiper-slide-next .p-examples__card { margin-right: rem(54);}
     }
     .p-examplesSwiper-button-prev,
     .p-examplesSwiper-button-next {
@@ -90,6 +97,7 @@ examples
       width: rem(20);
       height: rem(20);
       background-size: contain;
+      margin-top: 0;
       &::after { display: none; }
       @include mq(pc) {
         width: rem(34);
