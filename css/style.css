@@ -1237,11 +1237,13 @@ CTA
 examples
 ******************************/
 .p-examples {
-  padding-block: 2.25rem;
+  padding-top: 2.25rem;
+  padding-bottom: 1.5625rem;
 }
 @media (min-width: 1024px) {
   .p-examples {
     padding-block: 3rem;
+    padding-bottom: 2.1875rem;
   }
 }
 .p-examples h2 {
@@ -1325,6 +1327,11 @@ examples
   width: auto;
   aspect-ratio: auto;
 }
+@media (min-width: 768px) {
+  .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card img {
+    left: 1.25rem;
+  }
+}
 .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card:first-of-type img, .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card:nth-of-type(2) img {
   height: 4rem;
 }
@@ -1334,11 +1341,15 @@ examples
 .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card:last-of-type img {
   height: 4.0625rem;
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide-active .p-examples__card {
-  margin-left: 3.375rem;
+@media (min-width: 1024px) {
+  .p-examples__swiper .swiper-wrapper .swiper-slide-active .p-examples__card {
+    margin-left: 3.375rem;
+  }
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide-next .p-examples__card {
-  margin-right: 3.375rem;
+@media (min-width: 1024px) {
+  .p-examples__swiper .swiper-wrapper .swiper-slide-next .p-examples__card {
+    margin-right: 3.375rem;
+  }
 }
 .p-examples__swiper .p-examplesSwiper-button-prev,
 .p-examples__swiper .p-examplesSwiper-button-next {

@@ -5,8 +5,12 @@ examples
 @use "sass:math";
 
 .p-examples {
-  padding-block: rem(36);
-  @include mq("pc") { padding-block: rem(48);}
+  padding-top: rem(36);
+  padding-bottom: rem(25);
+  @include mq("pc") { 
+    padding-block: rem(48);
+    padding-bottom: rem(35);
+  }
   h2 {
     margin-bottom: rem(37);
     @include mq("pc") { margin-bottom: rem(53); }
@@ -70,6 +74,9 @@ examples
             left: rem(10);
             width: auto;
             aspect-ratio: auto;
+            @include mq("tab") {
+              left: rem(20);
+            } 
           }
 
           &:first-of-type img,
@@ -86,8 +93,16 @@ examples
         }
       }
 
-      .swiper-slide-active .p-examples__card { margin-left: rem(54);}
-      .swiper-slide-next .p-examples__card { margin-right: rem(54);}
+      .swiper-slide-active .p-examples__card { 
+        @include mq("pc") {
+          margin-left: rem(54);
+        }
+      }
+      .swiper-slide-next .p-examples__card { 
+        @include mq("pc") {
+          margin-right: rem(54);
+        }
+      }
     }
     .p-examplesSwiper-button-prev,
     .p-examplesSwiper-button-next {
