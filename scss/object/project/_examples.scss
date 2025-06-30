@@ -1,136 +1,133 @@
 /******************************
-examples  – 修正版
+examples
 ******************************/
 @use "../../foundation/forwards" as *;
 @use "sass:math";
 
 .p-examples {
-  /* ── 見出し ── */
+  padding-top: rem(36);
+  padding-bottom: rem(25);
+  @include mq("pc") { 
+    padding-block: rem(48);
+    padding-bottom: rem(35);
+  }
   h2 {
-    margin-bottom: rem(47);
-    @include mq("pc") { margin-bottom: rem(63); }
+    margin-bottom: rem(37);
+    @include mq("pc") { margin-bottom: rem(53); }
   }
-
-  /* ── 全体コンテナ ── */
-  &__swiperContainer {
-    overflow: hidden; 
-    position      : relative;
-    width         : 100%;
-    max-width     : rem(1024);     // PC 上限
-    margin-inline : auto;
-    @include mq("tab") {
-      max-width: rem(880);         // タブレット上限
-    }
-  }
-
-  /* ── ナビボタン ── */
-  &__prev, &__next {
-    position        : absolute;
-    top             : 50%;
-    transform       : translateY(-50%);
-    z-index         : 20;
-    cursor          : pointer;
-    background-size : contain;
-    background-repeat: no-repeat;
-
-    /* SP/Tab */
-    width   : rem(20);
-    height  : rem(20);
-    padding : 6px;      // カード端から6px
+  &__swiper{
+    width: 100%;
+    max-width: calc(rem(405) + rem(32) *2);
+    margin-inline: auto;
     @include mq("pc") {
-      /* PC */
-      width   : rem(34);
-      height  : rem(34);
-      padding : 0;
-    }
-  }
-  &__prev {
-    background-image: url("../img/icon-arrow_left.png");
-    left: rem(6);
-    @include mq("pc") { left: rem(18); }
-  }
-  &__next {
-    background-image: url("../img/icon-arrow_right.png");
-    right: rem(6);
-    @include mq("pc") { right: rem(18); }
-  }
-
-  /* ── Swiper 本体 ── */
-  &__swiper {
-    overflow       : hidden;
-    padding-inline : rem(32);  // SP/Tab: 両端32px余白
-    @include mq("pc") { padding-inline: 0; }
-
-    .swiper-wrapper {
-      display       : flex;
-      align-items   : stretch;  // カード高さを揃える
+      width: rem(988); 
+      max-width: none;
     }
 
-    /* ── スライド枠 ── */
-    .swiper-slide {
-      flex-shrink     : 0;
-      box-sizing      : border-box;
-      /* SP/Tab: 画面幅 − (32px×2) */
-      width           : calc(100% - #{rem(32) * 2});
-      @include mq("pc") {
-        /* PC: 枠＝405+左右padding(10px×2)=425px */
-        width         : rem(425);
-      }
-      display         : flex;
-      align-items: stretch; 
-      justify-content : center;
-    }
+    .swiper-wrapper{
+      .swiper-slide {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        @include mq("pc") {
+          width: 487px;
+        }
 
-    /* ── カード中身 ── */
-      .swiper-slide > .p-examples__card {
-      flex: 1 0 auto;        /* ← カード本体をフレックスで伸ばす */
-      display: flex;
-      flex-direction: column;
-      position      : relative;      // ① img の position:relative 必須
-      flex          : 1;             // ② 高さを揃える
-      box-sizing    : border-box;
-      width         : 100%;
-      max-width     : rem(405);
-      padding       : rem(31) rem(10) rem(20);
-      background    : $color-white;
-      box-shadow    : 0 5px 8px rgba(51,51,51,.25);
-      border-radius : 30px 0;
+        .p-examples__card{
+          position: relative;
+          width: calc(100% - rem(32) * 2);
+          max-width: calc(rem(405) + rem(32) *2);
+          @include mq("pc") {
+            width: calc(rem(405) + rem(54) + rem(10));
+          }
+          height: rem(471);
+          padding: rem(31) rem(10) rem(20);
+          margin-block: rem(20);
+          border-radius: 30px 0;
+          background-color: $color-white;
+          box-shadow: 0px 5px 8px 3px rgba(51, 51, 51, 0.25);
+          @include mq("pc") {
+            height: 488px;
+            padding: rem(32) rem(20) rem(20);
+          }
 
-      h3 {
-        font-size    : rem(18);
-        font-weight  : 700;
-        margin-bottom: rem(24);
-        @include mq("pc") { font-size: rem(24); }
+          h3 {
+            font-size: rem(18);
+            font-weight: 700;
+            margin-bottom: rem(24);
+            @include mq("pc") { font-size: rem(24) ;}
 
-        em {
-          font-style: normal;
-          color     : $color-main;
+            em {
+              font-style: normal;
+              color: $color-main;
+            }
+          }
+
+          p {
+            font-size: rem(12);
+            line-height: 1.8;
+            @include mq("pc") { font-size: rem(14) ;}
+          }
+          img {
+            position: absolute;
+            bottom: rem(20);
+            left: rem(10);
+            width: auto;
+            aspect-ratio: auto;
+            @include mq("tab") {
+              left: rem(20);
+            } 
+          }
+
+          &:first-of-type img,
+          &:nth-of-type(2) img{ 
+            height: rem(64);
+          }
+          &:nth-of-type(3) img {
+            height: rem(81);
+            
+          }
+          &:last-of-type img {
+            height: rem(65);
+          }
         }
       }
 
-      p {
-        font-size     : rem(12);
-        margin-bottom : rem(132);
-        @include mq("pc") { font-size: rem(14); }
+      .swiper-slide-active .p-examples__card { 
+        @include mq("pc") {
+          margin-left: rem(54);
+        }
       }
-
-      img {
-        position      : absolute;
-        bottom        : rem(20);
-        left          : rem(10);
-        width         : auto;
-        aspect-ratio  : auto;
+      .swiper-slide-next .p-examples__card { 
+        @include mq("pc") {
+          margin-right: rem(54);
+        }
       }
-      &:first-of-type img,
-      &:nth-of-type(2) img {
-        height: rem(64);
+    }
+    .p-examplesSwiper-button-prev,
+    .p-examplesSwiper-button-next {
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      width: rem(20);
+      height: rem(20);
+      background-size: contain;
+      margin-top: 0;
+      &::after { display: none; }
+      @include mq(pc) {
+        width: rem(34);
+        height: rem(34);
       }
-      &:nth-of-type(3) img {
-        height: rem(81);
-      }
-      &:last-of-type img {
-        height: rem(65);
-      }
+    }
+    .p-examplesSwiper-button-next {
+      right: rem(6);
+      background-image: url(../img/icon-arrow_right.png);
+      @include mq(pc) { right: 0; }
+    }
+    .p-examplesSwiper-button-prev {
+      left: rem(6);
+      background-image: url(../img/icon-arrow_left.png);
+      @include mq(pc) { left: 0; }
     }
   }
 }

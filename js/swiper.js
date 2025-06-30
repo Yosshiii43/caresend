@@ -29,39 +29,41 @@ window.addEventListener('load', () => {
 });
 
 
-/* -----------------------------------------------------------
-   examples-swiper.js  –  ページ内に複数 Swiper がある前提
------------------------------------------------------------ */
-// …省略…
-new Swiper('.p-examples__swiper', {
-  loop            : true,
-  speed           : 600,
+/*************************************************************************
+ * examples-swiper
+ *************************************************************************/
+window.addEventListener('load', () => {
+  const examplesSwiper = new Swiper('.p-examples__swiper', {
+    /* 共通設定 ------------------------------------------------ */
+    loop           : true,
+    speed          : 600,
+    navigation     : {
+      nextEl : '.p-examplesSwiper-button-next',
+      prevEl : '.p-examplesSwiper-button-prev',
+    },
 
-  /* SP/Tab 共通 */
-  slidesPerView   : 1,
-  slidesPerGroup  : 1,
-  centeredSlides  : false,  // ← OFF にして padding/overflow で隠す
-  spaceBetween    : 0,
+    /* ----- 画面幅別の表示枚数 ----- */
+    breakpoints : {
+      /*── SP / Tab ───────────────────────*/
+      0 : {
+        slidesPerView  : 1,
+        slidesPerGroup : 1,
+        centeredSlides : true,
+        spaceBetween   : 0,
+      },
+      1024: {         // 1024px〜（PC）
+        slidesPerView   : 2,
+        slidesPerGroup  : 2,
+        centeredSlides  : false,  // 2 枚セットを手動で中央へ
+        spaceBetween    : 70,
+      },
+    },
 
-  /* PC のみ */
-  breakpoints: {
-    1024: {
-      slidesPerView      : 2,
-      slidesPerGroup     : 2,
-      centeredSlides     : false,
-      spaceBetween       : 70,
-      /* 1024 − (425*2 + 70) = 62  → ÷2 = 31 */
-      slidesOffsetBefore : 31,
-      slidesOffsetAfter  : 31,
-      loopAdditionalSlides: 4,
-    }
-  },
+    /* リサイズに追従させる（仕様 1-⑤） ----------------------- */
+    observer       : true,
+    observeParents : true,
+  });
 
-  navigation: {
-    nextEl : '.p-examples__next',
-    prevEl : '.p-examples__prev',
-  },
-
-  observer       : true,
-  observeParents : true,
+  /* Safari など一部環境で resize 検知が遅い場合の保険 */
+  window.addEventListener('resize', () => swiper.update());
 });
