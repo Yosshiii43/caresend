@@ -73,8 +73,8 @@ examples
         }
       }
     }
-    .swiper-button-next,
-    .swiper-button-prev {
+    .p-examplesSwiper-button-prev,
+    .p-examplesSwiper-button-next {
       position: absolute;
       top: 50%;
       translate: 0 -50%;
@@ -87,12 +87,12 @@ examples
         height: rem(34);
       }
     }
-    .swiper-button-next {
+    .p-examplesSwiper-button-next {
       right: rem(6);
       background-image: url(../img/icon-arrow_right.png);
       @include mq(pc) { right: rem(20); }
     }
-    .swiper-button-prev {
+    .p-examplesSwiper-button-prev {
       left: rem(6);
       background-image: url(../img/icon-arrow_left.png);
       @include mq(pc) { left: rem(20); }

@@ -1310,8 +1310,8 @@ examples
 .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card:last-of-type img {
   height: 4.0625rem;
 }
-.p-examples__swiper .swiper-button-next,
-.p-examples__swiper .swiper-button-prev {
+.p-examples__swiper .p-examplesSwiper-button-prev,
+.p-examples__swiper .p-examplesSwiper-button-next {
   position: absolute;
   top: 50%;
   translate: 0 -50%;
@@ -1319,32 +1319,32 @@ examples
   height: 1.25rem;
   background-size: contain;
 }
-.p-examples__swiper .swiper-button-next::after,
-.p-examples__swiper .swiper-button-prev::after {
+.p-examples__swiper .p-examplesSwiper-button-prev::after,
+.p-examples__swiper .p-examplesSwiper-button-next::after {
   display: none;
 }
 @media (min-width: 1024px) {
-  .p-examples__swiper .swiper-button-next,
-.p-examples__swiper .swiper-button-prev {
+  .p-examples__swiper .p-examplesSwiper-button-prev,
+.p-examples__swiper .p-examplesSwiper-button-next {
     width: 2.125rem;
     height: 2.125rem;
   }
 }
-.p-examples__swiper .swiper-button-next {
+.p-examples__swiper .p-examplesSwiper-button-next {
   right: 0.375rem;
   background-image: url(../img/icon-arrow_right.png);
 }
 @media (min-width: 1024px) {
-  .p-examples__swiper .swiper-button-next {
+  .p-examples__swiper .p-examplesSwiper-button-next {
     right: 1.25rem;
   }
 }
-.p-examples__swiper .swiper-button-prev {
+.p-examples__swiper .p-examplesSwiper-button-prev {
   left: 0.375rem;
   background-image: url(../img/icon-arrow_left.png);
 }
 @media (min-width: 1024px) {
-  .p-examples__swiper .swiper-button-prev {
+  .p-examples__swiper .p-examplesSwiper-button-prev {
     left: 1.25rem;
   }
 }

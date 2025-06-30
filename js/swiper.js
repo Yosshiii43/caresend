@@ -38,8 +38,8 @@ window.addEventListener('load', () => {
     loop           : true,
     speed          : 600,
     navigation     : {
-      nextEl : '.swiper-button-next',
-      prevEl : '.swiper-button-prev',
+      nextEl : '.p-examplesSwiper-button-next',
+      prevEl : '.sp-examplesSwiper-button-prev',
     },
 
     /* ----- 画面幅別の表示枚数 ----- */
