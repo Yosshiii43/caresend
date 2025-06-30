@@ -1,110 +1,136 @@
 /******************************
-examples
+examples  – 修正版
 ******************************/
 @use "../../foundation/forwards" as *;
 @use "sass:math";
 
-/* ─── 共通変数 ─────────────────── */
-$arrow-w-sp-n : 20;   $arrow-w-sp : $arrow-w-sp-n * 1px;
-$gap-in-sp-n  : 6;    $gap-in-sp  : $gap-in-sp-n  * 1px;
-$gap-out-sp-n : 6;    $gap-out-sp : $gap-out-sp-n * 1px;
-$zone-sp-n : $arrow-w-sp-n + $gap-in-sp-n + $gap-out-sp-n; // 32
-$zone-sp   : $zone-sp-n * 1px;                             // 32px
-
-$arrow-w-pc-n : 34;   $arrow-w-pc : $arrow-w-pc-n * 1px;
-$gap-in-pc-n  : 20;   $gap-in-pc  : $gap-in-pc-n  * 1px;
-$zone-pc-n    : $arrow-w-pc-n + $gap-in-pc-n;              // 54
-$zone-pc      : $zone-pc-n * 1px;                          // 54px
-
 .p-examples {
+  /* ── 見出し ── */
   h2 {
     margin-bottom: rem(47);
     @include mq("pc") { margin-bottom: rem(63); }
   }
-  &__swiper{
-    width: 100%;
-    max-width : #{rem(405 + $zone-sp-n * 2)};
-    margin-inline: auto;
-    overflow  : hidden; 
-     @include mq("pc") { 
-      width: rem(1024); 
-      max-width:none; 
+
+  /* ── 全体コンテナ ── */
+  &__swiperContainer {
+    overflow: hidden; 
+    position      : relative;
+    width         : 100%;
+    max-width     : rem(1024);     // PC 上限
+    margin-inline : auto;
+    @include mq("tab") {
+      max-width: rem(880);         // タブレット上限
+    }
+  }
+
+  /* ── ナビボタン ── */
+  &__prev, &__next {
+    position        : absolute;
+    top             : 50%;
+    transform       : translateY(-50%);
+    z-index         : 20;
+    cursor          : pointer;
+    background-size : contain;
+    background-repeat: no-repeat;
+
+    /* SP/Tab */
+    width   : rem(20);
+    height  : rem(20);
+    padding : 6px;      // カード端から6px
+    @include mq("pc") {
+      /* PC */
+      width   : rem(34);
+      height  : rem(34);
+      padding : 0;
+    }
+  }
+  &__prev {
+    background-image: url("../img/icon-arrow_left.png");
+    left: rem(6);
+    @include mq("pc") { left: rem(18); }
+  }
+  &__next {
+    background-image: url("../img/icon-arrow_right.png");
+    right: rem(6);
+    @include mq("pc") { right: rem(18); }
+  }
+
+  /* ── Swiper 本体 ── */
+  &__swiper {
+    overflow       : hidden;
+    padding-inline : rem(32);  // SP/Tab: 両端32px余白
+    @include mq("pc") { padding-inline: 0; }
+
+    .swiper-wrapper {
+      display       : flex;
+      align-items   : stretch;  // カード高さを揃える
     }
 
-    .swiper-wrapper{
-      padding-block: rem(10);
-      .swiper-slide {
-        width: clamp( 0px,
-                      calc(100% - #{$zone-sp * 2}),
-                      #{rem(405)});
-        max-width: rem(405);
-        height: auto;
-        padding: rem(31) rem(10) rem(20);
-        border-radius: 30px 0;
-        background-color: $color-white;
-        box-shadow: 0px 5px 8px 3px rgba(51, 51, 51, 0.25);
+    /* ── スライド枠 ── */
+    .swiper-slide {
+      flex-shrink     : 0;
+      box-sizing      : border-box;
+      /* SP/Tab: 画面幅 − (32px×2) */
+      width           : calc(100% - #{rem(32) * 2});
+      @include mq("pc") {
+        /* PC: 枠＝405+左右padding(10px×2)=425px */
+        width         : rem(425);
+      }
+      display         : flex;
+      align-items: stretch; 
+      justify-content : center;
+    }
 
-        h3 {
-          font-size: rem(18);
-          font-weight: 700;
-          margin-bottom: rem(24);
-          @include mq("pc") { font-size: rem(24) ;}
+    /* ── カード中身 ── */
+      .swiper-slide > .p-examples__card {
+      flex: 1 0 auto;        /* ← カード本体をフレックスで伸ばす */
+      display: flex;
+      flex-direction: column;
+      position      : relative;      // ① img の position:relative 必須
+      flex          : 1;             // ② 高さを揃える
+      box-sizing    : border-box;
+      width         : 100%;
+      max-width     : rem(405);
+      padding       : rem(31) rem(10) rem(20);
+      background    : $color-white;
+      box-shadow    : 0 5px 8px rgba(51,51,51,.25);
+      border-radius : 30px 0;
 
-          em {
-            font-style: normal;
-            color: $color-main;
-          }
-        }
+      h3 {
+        font-size    : rem(18);
+        font-weight  : 700;
+        margin-bottom: rem(24);
+        @include mq("pc") { font-size: rem(24); }
 
-        p {
-          font-size: rem(12);
-          margin-bottom: rem(132);
-          @include mq("pc") { font-size: rem(14) ;}
-        }
-        img {
-          position: absolute;
-          bottom: rem(20);
-          left: rem(10);
-          width: auto;
-          aspect-ratio: auto;
-        }
-
-        &:first-of-type img,
-        &:nth-of-type(2) img{ 
-          height: rem(64);
-        }
-        &:nth-of-type(3) img {
-          height: rem(81);
-          
-        }
-        &:last-of-type img {
-          height: rem(65);
+        em {
+          font-style: normal;
+          color     : $color-main;
         }
       }
-    }
-    .swiper-button-next,
-    .swiper-button-prev {
-      position: absolute;
-      top: 50%;
-      translate: 0 -50%;
-      width : rem($arrow-w-sp-n);
-      height: rem($arrow-w-sp-n);
-      background-size: contain;
-      @include mq(pc) {
-        width : rem($arrow-w-pc-n);
-        height: rem($arrow-w-pc-n);
+
+      p {
+        font-size     : rem(12);
+        margin-bottom : rem(132);
+        @include mq("pc") { font-size: rem(14); }
       }
-      &::after { display: none; }
-    }
-    .swiper-button-next {
-      right: $gap-out-sp;
-      background-image: url(../img/icon-arrow_right.png);
-      @include mq(pc) { right: rem(18); }
-    }
-    .swiper-button-prev {
-      left: $gap-out-sp;
-      background-image: url(../img/icon-arrow_left.png);
-      @include mq(pc) { left: rem(18); }
+
+      img {
+        position      : absolute;
+        bottom        : rem(20);
+        left          : rem(10);
+        width         : auto;
+        aspect-ratio  : auto;
+      }
+      &:first-of-type img,
+      &:nth-of-type(2) img {
+        height: rem(64);
+      }
+      &:nth-of-type(3) img {
+        height: rem(81);
+      }
+      &:last-of-type img {
+        height: rem(65);
+      }
     }
   }
 }

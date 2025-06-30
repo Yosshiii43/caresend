@@ -1234,9 +1234,14 @@ CTA
 }
 
 /******************************
-examples
+examples  – 修正版
 ******************************/
-/* ─── 共通変数 ─────────────────── */
+.p-examples {
+  /* ── 見出し ── */
+  /* ── 全体コンテナ ── */
+  /* ── ナビボタン ── */
+  /* ── Swiper 本体 ── */
+}
 .p-examples h2 {
   margin-bottom: 2.9375rem;
 }
@@ -1245,108 +1250,139 @@ examples
     margin-bottom: 3.9375rem;
   }
 }
-.p-examples__swiper {
-  width: 100%;
-  max-width: 29.3125rem;
-  margin-inline: auto;
+.p-examples__swiperContainer {
   overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .p-examples__swiperContainer {
+    max-width: 55rem;
+  }
+}
+.p-examples__prev, .p-examples__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* SP/Tab */
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 6px;
+}
+@media (min-width: 1024px) {
+  .p-examples__prev, .p-examples__next {
+    /* PC */
+    width: 2.125rem;
+    height: 2.125rem;
+    padding: 0;
+  }
+}
+.p-examples__prev {
+  background-image: url("../img/icon-arrow_left.png");
+  left: 0.375rem;
+}
+@media (min-width: 1024px) {
+  .p-examples__prev {
+    left: 1.125rem;
+  }
+}
+.p-examples__next {
+  background-image: url("../img/icon-arrow_right.png");
+  right: 0.375rem;
+}
+@media (min-width: 1024px) {
+  .p-examples__next {
+    right: 1.125rem;
+  }
+}
+.p-examples__swiper {
+  overflow: hidden;
+  padding-inline: 2rem;
+  /* ── スライド枠 ── */
+  /* ── カード中身 ── */
 }
 @media (min-width: 1024px) {
   .p-examples__swiper {
-    width: 64rem;
-    max-width: none;
+    padding-inline: 0;
   }
 }
 .p-examples__swiper .swiper-wrapper {
-  padding-block: 0.625rem;
+  display: flex;
+  align-items: stretch;
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide {
-  width: clamp( 0px,
-                      calc(100% - 64px),
-                      25.3125rem);
+.p-examples__swiper .swiper-slide {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  /* SP/Tab: 画面幅 − (32px×2) */
+  width: calc(100% - 4rem);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+@media (min-width: 1024px) {
+  .p-examples__swiper .swiper-slide {
+    /* PC: 枠＝405+左右padding(10px×2)=425px */
+    width: 26.5625rem;
+  }
+}
+.p-examples__swiper .swiper-slide > .p-examples__card {
+  flex: 1 0 auto; /* ← カード本体をフレックスで伸ばす */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1;
+  box-sizing: border-box;
+  width: 100%;
   max-width: 25.3125rem;
-  height: auto;
   padding: 1.9375rem 0.625rem 1.25rem;
+  background: #fff;
+  box-shadow: 0 5px 8px rgba(51, 51, 51, 0.25);
   border-radius: 30px 0;
-  background-color: #fff;
-  box-shadow: 0px 5px 8px 3px rgba(51, 51, 51, 0.25);
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide h3 {
+.p-examples__swiper .swiper-slide > .p-examples__card h3 {
   font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
 @media (min-width: 1024px) {
-  .p-examples__swiper .swiper-wrapper .swiper-slide h3 {
+  .p-examples__swiper .swiper-slide > .p-examples__card h3 {
     font-size: 1.5rem;
   }
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide h3 em {
+.p-examples__swiper .swiper-slide > .p-examples__card h3 em {
   font-style: normal;
   color: #007FC6;
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide p {
+.p-examples__swiper .swiper-slide > .p-examples__card p {
   font-size: 0.75rem;
   margin-bottom: 8.25rem;
 }
 @media (min-width: 1024px) {
-  .p-examples__swiper .swiper-wrapper .swiper-slide p {
+  .p-examples__swiper .swiper-slide > .p-examples__card p {
     font-size: 0.875rem;
   }
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide img {
+.p-examples__swiper .swiper-slide > .p-examples__card img {
   position: absolute;
   bottom: 1.25rem;
   left: 0.625rem;
   width: auto;
   aspect-ratio: auto;
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide:first-of-type img, .p-examples__swiper .swiper-wrapper .swiper-slide:nth-of-type(2) img {
+.p-examples__swiper .swiper-slide > .p-examples__card:first-of-type img, .p-examples__swiper .swiper-slide > .p-examples__card:nth-of-type(2) img {
   height: 4rem;
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide:nth-of-type(3) img {
+.p-examples__swiper .swiper-slide > .p-examples__card:nth-of-type(3) img {
   height: 5.0625rem;
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide:last-of-type img {
+.p-examples__swiper .swiper-slide > .p-examples__card:last-of-type img {
   height: 4.0625rem;
-}
-.p-examples__swiper .swiper-button-next,
-.p-examples__swiper .swiper-button-prev {
-  position: absolute;
-  top: 50%;
-  translate: 0 -50%;
-  width: 1.25rem;
-  height: 1.25rem;
-  background-size: contain;
-}
-@media (min-width: 1024px) {
-  .p-examples__swiper .swiper-button-next,
-.p-examples__swiper .swiper-button-prev {
-    width: 2.125rem;
-    height: 2.125rem;
-  }
-}
-.p-examples__swiper .swiper-button-next::after,
-.p-examples__swiper .swiper-button-prev::after {
-  display: none;
-}
-.p-examples__swiper .swiper-button-next {
-  right: 6px;
-  background-image: url(../img/icon-arrow_right.png);
-}
-@media (min-width: 1024px) {
-  .p-examples__swiper .swiper-button-next {
-    right: 1.125rem;
-  }
-}
-.p-examples__swiper .swiper-button-prev {
-  left: 6px;
-  background-image: url(../img/icon-arrow_left.png);
-}
-@media (min-width: 1024px) {
-  .p-examples__swiper .swiper-button-prev {
-    left: 1.125rem;
-  }
 }
 
 /******************************
