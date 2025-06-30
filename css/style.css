@@ -1257,7 +1257,7 @@ examples
     padding: 0.625rem 2rem;
   }
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide {
+.p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card {
   width: 100%;
   max-width: 25.3125rem;
   height: auto;
@@ -1267,47 +1267,47 @@ examples
   box-shadow: 0px 5px 8px 3px rgba(51, 51, 51, 0.25);
 }
 @media (min-width: 1024px) {
-  .p-examples__swiper .swiper-wrapper .swiper-slide {
+  .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card {
     width: 25.3125rem;
   }
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide h3 {
+.p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card h3 {
   font-size: 1.125rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
 @media (min-width: 1024px) {
-  .p-examples__swiper .swiper-wrapper .swiper-slide h3 {
+  .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card h3 {
     font-size: 1.5rem;
   }
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide h3 em {
+.p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card h3 em {
   font-style: normal;
   color: #007FC6;
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide p {
+.p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card p {
   font-size: 0.75rem;
   margin-bottom: 8.25rem;
 }
 @media (min-width: 1024px) {
-  .p-examples__swiper .swiper-wrapper .swiper-slide p {
+  .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card p {
     font-size: 0.875rem;
   }
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide img {
+.p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card img {
   position: absolute;
   bottom: 1.25rem;
   left: 0.625rem;
   width: auto;
   aspect-ratio: auto;
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide:first-of-type img, .p-examples__swiper .swiper-wrapper .swiper-slide:nth-of-type(2) img {
+.p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card:first-of-type img, .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card:nth-of-type(2) img {
   height: 4rem;
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide:nth-of-type(3) img {
+.p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card:nth-of-type(3) img {
   height: 5.0625rem;
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide:last-of-type img {
+.p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card:last-of-type img {
   height: 4.0625rem;
 }
 .p-examples__swiper .swiper-button-next,

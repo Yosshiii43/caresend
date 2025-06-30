@@ -22,52 +22,54 @@ examples
 
     .swiper-wrapper{
       .swiper-slide {
-        width: 100%;
-        max-width: rem(405);
-        @include mq(pc) {
-          width: rem(405);
-        }
-        height: auto;
-        padding: rem(31) rem(10) rem(20);
-        border-radius: 30px 0;
-        background-color: $color-white;
-        box-shadow: 0px 5px 8px 3px rgba(51, 51, 51, 0.25);
-
-        h3 {
-          font-size: rem(18);
-          font-weight: 700;
-          margin-bottom: rem(24);
-          @include mq("pc") { font-size: rem(24) ;}
-
-          em {
-            font-style: normal;
-            color: $color-main;
+        .p-examples__card{
+          width: 100%;
+          max-width: rem(405);
+          @include mq(pc) {
+            width: rem(405);
           }
-        }
+          height: auto;
+          padding: rem(31) rem(10) rem(20);
+          border-radius: 30px 0;
+          background-color: $color-white;
+          box-shadow: 0px 5px 8px 3px rgba(51, 51, 51, 0.25);
 
-        p {
-          font-size: rem(12);
-          margin-bottom: rem(132);
-          @include mq("pc") { font-size: rem(14) ;}
-        }
-        img {
-          position: absolute;
-          bottom: rem(20);
-          left: rem(10);
-          width: auto;
-          aspect-ratio: auto;
-        }
+          h3 {
+            font-size: rem(18);
+            font-weight: 700;
+            margin-bottom: rem(24);
+            @include mq("pc") { font-size: rem(24) ;}
 
-        &:first-of-type img,
-        &:nth-of-type(2) img{ 
-          height: rem(64);
-        }
-        &:nth-of-type(3) img {
-          height: rem(81);
-          
-        }
-        &:last-of-type img {
-          height: rem(65);
+            em {
+              font-style: normal;
+              color: $color-main;
+            }
+          }
+
+          p {
+            font-size: rem(12);
+            margin-bottom: rem(132);
+            @include mq("pc") { font-size: rem(14) ;}
+          }
+          img {
+            position: absolute;
+            bottom: rem(20);
+            left: rem(10);
+            width: auto;
+            aspect-ratio: auto;
+          }
+
+          &:first-of-type img,
+          &:nth-of-type(2) img{ 
+            height: rem(64);
+          }
+          &:nth-of-type(3) img {
+            height: rem(81);
+            
+          }
+          &:last-of-type img {
+            height: rem(65);
+          }
         }
       }
     }
