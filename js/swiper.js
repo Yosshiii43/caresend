@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
     speed          : 600,
     navigation     : {
       nextEl : '.p-examplesSwiper-button-next',
-      prevEl : '.sp-examplesSwiper-button-prev',
+      prevEl : '.p-examplesSwiper-button-prev',
     },
 
     /* ----- 画面幅別の表示枚数 ----- */
@@ -48,16 +48,14 @@ window.addEventListener('load', () => {
       0 : {
         slidesPerView  : 1,
         slidesPerGroup : 1,
-        centeredSlides : false,   // ← OFF にするのがキモ
+        centeredSlides : true,
         spaceBetween   : 0,
       },
       1024: {         // 1024px〜（PC）
         slidesPerView   : 2,
         slidesPerGroup  : 2,
         centeredSlides  : false,  // 2 枚セットを手動で中央へ
-        spaceBetween    : 70,
-        slidesOffsetBefore : 72,  // (1024 - 880) / 2
-        slidesOffsetAfter  : 72,
+        spaceBetween    : 50,
       },
     },
 

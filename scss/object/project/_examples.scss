@@ -5,15 +5,15 @@ examples
 @use "sass:math";
 
 .p-examples {
+  padding-block: rem(36);
   h2 {
-    margin-bottom: rem(47);
-    @include mq("pc") { margin-bottom: rem(63); }
+    margin-bottom: rem(37);
+    @include mq("pc") { margin-bottom: rem(53); }
   }
   &__swiper{
     width: 100%;
-    max-width: rem(405);
+    max-width: calc(rem(405) + rem(32) *2);
     margin-inline: auto;
-    padding: rem(10);
     @include mq("pc") {
       width: rem(1024); 
       max-width: rem(1024);
@@ -22,17 +22,26 @@ examples
 
     .swiper-wrapper{
       .swiper-slide {
+        width: 100%;
+          display: flex;
+          justify-content: center;
         .p-examples__card{
-          width: 100%;
-          max-width: rem(405);
+          position: relative;
+          width: calc(100% - rem(32) * 2);
+          max-width: calc(rem(405) + rem(32) *2);
           @include mq(pc) {
             width: rem(405);
           }
-          height: auto;
+          height: rem(471);
           padding: rem(31) rem(10) rem(20);
+          margin-block: rem(20);
           border-radius: 30px 0;
           background-color: $color-white;
           box-shadow: 0px 5px 8px 3px rgba(51, 51, 51, 0.25);
+          @include mq("pc") {
+            height: 488px;
+            padding: rem(32) rem(20) rem(20);
+          }
 
           h3 {
             font-size: rem(18);
@@ -48,7 +57,7 @@ examples
 
           p {
             font-size: rem(12);
-            margin-bottom: rem(132);
+            line-height: 1.8;
             @include mq("pc") { font-size: rem(14) ;}
           }
           img {
@@ -90,12 +99,12 @@ examples
     .p-examplesSwiper-button-next {
       right: rem(6);
       background-image: url(../img/icon-arrow_right.png);
-      @include mq(pc) { right: rem(20); }
+      @include mq(pc) { right: 0; }
     }
     .p-examplesSwiper-button-prev {
       left: rem(6);
       background-image: url(../img/icon-arrow_left.png);
-      @include mq(pc) { left: rem(20); }
+      @include mq(pc) { left: 0; }
     }
   }
 }

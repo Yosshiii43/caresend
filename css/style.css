@@ -1236,19 +1236,21 @@ CTA
 /******************************
 examples
 ******************************/
+.p-examples {
+  padding-block: 2.25rem;
+}
 .p-examples h2 {
-  margin-bottom: 2.9375rem;
+  margin-bottom: 2.3125rem;
 }
 @media (min-width: 1024px) {
   .p-examples h2 {
-    margin-bottom: 3.9375rem;
+    margin-bottom: 3.3125rem;
   }
 }
 .p-examples__swiper {
   width: 100%;
-  max-width: 25.3125rem;
+  max-width: 29.3125rem;
   margin-inline: auto;
-  padding: 0.625rem;
 }
 @media (min-width: 1024px) {
   .p-examples__swiper {
@@ -1257,11 +1259,18 @@ examples
     padding: 0.625rem 2rem;
   }
 }
-.p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card {
+.p-examples__swiper .swiper-wrapper .swiper-slide {
   width: 100%;
-  max-width: 25.3125rem;
-  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card {
+  position: relative;
+  width: calc(100% - 4rem);
+  max-width: 29.3125rem;
+  height: 29.4375rem;
   padding: 1.9375rem 0.625rem 1.25rem;
+  margin-block: 1.25rem;
   border-radius: 30px 0;
   background-color: #fff;
   box-shadow: 0px 5px 8px 3px rgba(51, 51, 51, 0.25);
@@ -1269,6 +1278,12 @@ examples
 @media (min-width: 1024px) {
   .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card {
     width: 25.3125rem;
+  }
+}
+@media (min-width: 1024px) {
+  .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card {
+    height: 488px;
+    padding: 2rem 1.25rem 1.25rem;
   }
 }
 .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card h3 {
@@ -1287,7 +1302,7 @@ examples
 }
 .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card p {
   font-size: 0.75rem;
-  margin-bottom: 8.25rem;
+  line-height: 1.8;
 }
 @media (min-width: 1024px) {
   .p-examples__swiper .swiper-wrapper .swiper-slide .p-examples__card p {
@@ -1336,7 +1351,7 @@ examples
 }
 @media (min-width: 1024px) {
   .p-examples__swiper .p-examplesSwiper-button-next {
-    right: 1.25rem;
+    right: 0;
   }
 }
 .p-examples__swiper .p-examplesSwiper-button-prev {
@@ -1345,7 +1360,7 @@ examples
 }
 @media (min-width: 1024px) {
   .p-examples__swiper .p-examplesSwiper-button-prev {
-    left: 1.25rem;
+    left: 0;
   }
 }
 
