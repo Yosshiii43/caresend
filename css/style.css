@@ -1473,17 +1473,17 @@ FAQ
     margin-bottom: 4.375rem;
   }
 }
-.p-faq__inner .p-faq__accordionDetails {
+.p-faq__inner .p-faq__accordion {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 @media (min-width: 1024px) {
-  .p-faq__inner .p-faq__accordionDetails {
+  .p-faq__inner .p-faq__accordion {
     gap: 1.5rem;
   }
 }
-.p-faq__inner .p-faq__accordionDetails .p-faq__accordionSummary {
+.p-faq__inner .p-faq__accordion .p-faq__accordionDetails .p-faq__accordionSummary {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 16px;
@@ -1500,18 +1500,18 @@ FAQ
   border-radius: 10px;
   /* Safariで表示されるデフォルトの三角形アイコンを消します */
 }
-.p-faq__inner .p-faq__accordionDetails .p-faq__accordionSummary::-webkit-details-marker {
+.p-faq__inner .p-faq__accordion .p-faq__accordionDetails .p-faq__accordionSummary::-webkit-details-marker {
   display: none;
 }
 @media (min-width: 1024px) {
-  .p-faq__inner .p-faq__accordionDetails .p-faq__accordionSummary {
+  .p-faq__inner .p-faq__accordion .p-faq__accordionDetails .p-faq__accordionSummary {
     gap: 1.5rem;
     height: 80;
     padding-inline: 6.5rem 1.5rem;
     font-size: 1rem;
   }
 }
-.p-faq__inner .p-faq__accordionDetails .p-faq__accordionSummary::before {
+.p-faq__inner .p-faq__accordion .p-faq__accordionDetails .p-faq__accordionSummary::before {
   position: absolute;
   content: "";
   display: block;
@@ -1525,21 +1525,39 @@ FAQ
   transform: translateY(-50%);
   left: 0.625rem;
 }
-.p-faq__inner .p-faq__accordionDetails .p-faq__accordionInnerr {
+@media (min-width: 1024px) {
+  .p-faq__inner .p-faq__accordion .p-faq__accordionDetails .p-faq__accordionSummary::before {
+    width: 2.75rem;
+    height: 2.75rem;
+    left: 2.25rem;
+  }
+}
+.p-faq__inner .p-faq__accordion .p-faq__accordionDetails .p-faq__accordionInnerr {
   background: #fff;
   padding: 24px 48px;
 }
-.p-faq__inner .p-faq__accordionDetails .js-accordionContent {
+.p-faq__inner .p-faq__accordion .p-faq__accordionDetails .js-accordionContent {
   overflow: hidden;
   height: 0;
 }
 
-/* アコーディオンが開いた時のプラスアイコン */
-.p-faq__accordionDetails[open] .c-icon--plusMinus::before {
+/* アコーディオンが開いた時*/
+.p-faq__inner .p-faq__accordionDetails[open] .p-faq__accordionSummary {
+  color: #fff;
+  background-color: #007FC6;
+  border-radius: 10px 10px 0 0;
+}
+.p-faq__inner .p-faq__accordionDetails[open] .p-faq__accordionSummary::before {
+  background-image: url(../img/icon-q_on.png);
+}
+.p-faq__inner .p-faq__accordionDetails[open] .p-faq__accordionSummary .c-icon--plusMinus::before, .p-faq__inner .p-faq__accordionDetails[open] .p-faq__accordionSummary .c-icon--plusMinus::after {
+  background-color: #fff;
+}
+.p-faq__inner .p-faq__accordionDetails[open] .p-faq__accordionSummary .c-icon--plusMinus::before {
   transform: rotate(90deg);
   opacity: 0;
 }
-.p-faq__accordionDetails[open] .c-icon--plusMinus::after {
+.p-faq__inner .p-faq__accordionDetails[open] .p-faq__accordionSummary .c-icon--plusMinus::after {
   transform: translateY(-50%) translateX(-50%) rotate(90deg);
 }
 
