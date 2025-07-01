@@ -1,0 +1,25 @@
+/******************************
+FAQ
+******************************/
+@use "../../foundation/forwards" as *;
+@use "sass:math";
+
+.p-faq {
+  &__inner{
+    padding: rem(57) rem(16) rem(72);
+    width: 100%;
+    max-width: rem(480);
+    margin-inline: auto;
+    @include mq("pc") {
+      padding: rem(96) auto rem(72);
+      max-width: rem(1024);
+    }
+
+    .p-faq__title{
+      margin-bottom: rem(48);
+      @include mq("pc") {
+        margin-bottom: rem(70);
+      }
+    }
+  }
+}

@@ -495,6 +495,48 @@ balloon（吹き出し）
 }
 
 /******************************
+アコーディオン
+******************************/
+.c-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.c-accordion__summary {
+  display: grid;
+  grid-template-columns: 1fr 24px;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  padding: 16px 24px;
+  border: 1px solid #333;
+  font-weight: 700;
+  color: #333;
+  /* Safariで表示されるデフォルトの三角形アイコンを消します */
+}
+.c-accordion__summary::-webkit-details-marker {
+  display: none;
+}
+.c-accordion__inner {
+  background: #fff;
+  padding: 24px 48px;
+}
+.c-accordion .js-accordionContent {
+  overflow: hidden;
+  height: 0;
+}
+
+/* アコーディオンが開いた時 */
+.c-accordion[open] .c-icon--arrow::before {
+  left: 0;
+  transform: rotate(-45deg);
+}
+.c-accordion[open] .c-icon--arrow::after {
+  right: 0;
+  transform: rotate(45deg);
+}
+
+/******************************
 ヘッダー
 ******************************/
 .p-header {
@@ -884,53 +926,6 @@ balloon（吹き出し）
   .p-hero__inner .p-hero__form .p-form__inner {
     width: 25rem;
   }
-}
-
-/******************************
-アコーディオン
-******************************/
-.p-accordionSection .inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-.p-accordionSection .inner .p-accordion__wrapper {
-  flex: 1 1 calc(50% - 12px);
-  min-width: 286;
-  display: flex;
-  gap: 16px;
-  flex-direction: column;
-  /* アコーディオンが開いた時 */
-}
-.p-accordionSection .inner .p-accordion__wrapper .p-accordion__summary {
-  /* display: list-item;以外を指定してデフォルトの三角形アイコンを消します */
-  display: grid;
-  grid-template-columns: 1fr 24px;
-  gap: 8px;
-  align-items: center;
-  cursor: pointer;
-  padding: 16px 24px;
-  border: 1px solid #333;
-  font-weight: 700;
-  color: #333;
-  /* Safariで表示されるデフォルトの三角形アイコンを消します */
-}
-.p-accordionSection .inner .p-accordion__wrapper .p-accordion__summary::-webkit-details-marker {
-  display: none;
-}
-.p-accordionSection .inner .p-accordion__wrapper .p-accordion__content {
-  background: #F9F9F9;
-  padding: 24px 48px;
-}
-.p-accordionSection .inner .p-accordion__wrapper .p-accordion[open] .c-icon--arrow::before {
-  left: 0;
-  transform: rotate(-45deg);
-}
-.p-accordionSection .inner .p-accordion__wrapper .p-accordion[open] .c-icon--arrow::after {
-  right: 0;
-  transform: rotate(45deg);
 }
 
 /******************************
@@ -1409,7 +1404,7 @@ fee
 }
 @media (min-width: 1024px) {
   .p-fee__inner {
-    padding: 6rem 3.5rem;
+    padding: 6rem 3.5rem 3.5625rem;
     max-width: 64rem;
   }
 }
@@ -1486,6 +1481,30 @@ fee
 @media (min-width: 1024px) {
   .p-fee__inner .p-fee__text li {
     font-size: 0.875rem;
+  }
+}
+
+/******************************
+FAQ
+******************************/
+.p-faq__inner {
+  padding: 3.5625rem 1rem 4.5rem;
+  width: 100%;
+  max-width: 30rem;
+  margin-inline: auto;
+}
+@media (min-width: 1024px) {
+  .p-faq__inner {
+    padding: 6rem auto 4.5rem;
+    max-width: 64rem;
+  }
+}
+.p-faq__inner .p-faq__title {
+  margin-bottom: 3rem;
+}
+@media (min-width: 1024px) {
+  .p-faq__inner .p-faq__title {
+    margin-bottom: 4.375rem;
   }
 }
 

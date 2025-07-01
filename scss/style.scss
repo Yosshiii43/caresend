@@ -20,18 +20,19 @@
 @use "object/component/form";
 @use "object/component/balloon";
 @use "object/component/bg";
+@use "object/component/accordion";
 
 //project
 @use "object/project/header" as ph;
 @use "object/project/nav";
 @use "object/project/hero";
-@use "object/project/accordion";
 @use "object/project/achievements";
 @use "object/project/about";
 @use "object/project/features";
 @use "object/project/cta";
 @use "object/project/examples";
 @use "object/project/fee";
+@use "object/project/faq";
 
 
 //utility

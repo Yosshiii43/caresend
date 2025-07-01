@@ -1,0 +1,51 @@
+/******************************
+アコーディオン
+******************************/
+@use "../../foundation/forwards" as *;
+@use "sass:math";
+
+.c-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__summary{
+    display: grid;//初期値のdisplay: list-item以外を指定しデフォルトの三角アイコンを非表示
+    grid-template-columns: 1fr 24px;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    padding: 16px 24px;
+    border: 1px solid $color-text;
+    font-weight: 700;
+    color: $color-text;
+    /* Safariで表示されるデフォルトの三角形アイコンを消します */
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__inner{
+    background: $color-white;
+    padding: 24px 48px;
+  }
+
+  .js-accordionContent {
+    overflow: hidden;
+    height: 0;
+  }
+}
+
+  /* アコーディオンが開いた時 */
+.c-accordion[open] {
+  .c-icon--arrow {
+    &::before {
+      left: 0;
+      transform: rotate(-45deg);
+    }
+    &::after {
+      right: 0;
+      transform: rotate(45deg);
+    }
+  }
+}
