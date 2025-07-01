@@ -1484,19 +1484,46 @@ FAQ
   }
 }
 .p-faq__inner .p-faq__accordionDetails .p-faq__accordionSummary {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr 24px;
+  grid-template-columns: 1fr 16px;
   gap: 8px;
   align-items: center;
+  height: 4rem;
   cursor: pointer;
-  padding: 16px 24px;
+  padding-inline: 3.5rem 0.625rem;
+  font-size: 0.875rem;
   font-weight: 700;
+  line-height: 1.5;
   color: #333;
-  background-color: #007FC6;
+  background-color: #fff;
+  border-radius: 10px;
   /* Safariで表示されるデフォルトの三角形アイコンを消します */
 }
 .p-faq__inner .p-faq__accordionDetails .p-faq__accordionSummary::-webkit-details-marker {
   display: none;
+}
+@media (min-width: 1024px) {
+  .p-faq__inner .p-faq__accordionDetails .p-faq__accordionSummary {
+    gap: 1.5rem;
+    height: 80;
+    padding-inline: 6.5rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+.p-faq__inner .p-faq__accordionDetails .p-faq__accordionSummary::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background-image: url(../img/icon-q_off.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.625rem;
 }
 .p-faq__inner .p-faq__accordionDetails .p-faq__accordionInnerr {
   background: #fff;

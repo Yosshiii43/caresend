@@ -31,18 +31,44 @@ FAQ
       }
 
       .p-faq__accordionSummary{
+        position: relative;
         display: grid;//初期値のdisplay: list-item以外を指定しデフォルトの三角アイコンを非表示
-        grid-template-columns: 1fr 24px;
+        grid-template-columns: 1fr 16px;
         gap: 8px;
         align-items: center;
+        height: rem(64);
         cursor: pointer;
-        padding: 16px 24px;
+        padding-inline: rem(56) rem(10);
+        font-size: rem(14);
         font-weight: 700;
+        line-height: 1.5;
         color: $color-text;
-        background-color: $color-main;
+        background-color: $color-white;
+        border-radius: 10px;
         /* Safariで表示されるデフォルトの三角形アイコンを消します */
         &::-webkit-details-marker {
           display: none;
+        }
+        @include mq("pc") {
+          gap: rem(24);
+          height: 80;
+          padding-inline: rem(104) rem(24);
+          font-size: rem(16);
+        }
+        
+        &::before{
+          position: absolute;
+          content: '';
+          display: block;
+          width: rem(32);
+          height: rem(32);
+          background-image: url(../img/icon-q_off.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center center;
+          top: 50%;
+          transform: translateY(-50%);
+          left: rem(10);
         }
       }
 
