@@ -3,27 +3,37 @@
 ******************************/
 @use "../../foundation/forwards" as *;
 
-.c-icon--arrow {
-  display: block;
+.c-icon--plusMinus {
+  --bar-w: 16px;
+  --bar-h: 2px;
+
+  display: inline-block;
   position: relative;
-  width: 24px;
+  width: 16px;
+  height: 16px;
   
-    &::before, 
-    &::after {
-    content: "";
+  &::before, 
+  &::after {
     position: absolute;
     display: block;
-    width: 15px;
-    height: 3px;
+    content: '';
+    top: 50%;
+    left: 50%;
+    width: var(--bar-w);
+    height: var(--bar-h);
     background-color: $color-text;
-    transition: transform .2s;
+    transform: translateY(-50%) translateX(-50%);
+    transition: all .3s ease-in-out;
   }
+
   &::before {
-    left: 0;
-    transform: rotate(45deg);
+    width: var(--bar-w);
+    height: var(--bar-h);
+    opacity: 1;
   }
   &::after {
-    right: 0;
-    transform: rotate(-45deg);
+    width: var(--bar-h);
+    height: var(--bar-w);
+    opacity: 1;
   }
 }

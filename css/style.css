@@ -255,27 +255,35 @@ body {
 /******************************
 アイコン
 ******************************/
-.c-icon--arrow {
-  display: block;
+.c-icon--plusMinus {
+  --bar-w: 16px;
+  --bar-h: 2px;
+  display: inline-block;
   position: relative;
-  width: 24px;
+  width: 16px;
+  height: 16px;
 }
-.c-icon--arrow::before, .c-icon--arrow::after {
-  content: "";
+.c-icon--plusMinus::before, .c-icon--plusMinus::after {
   position: absolute;
   display: block;
-  width: 15px;
-  height: 3px;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: var(--bar-w);
+  height: var(--bar-h);
   background-color: #333;
-  transition: transform 0.2s;
+  transform: translateY(-50%) translateX(-50%);
+  transition: all 0.3s ease-in-out;
 }
-.c-icon--arrow::before {
-  left: 0;
-  transform: rotate(45deg);
+.c-icon--plusMinus::before {
+  width: var(--bar-w);
+  height: var(--bar-h);
+  opacity: 1;
 }
-.c-icon--arrow::after {
-  right: 0;
-  transform: rotate(-45deg);
+.c-icon--plusMinus::after {
+  width: var(--bar-h);
+  height: var(--bar-w);
+  opacity: 1;
 }
 
 /******************************
@@ -502,6 +510,11 @@ balloon（吹き出し）
   flex-direction: column;
   gap: 16px;
 }
+@media (min-width: 1024px) {
+  .c-accordion {
+    gap: 1.5rem;
+  }
+}
 .c-accordion__summary {
   display: grid;
   grid-template-columns: 1fr 24px;
@@ -527,13 +540,12 @@ balloon（吹き出し）
 }
 
 /* アコーディオンが開いた時 */
-.c-accordion[open] .c-icon--arrow::before {
-  left: 0;
-  transform: rotate(-45deg);
+.c-accordion[open] .c-icon--plusMinus::before {
+  transform: rotate(90deg);
+  opacity: 0;
 }
-.c-accordion[open] .c-icon--arrow::after {
-  right: 0;
-  transform: rotate(45deg);
+.c-accordion[open] .c-icon--plusMinus::after {
+  transform: translateY(-50%) translateX(-50%) rotate(90deg);
 }
 
 /******************************
