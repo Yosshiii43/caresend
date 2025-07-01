@@ -503,52 +503,6 @@ balloon（吹き出し）
 }
 
 /******************************
-アコーディオン
-******************************/
-.c-accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-@media (min-width: 1024px) {
-  .c-accordion {
-    gap: 1.5rem;
-  }
-}
-.c-accordion__summary {
-  display: grid;
-  grid-template-columns: 1fr 24px;
-  gap: 8px;
-  align-items: center;
-  cursor: pointer;
-  padding: 16px 24px;
-  border: 1px solid #333;
-  font-weight: 700;
-  color: #333;
-  /* Safariで表示されるデフォルトの三角形アイコンを消します */
-}
-.c-accordion__summary::-webkit-details-marker {
-  display: none;
-}
-.c-accordion__inner {
-  background: #fff;
-  padding: 24px 48px;
-}
-.c-accordion .js-accordionContent {
-  overflow: hidden;
-  height: 0;
-}
-
-/* アコーディオンが開いた時 */
-.c-accordion[open] .c-icon--plusMinus::before {
-  transform: rotate(90deg);
-  opacity: 0;
-}
-.c-accordion[open] .c-icon--plusMinus::after {
-  transform: translateY(-50%) translateX(-50%) rotate(90deg);
-}
-
-/******************************
 ヘッダー
 ******************************/
 .p-header {
@@ -1518,6 +1472,48 @@ FAQ
   .p-faq__inner .p-faq__title {
     margin-bottom: 4.375rem;
   }
+}
+.p-faq__inner .p-faq__accordionDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (min-width: 1024px) {
+  .p-faq__inner .p-faq__accordionDetails {
+    gap: 1.5rem;
+  }
+}
+.p-faq__inner .p-faq__accordionDetails .p-faq__accordionSummary {
+  display: grid;
+  grid-template-columns: 1fr 24px;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  padding: 16px 24px;
+  font-weight: 700;
+  color: #333;
+  background-color: #007FC6;
+  /* Safariで表示されるデフォルトの三角形アイコンを消します */
+}
+.p-faq__inner .p-faq__accordionDetails .p-faq__accordionSummary::-webkit-details-marker {
+  display: none;
+}
+.p-faq__inner .p-faq__accordionDetails .p-faq__accordionInnerr {
+  background: #fff;
+  padding: 24px 48px;
+}
+.p-faq__inner .p-faq__accordionDetails .js-accordionContent {
+  overflow: hidden;
+  height: 0;
+}
+
+/* アコーディオンが開いた時のプラスアイコン */
+.p-faq__accordionDetails[open] .c-icon--plusMinus::before {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+.p-faq__accordionDetails[open] .c-icon--plusMinus::after {
+  transform: translateY(-50%) translateX(-50%) rotate(90deg);
 }
 
 /******************************

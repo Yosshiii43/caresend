@@ -21,5 +21,53 @@ FAQ
         margin-bottom: rem(70);
       }
     }
+
+    .p-faq__accordionDetails{
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      @include mq("pc") {
+        gap: rem(24);
+      }
+
+      .p-faq__accordionSummary{
+        display: grid;//初期値のdisplay: list-item以外を指定しデフォルトの三角アイコンを非表示
+        grid-template-columns: 1fr 24px;
+        gap: 8px;
+        align-items: center;
+        cursor: pointer;
+        padding: 16px 24px;
+        font-weight: 700;
+        color: $color-text;
+        background-color: $color-main;
+        /* Safariで表示されるデフォルトの三角形アイコンを消します */
+        &::-webkit-details-marker {
+          display: none;
+        }
+      }
+
+      .p-faq__accordionInnerr{
+        background: $color-white;
+        padding: 24px 48px;
+      }
+
+      .js-accordionContent {
+        overflow: hidden;
+        height: 0;
+      }
+    }
+  }
+}
+
+/* アコーディオンが開いた時のプラスアイコン */
+.p-faq__accordionDetails[open] {
+  .c-icon--plusMinus {
+    &::before {
+      transform: rotate(90deg);
+      opacity: 0;
+    }
+    &::after {
+      transform: translateY(-50%) translateX(-50%) rotate(90deg);
+    }
   }
 }
