@@ -1476,7 +1476,7 @@ FAQ
 }
 @media (min-width: 1024px) {
   .p-faq__inner {
-    padding: 6rem 4.5rem;
+    padding: 6rem 0 4.5rem;
     max-width: 64rem;
   }
 }
@@ -1522,8 +1522,8 @@ FAQ
 @media (min-width: 1024px) {
   .p-faq__inner .p-faq__accordion .p-faq__accordionDetails .p-faq__accordionSummary {
     gap: 1.5rem;
-    height: 80;
-    padding-inline: 6.5rem 1.5rem;
+    height: 5rem;
+    padding-inline: 6.5rem 2.5rem;
     font-size: 1rem;
   }
 }
@@ -1566,6 +1566,12 @@ FAQ
   .p-faq__inner .p-faq__accordion .p-faq__accordionDetails .p-faq__accordionInnerr p, .p-faq__inner .p-faq__accordion .p-faq__accordionDetails .p-faq__accordionInnerr li {
     font-size: 1rem;
   }
+}
+.p-faq__inner .p-faq__accordion .p-faq__accordionDetails .p-faq__accordionInnerr ol {
+  list-style-type: decimal;
+}
+.p-faq__inner .p-faq__accordion .p-faq__accordionDetails .p-faq__accordionInnerr ol li {
+  margin-left: 1em;
 }
 .p-faq__inner .p-faq__accordion .p-faq__accordionDetails .js-accordionContent {
   overflow: hidden;
@@ -1620,27 +1626,18 @@ hidden
 }
 
 /******************************
-padding
-******************************/
-.u-py-lg {
-  padding-block: 3rem;
-}
-
-.u-px-mg {
-  padding-inline: 5%;
-}
-@media (min-width: 768px) {
-  .u-px-mg {
-    padding-inline: 6rem;
-  }
-}
-
-/******************************
 フォントサイズ
 ******************************/
 @media (min-width: 1024px) {
   .u-fontSize--pc24 {
     font-size: 1.5rem;
   }
+}
+
+/******************************
+margin
+******************************/
+.marginBottom--1em {
+  margin-bottom: 1em;
 }
 /*# sourceMappingURL=style.css.map */
