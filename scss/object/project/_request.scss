@@ -27,6 +27,10 @@ request
 
       .p-request__title {
         text-align: center;
+        color: $color-white;
+        @include mq("pc") {
+          line-height: 1;
+        }
       }
     }
   }

@@ -13,7 +13,7 @@ achievements
   }
 
   &__title {
-    font-size: rem(20);
+    font-size: clamp(1.25rem, -1rem + 4.69vw, 2rem);
     font-weight: 700;
     line-height: 1;
     text-align: center;
@@ -22,7 +22,6 @@ achievements
       font-size: rem(18);
     }
     @include mq("pc") {
-      font-size: rem(32);
       margin-bottom: rem(40);
     }
   }

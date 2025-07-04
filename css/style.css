@@ -923,7 +923,7 @@ achievements
   }
 }
 .p-achievements__title {
-  font-size: 1.25rem;
+  font-size: clamp(1.25rem, -1rem + 4.69vw, 2rem);
   font-weight: 700;
   line-height: 1;
   text-align: center;
@@ -936,7 +936,6 @@ achievements
 }
 @media (min-width: 1024px) {
   .p-achievements__title {
-    font-size: 2rem;
     margin-bottom: 2.5rem;
   }
 }
@@ -1633,6 +1632,12 @@ request
   }
   .p-request__inner .p-request__title {
     text-align: center;
+    color: #fff;
+  }
+}
+@media (min-width: 1024px) and (min-width: 1024px) {
+  .p-request__inner .p-request__title {
+    line-height: 1;
   }
 }
 
