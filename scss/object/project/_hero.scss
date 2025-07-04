@@ -25,10 +25,10 @@
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      gap: clamp(1.25rem, -16.375rem + 27.54vw, 10.063rem);
+      gap: clamp(1.5rem, -15.625rem + 26.76vw, 10.063rem);
     }
 
-    .p-hero__catch {
+    .p-hero__left {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -41,7 +41,7 @@
         justify-content:center;
       }
 
-      &Label{
+      .p-hero__label{
         font-size: clamp(0.875rem, 0.754rem + 0.52vw, 1.25rem);
         line-height: 1.5;
         margin-bottom: rem(18);
@@ -51,7 +51,7 @@
         }
       }
 
-      &Headline {
+      .p-hero__headline {
         font-size: clamp(1.5rem, 0.854rem + 2.76vw, 3.5rem);
         font-weight: 700;
         margin-bottom: rem(24);
@@ -61,7 +61,7 @@
         }
       }
 
-      &Description {
+      .p-hero__description {
         max-width: 20em;
         font-size: clamp(0.875rem, 0.754rem + 0.52vw, 1.25rem);
         line-height: 1.8;
@@ -204,7 +204,7 @@
       } //.p-hero__img
     } //.p-hero__catch
 
-    .p-hero__form{
+    .p-hero_right{
       .p-form__inner{
         width:100%;
         max-width: rem(400);

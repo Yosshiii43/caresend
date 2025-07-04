@@ -24,6 +24,10 @@ request
       align-items: flex-start;
       justify-content: center;
       gap: clamp(1.5rem, -15.625rem + 26.76vw, 10.063rem);
+
+      .p-request__title {
+        text-align: center;
+      }
     }
   }
 }
