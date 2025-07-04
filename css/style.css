@@ -1604,6 +1604,36 @@ FAQ
 }
 
 /******************************
+request
+******************************/
+.p-request {
+  background: linear-gradient(287deg, #02D1FF 0%, #007FC6 100%);
+  position: relative;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+@media (min-width: 1024px) {
+  .p-request {
+    padding-right: 5.5rem;
+    padding-left: 5.5rem;
+  }
+}
+.p-request__inner {
+  padding-top: 4.5rem;
+  padding-bottom: 2.875rem;
+}
+@media (min-width: 1024px) {
+  .p-request__inner {
+    padding-top: 6rem;
+    padding-bottom: 3.5625rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: clamp(1.25rem, -16.375rem + 27.54vw, 10.063rem);
+  }
+}
+
+/******************************
 hidden
 ******************************/
 .u-hidden {

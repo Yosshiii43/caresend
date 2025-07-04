@@ -1,0 +1,29 @@
+/******************************
+request
+******************************/
+@use "../../foundation/forwards" as *;
+@use "sass:math";
+
+.p-request {
+  background: linear-gradient(287deg, $color-lightblue 0%, $color-main 100%);
+  position: relative;
+  padding-right: rem(16);
+  padding-left: rem(16);
+  @include mq("pc") {
+    padding-right: rem(88);
+    padding-left: rem(88);
+  }
+
+  &__inner {
+    padding-top: rem(72);
+    padding-bottom: rem(46);
+    @include mq("pc") {
+      padding-top: rem(96);
+      padding-bottom: rem(57);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: clamp(1.5rem, -15.625rem + 26.76vw, 10.063rem);
+    }
+  }
+}
