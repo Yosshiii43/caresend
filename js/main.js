@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
  *************************************************************************/
 (() => {
   const form = document.getElementById('dlForm');
-  const body = form.querySelector('.c-form__body');
+  const body = form.querySelector('.c-form__inner');
   const btn  = document.getElementById('dlBtn');
   const msg  = document.getElementById('thanksMsg');
 
