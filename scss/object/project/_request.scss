@@ -59,7 +59,7 @@ request
           font-size: clamp(0.75rem, 0.004rem + 1.56vw, 1rem);
           color: $color-white;
           text-align: center;
-          margin-bottom: clamp(1.1rem, -4.969rem + 12.45vw, 3rem);
+          margin-bottom: clamp(1rem, -4.969rem + 12.45vw, 3rem);
           @include mq("pc") {
             text-align: left;
             margin-top: rem(32);
