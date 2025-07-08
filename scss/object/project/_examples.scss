@@ -5,8 +5,7 @@ examples
 @use "sass:math";
 
 .p-examples {
-  padding-top: rem(36);
-  padding-bottom: rem(25);
+  padding-block: rem(36) rem(25);
   @include mq("pc") { 
     padding-block: rem(48);
     padding-bottom: rem(35);
