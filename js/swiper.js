@@ -65,5 +65,5 @@ window.addEventListener('load', () => {
   });
 
   /* Safari など一部環境で resize 検知が遅い場合の保険 */
-  window.addEventListener('resize', () => swiper.update());
+  window.addEventListener('resize', () => examplesSwiper.update());
 });
