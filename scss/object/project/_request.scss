@@ -106,9 +106,6 @@ request
         }
       }
       .p-request__right {
-        @include mq("pc") {
-          width: rem(400);
-        }
       }
     }
   }

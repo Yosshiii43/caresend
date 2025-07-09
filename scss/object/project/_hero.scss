@@ -205,21 +205,6 @@
     } //.p-hero__catch
 
     .p-hero__right{
-      .c-form{
-        width:100%;
-        max-width: rem(400);
-        padding: rem(8) rem(8) rem(19);
-        margin:0 auto;
-        background-color: $color-white;
-        border-radius: 5px;
-        @include mq("pc") {
-          width: rem(380);
-          padding: rem(8) rem(8) rem(28);
-        }
-        @include mq("min-xl") {
-          width: rem(400);
-        }
-      }
     }
   } //.p-hero__inner
 }

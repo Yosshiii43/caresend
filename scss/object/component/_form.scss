@@ -11,11 +11,8 @@
   background-color: $color-white;
   border-radius: 5px;
   @include mq("pc") {
-    width: rem(380);
+    width: clamp(23.75rem, 16.477rem + 11.36vw, 25rem);
     padding: rem(8) rem(8) rem(28);
-  }
-  @include mq("min-xl") {
-    width: rem(400);
   }
 
   .c-form__body {
