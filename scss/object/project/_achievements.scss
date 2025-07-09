@@ -41,10 +41,11 @@ achievements
 
     .p-achievements__img{
       width: rem(280);
-      height: auto;
+      height: rem(95);
       object-fit: contain;
       @include mq("pc") {
         width: pc-vw(428);
+        height: rem(146);
       }
     }
   }
