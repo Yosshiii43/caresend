@@ -136,8 +136,13 @@
               transform: translateX(-50%);
               font-size: rem(16);
               white-space: nowrap;
-              @media (max-width: 370px) {
+              @media (max-width: 350px) {
                 font-size: rem(15);
+                top: rem(26);
+              }
+              @include mq("pc") {
+                font-size: rem(24);
+                top: rem(40);
               }
             }
 
@@ -151,11 +156,13 @@
               .p-hero__annotationMark{
                 color: $color-text;
               }
-              @media (max-width: 370px) {
+              @media (max-width: 350px) {
                 font-size: rem(16);
+                bottom: rem(28);
               }
               @include mq("pc") {
                 font-size: rem(32);
+                bottom: rem(40);
               }
             }
 
@@ -180,7 +187,9 @@
 
               }
               .p-hero__statVal{
-
+                @include mq("pc") {
+                  padding-left: rem(13);
+                }
               }
             } 
           } //.p-hero__statsItem
