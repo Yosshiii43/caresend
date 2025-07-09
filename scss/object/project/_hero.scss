@@ -175,17 +175,11 @@
               }
             }
             &:nth-child(2){
-              .p-hero__statKey{
-
-              }
               .p-hero__statVal{
                 padding-right: rem(1);
               }
             }
             &:last-child{
-              .p-hero__statKey{
-
-              }
               .p-hero__statVal{
                 @include mq("pc") {
                   padding-left: rem(13);
@@ -232,7 +226,5 @@
       } //.p-hero__img
     } //.p-hero__catch
 
-    .p-hero__right{
-    }
   } //.p-hero__inner
 }
