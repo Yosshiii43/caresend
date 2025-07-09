@@ -78,18 +78,18 @@ examples
               left: rem(20);
             } 
           }
+        }
 
-          &:first-of-type img,
-          &:nth-of-type(2) img{ 
-            height: rem(64);
-          }
-          &:nth-of-type(3) img {
-            height: rem(81);
-            
-          }
-          &:last-of-type img {
-            height: rem(65);
-          }
+        &:first-of-type .p-examples__card img,
+        &:nth-of-type(2) .p-examples__card img{ 
+          height: rem(64);
+        }
+        &:nth-of-type(3) .p-examples__card img {
+          height: rem(81);
+          
+        }
+        &:last-of-type .p-examples__card img{
+          height: rem(65);
         }
       }
 
