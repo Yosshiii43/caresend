@@ -30,10 +30,13 @@ features
       border: 1px solid $color-main;
       padding: rem(109.5) rem(29) rem(21.5);
       @include mq("tab") {
-        padding: rem(109) rem(32) rem(23);
+        padding: rem(108.5) rem(31) rem(22.5);
       }
       &:first-child {
         padding: rem(109) rem(29) rem(21.5);
+        @include mq("tab") {
+          padding: rem(108.5) rem(31) rem(22.5);
+        }
       }
       h3 {
         font-size: rem(20);
