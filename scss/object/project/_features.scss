@@ -49,9 +49,11 @@ features
         justify-content: center;
         margin-bottom: rem(19);
         position: relative;
-        @include mq (tab) {
-          flex-direction: row;
+        @include mq("tab") {
           margin-bottom: rem(18);
+        }
+        @include mq("pc") {
+          flex-direction: row;
         }
 
           &::before{
