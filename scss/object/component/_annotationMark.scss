@@ -6,7 +6,9 @@
 .c-annotationMark {
   font-size: rem(12);
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.2;
   vertical-align: top;
-  padding-top: rem(1);
+  @include mq("pc") {
+    line-height: 1;
+  }
 }
