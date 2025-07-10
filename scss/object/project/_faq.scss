@@ -136,7 +136,7 @@ FAQ
             background-color: $color-white;
           }
           &::before {
-            transform: rotate(90deg);
+            transform: translateY(-50%) translateX(-50%) rotate(90deg);
             opacity: 0;
           }
           &::after {
