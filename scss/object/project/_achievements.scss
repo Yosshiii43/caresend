@@ -44,7 +44,7 @@ achievements
       height: rem(95);
       object-fit: contain;
       @include mq("pc") {
-        width: pc-vw(428);
+        width: rem(428);
         height: rem(146);
       }
     }
