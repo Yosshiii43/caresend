@@ -79,18 +79,18 @@ examples
             } 
           }
         }
-
-        &:first-of-type .p-examples__card img,
-        &:nth-of-type(2) .p-examples__card img{ 
-          height: rem(64);
-        }
-        &:nth-of-type(3) .p-examples__card img {
-          height: rem(81);
-          
-        }
-        &:last-of-type .p-examples__card img{
-          height: rem(65);
-        }
+      }
+      
+      .p-examples_slide01 .p-examples__card img,
+      .p-examples_slide02 .p-examples__card img{ 
+        height: rem(64);
+      }
+      .p-examples_slide03 .p-examples__card img {
+        height: rem(81);
+        
+      }
+      .p-examples_slide04 .p-examples__card img{
+        height: rem(65);
       }
 
       .swiper-slide-active .p-examples__card { 
