@@ -235,6 +235,11 @@ if(($confirmDsp == 0 || $sendmail == 1) && $empty_flag != 1){
 		if(isset($_POST['mailform_token'])) unset($_POST['mailform_token']);//トークン破棄
 	}
 	
+  //“ajax” パラメータを配列から削除(自動返信メールに表示しないため)
+  if (isset($_POST['ajax'])) {
+      unset($_POST['ajax']);
+  }
+
 	//差出人に届くメールをセット
 	if($remail == 1) {
 		$userBody = mailToUser($_POST,$dsp_name,$remail_text,$mailFooterDsp,$mailSignature,$encode);
