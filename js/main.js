@@ -216,11 +216,10 @@ document.addEventListener('DOMContentLoaded', () => {
 /*************************************************************************
  * 資料請求フォーム
  *************************************************************************/
-(() => {
-  const form = document.getElementById('dlForm');
+document.querySelectorAll('.js-dlForm').forEach(form => {
   const body = form.querySelector('.c-form__inner');
-  const btn  = document.getElementById('dlBtn');
-  const msg  = document.getElementById('thanksMsg');
+  const btn  = form.querySelector('.js-dlBtn');
+  const msg  = form.querySelector('.js-thanksMsg');
 
   if (!form || !btn || !msg || !body) {
     console.warn('フォーム部品が見つかりません');
@@ -262,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error(err);                          // console で原因を確認できる
     }
   });
-})();
+});
 
 /*************************************************************************
  * アコーディオン
