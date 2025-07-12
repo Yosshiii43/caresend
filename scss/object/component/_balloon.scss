@@ -18,7 +18,7 @@ balloon（吹き出し）
   text-align: center;
   @include mq("pc") {
     padding-top: rem(16);
-    padding-bottom: rem(16);
+    padding-bottom: rem(15.5);
     font-size: clamp(1.125rem, 0.398rem + 1.14vw, 1.25rem);
   }
 
