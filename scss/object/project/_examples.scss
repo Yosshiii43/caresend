@@ -65,8 +65,11 @@ examples
 
           p {
             font-size: rem(12);
-            line-height: 1.8;
-            @include mq("pc") { font-size: rem(14) ;}
+            line-height: 21.9px;
+            @include mq("pc") { 
+              font-size: rem(14) ;
+              line-height: 25.0px;
+            }
           }
           img {
             position: absolute;

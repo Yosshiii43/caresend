@@ -92,8 +92,10 @@ FAQ
 
           p,li {
             font-size: rem(14);
+            line-height: 24.9px;
             @include mq("pc") {
               font-size: rem(16);
+              line-height: 28.8px;
             }
           } 
 
