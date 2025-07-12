@@ -102,33 +102,60 @@
             <form class="c-form__body js-dlForm" method="post" action="mail.php">
               <div class="c-form__inner">
                 <input type="hidden" name="ajax" value="1">
-                  <div class="c-form__itemGroup">
-                    <div class="c-form__item">
-                      <label for="sei">姓</label>
-                      <input id="sei" name="姓" type="text" required autocomplete="family-name" placeholder="介護">
-                    </div>
-                
-                    <div class="c-form__item">
-                      <label for="mei">名</label>
-                      <input id="mei" name="名" type="text" required autocomplete="given-name" placeholder="太郎">
-                    </div>
-                  </div>
+
+                <div class="c-form__itemGroup">
+                  <!-- 姓 -->
                   <div class="c-form__item">
-                    <label for="company">会社名</label>
-                    <input id="company" name="会社名" type="text" required autocomplete="organization" placeholder="株式会社CareSend">
+                    <label>
+                      <span class="c-labelTxt">姓</span>
+                      <input name="姓" type="text" required autocomplete="family-name" placeholder="介護">
+                    </label>
                   </div>
 
-                <div class="c-form__item">
-                  <label for="email">メールアドレス</label>
-                  <input id="email" name="Email" type="email" required autocomplete="email" placeholder="caresend@caresend.com">
+                  <!-- 名 -->
+                  <div class="c-form__item">
+                    <label>
+                      <span class="c-labelTxt">名</span>
+                      <input name="名" type="text" required autocomplete="given-name" placeholder="太郎">
+                    </label>
+                  </div>
                 </div>
 
+                <!-- 会社名 -->
                 <div class="c-form__item">
-                  <label for="tel">電話番号</label>
-                  <input id="tel" name="電話番号" type="tel" required inputmode="tel" autocomplete="tel-national" pattern="^(\d{10,11}|\d{2,4}-\d{2,4}-\d{3,4})$" placeholder="000-0000-0000">
+                  <label>
+                    <span class="c-labelTxt">会社名</span>
+                    <input name="会社名" type="text" required autocomplete="organization" placeholder="株式会社CareSend">
+                  </label>
                 </div>
 
-                <p class="c-form__pp">このフォームから送信された情報は、 プライバシーポリシー に基づいて処理されます。</p>
+                <!-- メールアドレス -->
+                <div class="c-form__item">
+                  <label>
+                    <span class="c-labelTxt">メールアドレス</span>
+                    <input name="Email" type="email" required autocomplete="email" placeholder="caresend@caresend.com">
+                  </label>
+                </div>
+
+                <!-- 電話番号 -->
+                <div class="c-form__item">
+                  <label>
+                    <span class="c-labelTxt">電話番号</span>
+                    <input
+                      name="電話番号"
+                      type="tel"
+                      required
+                      inputmode="tel"
+                      autocomplete="tel-national"
+                      pattern="^(\d{10,11}|\d{2,4}-\d{2,4}-\d{3,4})$"
+                      placeholder="000-0000-0000">
+                  </label>
+                </div>
+
+                <p class="c-form__pp">
+                  このフォームから送信された情報は、 プライバシーポリシー に基づいて処理されます。
+                </p>
+
                 <button class="c-form__btn js-dlBtn" type="submit">
                   資料ダウンロード（無料）
                 </button>
@@ -276,7 +303,7 @@
       <div class="p-faq__inner">
         <h2 class="p-faq__title c-secTitle c-fadeIn js-fadeIn">よくある質問</h2>
         <div class="p-faq__accordion c-fadeIn js-fadeIn">
-          <details name="accordion1" class="p-faq__accordionDetails js-accordionDetails">
+          <details class="p-faq__accordionDetails js-accordionDetails">
             <summary class="p-faq__accordionSummary js-accordionSummary">
               登録介護士はどこから確認できますか？<span class="c-icon--plusMinus"></span>
             </summary>
@@ -286,7 +313,7 @@
               </div>
             </div>
           </details>
-          <details name="accordion1" class="p-faq__accordionDetails js-accordionDetails">
+          <details class="p-faq__accordionDetails js-accordionDetails">
             <summary class="p-faq__accordionSummary js-accordionSummary">
               派遣可能エリアはどのようになっていますか？<span class="c-icon--plusMinus"></span>
             </summary>
@@ -296,7 +323,7 @@
               </div>
             </div>
           </details>
-          <details name="accordion1" class="p-faq__accordionDetails js-accordionDetails">
+          <details class="p-faq__accordionDetails js-accordionDetails">
             <summary class="p-faq__accordionSummary js-accordionSummary">
               登録介護士の資格取得などの支援は行っていますか？<span class="c-icon--plusMinus"></span>
             </summary>
@@ -314,7 +341,7 @@
               </div>
             </div>
           </details>
-          <details name="accordion1" class="p-faq__accordionDetails js-accordionDetails">
+          <details class="p-faq__accordionDetails js-accordionDetails">
             <summary class="p-faq__accordionSummary js-accordionSummary">
               派遣の登録介護士を、派遣期間終了後に直接雇用することは可能ですか？<span class="c-icon--plusMinus"></span>
             </summary>
@@ -327,7 +354,7 @@
               </div>
             </div>
           </details>
-          <details name="accordion1" class="p-faq__accordionDetails js-accordionDetails">
+          <details class="p-faq__accordionDetails js-accordionDetails">
             <summary class="p-faq__accordionSummary js-accordionSummary">
               CareSendはどのように介護士を選んでいますか？<span class="c-icon--plusMinus"></span>
             </summary>
@@ -368,33 +395,60 @@
               <form class="c-form__body js-dlForm" method="post" action="mail.php">
                 <div class="c-form__inner">
                   <input type="hidden" name="ajax" value="1">
-                    <div class="c-form__itemGroup">
-                      <div class="c-form__item">
-                        <label for="sei">姓</label>
-                        <input id="sei" name="姓" type="text" required autocomplete="family-name" placeholder="介護">
-                      </div>
-                  
-                      <div class="c-form__item">
-                        <label for="mei">名</label>
-                        <input id="mei" name="名" type="text" required autocomplete="given-name" placeholder="太郎">
-                      </div>
-                    </div>
+
+                  <div class="c-form__itemGroup">
+                    <!-- 姓 -->
                     <div class="c-form__item">
-                      <label for="company">会社名</label>
-                      <input id="company" name="会社名" type="text" required autocomplete="organization" placeholder="株式会社CareSend">
+                      <label>
+                        <span class="c-labelTxt">姓</span>
+                        <input name="姓" type="text" required autocomplete="family-name" placeholder="介護">
+                      </label>
                     </div>
 
-                  <div class="c-form__item">
-                    <label for="email">メールアドレス</label>
-                    <input id="email" name="Email" type="email" required autocomplete="email" placeholder="caresend@caresend.com">
+                    <!-- 名 -->
+                    <div class="c-form__item">
+                      <label>
+                        <span class="c-labelTxt">名</span>
+                        <input name="名" type="text" required autocomplete="given-name" placeholder="太郎">
+                      </label>
+                    </div>
                   </div>
 
+                  <!-- 会社名 -->
                   <div class="c-form__item">
-                    <label for="tel">電話番号</label>
-                    <input id="tel" name="電話番号" type="tel" required inputmode="tel" autocomplete="tel-national" pattern="^(\d{10,11}|\d{2,4}-\d{2,4}-\d{3,4})$" placeholder="000-0000-0000">
+                    <label>
+                      <span class="c-labelTxt">会社名</span>
+                      <input name="会社名" type="text" required autocomplete="organization" placeholder="株式会社CareSend">
+                    </label>
                   </div>
 
-                  <p class="c-form__pp">このフォームから送信された情報は、 プライバシーポリシー に基づいて処理されます。</p>
+                  <!-- メールアドレス -->
+                  <div class="c-form__item">
+                    <label>
+                      <span class="c-labelTxt">メールアドレス</span>
+                      <input name="Email" type="email" required autocomplete="email" placeholder="caresend@caresend.com">
+                    </label>
+                  </div>
+
+                  <!-- 電話番号 -->
+                  <div class="c-form__item">
+                    <label>
+                      <span class="c-labelTxt">電話番号</span>
+                      <input
+                        name="電話番号"
+                        type="tel"
+                        required
+                        inputmode="tel"
+                        autocomplete="tel-national"
+                        pattern="^(\d{10,11}|\d{2,4}-\d{2,4}-\d{3,4})$"
+                        placeholder="000-0000-0000">
+                    </label>
+                  </div>
+
+                  <p class="c-form__pp">
+                    このフォームから送信された情報は、 プライバシーポリシー に基づいて処理されます。
+                  </p>
+
                   <button class="c-form__btn js-dlBtn" type="submit">
                     資料ダウンロード（無料）
                   </button>

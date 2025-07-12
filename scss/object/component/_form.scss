@@ -36,27 +36,35 @@
         font-size: rem(14);
         font-weight: 700;
         line-height: 1;
-        margin-bottom: rem(8);
 
-        &::after {
-          content: "*";
-          font-size: rem(14);
+        .c-labelTxt {
+          display: inline-block;
+          margin-bottom: rem(8);
           line-height: 1;
-          color: $color-red;
+
+          &::after {
+            content: "*";
+            font-size: rem(14);
+            line-height: 1;
+            color: $color-red;
+          }
         }
-      }
 
-      input {
-        width: 100%;
-        border-radius: 5px;
-        border: 1px solid #CED4DA;
-        background: #F5F8FA;
-        padding: rem(11.5) rem(7);
-        line-height: 1;
-
-        &::placeholder{
-          color: #aaa;
+        input {
+          width: 100%;
+          border-radius: 5px;
+          border: 1px solid #CED4DA;
+          background: #F5F8FA;
+          padding: rem(11.5) rem(7);
+          font-size: rem(16);
+          font-weight: 400;
           line-height: 1;
+
+          &::placeholder{
+            color: #aaa;
+            font-size: rem(16);
+            line-height: 1;
+          }
         }
       }
     }
