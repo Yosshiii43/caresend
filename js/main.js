@@ -1,6 +1,6 @@
 /*************************************************************************
- * main.js  –  var.1.4
- * ハンバーガーメニュー制御 + スムーススクロール + 幅切替リセット
+ * main.js  –  ver.1.11
+ * ハンバーガーメニュー制御 + スムーススクロール安定化 + ヘッダーずれ対策 + フェードイン即時表示
  *************************************************************************/
 
 // リロード時に勝手に元のスクロール位置へ戻らないように
@@ -13,25 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
      0. 定数 & 要素取得
   ───────────────────────────────────── */
   const header    = document.getElementById('js-header');
-  const mqPC = window.matchMedia('(min-width: 1024px)');      // PC = 1024px↑
+  const mqPC      = window.matchMedia('(min-width: 1024px)');
   const hamburger = document.getElementById('js-hamburger');
   const nav       = document.getElementById('global-nav');
   const body      = document.body;
-  if (!nav) return;                                           // ナビが無ければ終了
+  if (!nav) return;
 
   const getHeaderHeight = () => header ? header.offsetHeight : 0;
 
-  // ユーティリティ
-  const syncHeaderVar = () => { //「CSS 変数 --header-h をヘッダーの実寸で同期する」関数。
+  const syncHeaderVar = () => {
     document.documentElement.style.setProperty('--header-h', `${getHeaderHeight()}px`);
   };
-  syncHeaderVar();                         // 初期設定
-  window.addEventListener('resize', syncHeaderVar); //ブラウザのリサイズ時に毎回実行
+  syncHeaderVar();
+  window.addEventListener('resize', syncHeaderVar);
+  window.addEventListener('load', syncHeaderVar);  // ★ load時にも強制同期
 
   /* ─────────────────────────────────────
-     1. ナビ状態を強制リセットするヘルパー
+     1. ナビ状態を強制リセット
   ───────────────────────────────────── */
-  const closeMobileMenu = () => {                             // SP 幅での初期状態
+  const closeMobileMenu = () => {
     hamburger?.classList.remove('is-open');
     hamburger?.setAttribute('aria-expanded', 'false');
     nav.classList.remove('is-open');
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.setAttribute('inert', '');
   };
 
-  const openDesktopNav = () => {                              // PC 幅の初期状態
+  const openDesktopNav = () => {
     hamburger?.classList.remove('is-open');
     hamburger?.setAttribute('aria-expanded', 'false');
     body.classList.remove('is-scrollLock');
@@ -70,20 +70,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   hamburger?.addEventListener('click', toggleMenu);
 
-/* ─────────────────────────────────────
-   3. 共通スムーススクロール（prefers‐reduced-motion 対応）
-───────────────────────────────────── */
+  /* ─────────────────────────────────────
+     3. スムーススクロール処理
+  ───────────────────────────────────── */
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const smoothScrollTo = (targetY, duration = 350) => { //速度をここで管理
+  const smoothScrollTo = (targetY, duration = 350) => {
     if (reduceMotion) {
       window.scrollTo(0, targetY);
       return;
     }
-    const startY  = window.pageYOffset;
-    const dist    = targetY - startY;
-    const startT  = performance.now();
-    const easeOut = t => t * (2 - t);       // お好みで変更可
+    const startY = window.pageYOffset;
+    const dist   = targetY - startY;
+    const startT = performance.now();
+    const easeOut = t => t * (2 - t);
 
     const step = now => {
       const t = Math.min(1, (now - startT) / duration);
@@ -93,47 +93,64 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(step);
   };
 
-  const scrollToTarget = target => {
-    const headerH = getHeaderHeight();   // ←動的に取得
-    const offsetY = target.getBoundingClientRect().top + window.pageYOffset - headerH;
-    smoothScrollTo(offsetY);
+  const scrollToTarget = (target) => {
+    const headerH = getHeaderHeight();
+    let retry = 0;
+    const maxRetry = 10;
+
+    const waitForStable = () => {
+      const rect = target.getBoundingClientRect();
+      const offsetY = rect.top + window.pageYOffset - headerH;
+
+      if (retry > 1) {
+        smoothScrollTo(offsetY);
+
+        setTimeout(() => {
+          const finalOffsetY = target.getBoundingClientRect().top + window.pageYOffset - getHeaderHeight();
+          window.scrollTo({ top: finalOffsetY });
+        },400);
+      } else {
+        retry++;
+        requestAnimationFrame(waitForStable);
+      }
+    };
+
+    waitForStable();
   };
 
   /* ─────────────────────────────────────
-     4. アンカーリンク（ページ内）クリック：スムーススクロール
+     4. アンカーリンククリック
   ───────────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
-      const href = link.getAttribute('href');     // "#first" 等
-      e.preventDefault();                         // ★常に標準ジャンプ抑止
-
-      if (!href || href === '#') return;          // ダミー "#" はここで終了
-
+      const href = link.getAttribute('href');
+      e.preventDefault();
+      if (!href || href === '#') return;
       const target = document.querySelector(href);
-      if (!target) return;                        // 要素が無ければ終了
+      if (!target) return;
 
-      history.pushState(null, '', href);          // URL の # を更新
+      history.pushState(null, '', href);
+      if (nav.classList.contains('is-open')) toggleMenu();
 
-      // ハンバーガーが開いていたら閉じる (nav がある時のみ)
-      if (nav && nav.classList.contains('is-open')) toggleMenu();
+      document.querySelectorAll('.c-fadeIn').forEach(el => {
+        el.classList.add('is-inview');
+      });
 
-      // 次フレームでスムーススクロール
-      requestAnimationFrame(() => scrollToTarget(target));
+      scrollToTarget(target);
     });
   });
 
   /* ─────────────────────────────────────
-     5. PC ⇔ SP 幅切り替え時のリセット
+     5. PC/SP幅切替の状態初期化
   ───────────────────────────────────── */
   mqPC.addEventListener('change', e => {
-    if (e.matches) {               // SP → PC
+    if (e.matches) {
       openDesktopNav();
-    } else {                       // PC → SP
+    } else {
       closeMobileMenu();
     }
   });
 
-  // 画面読み込み時の初期判定
   if (mqPC.matches) {
     openDesktopNav();
   } else {
