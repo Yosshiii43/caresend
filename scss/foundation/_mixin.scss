@@ -2,6 +2,7 @@
 mixin
 ******************************/
 @use "sass:math";
+@use "sass:map";
 
 ///pxからremを算出
 $base-font-size: 16;
@@ -21,8 +22,9 @@ $breakpoints: (
   "min-xxl": 1600px 
 );
 
-@mixin mq($name) {
-  $min: map-get($breakpoints, $name);
+@mixin mq($key) {
+  $min: map.get($breakpoints, $key);
+
   @media (min-width: $min) {
     @content;
   }

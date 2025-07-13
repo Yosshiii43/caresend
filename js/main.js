@@ -1,5 +1,5 @@
 /*************************************************************************
- * main.js  –  ver.1.11
+ * main.js  –  ver.1.12
  * ハンバーガーメニュー制御 + スムーススクロール安定化 + ヘッダーずれ対策 + フェードイン即時表示
  *************************************************************************/
 
@@ -19,14 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const body      = document.body;
   if (!nav) return;
 
-  const getHeaderHeight = () => header ? header.offsetHeight : 0;
-
-  const syncHeaderVar = () => {
-    document.documentElement.style.setProperty('--header-h', `${getHeaderHeight()}px`);
+  /* ヘッダー高さを CSS変数から取得 */
+  const getHeaderHeight = () => {
+    const val = getComputedStyle(document.documentElement)
+                .getPropertyValue('--header-h').trim();
+    const px = parseInt(val, 10);
+    if (isNaN(px)) {
+      console.warn('⚠️ --header-h が無効です。デフォルト64pxを使用');
+      return 64;
+    }
+    return px;
   };
-  syncHeaderVar();
-  window.addEventListener('resize', syncHeaderVar);
-  window.addEventListener('load', syncHeaderVar);  // ★ load時にも強制同期
 
   /* ─────────────────────────────────────
      1. ナビ状態を強制リセット
@@ -65,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (nav.contains(focused)) focused.blur();
       nav.setAttribute('inert', '');
     }
-    syncHeaderVar();
   };
 
   hamburger?.addEventListener('click', toggleMenu);
@@ -104,11 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (retry > 1) {
         smoothScrollTo(offsetY);
-
         setTimeout(() => {
-          const finalOffsetY = target.getBoundingClientRect().top + window.pageYOffset - getHeaderHeight();
-          window.scrollTo({ top: finalOffsetY });
-        },400);
+          const correctedOffsetY =
+            target.getBoundingClientRect().top + window.pageYOffset - getHeaderHeight();
+          window.scrollTo({ top: correctedOffsetY });
+        }, 400);
       } else {
         retry++;
         requestAnimationFrame(waitForStable);
@@ -208,25 +210,28 @@ document.addEventListener('DOMContentLoaded', () => {
  * 電話番号表示形式
  *************************************************************************/
 document.addEventListener('DOMContentLoaded', () => {
-  const telField = document.getElementById('tel');
+  document
+    .querySelectorAll('.js-form__tel input[type="tel"]')   // ← input 要素だけ取る
+    .forEach(telField => {
 
-  telField.addEventListener('blur', () => {
-    let v = telField.value.trim();
+      telField.addEventListener('blur', () => {
+        let v = telField.value.trim();
 
-    // +8190… → 090…
-    if (/^\+81\d{9,10}$/.test(v)) {
-      v = '0' + v.slice(3);
-    }
+        /* +8190… → 090… */
+        if (/^\+81\d{9,10}$/.test(v)) {
+          v = '0' + v.slice(3);
+        }
 
-    // ハイフンが無ければ 3-4-4 / 2-4-4 に自動整形
-    if (/^\d{10,11}$/.test(v)) {
-      v = v.length === 11
-        ? v.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3')
-        : v.replace(/(\d{2})(\d{4})(\d{4})/, '$1-$2-$3');
-    }
+        /* ハイフンが無ければ 3-4-4 / 2-4-4 に整形 */
+        if (/^\d{10,11}$/.test(v)) {
+          v = v.length === 11
+            ? v.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3')  // 11桁 → 3-4-4
+            : v.replace(/(\d{2})(\d{4})(\d{4})/, '$1-$2-$3'); // 10桁 → 2-4-4
+        }
 
-    telField.value = v;
-  });
+        telField.value = v;
+      });
+    });
 });
 
 

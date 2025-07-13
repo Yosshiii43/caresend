@@ -9,6 +9,8 @@
   top: 0; left: 0; right: 0;
   z-index: $z-header;
   background-color: #fff;
+  height: var(--header-h); 
+  overflow: hidden;
 
   .p-header__inner {
     max-width: 1920px;
@@ -21,7 +23,8 @@
       display: grid;
       grid-template-columns: 1fr auto 1fr;   // ← 中央列だけ “auto”
       align-items: center;                   // 縦位置そろえ
-      gap: 0 24px;      
+      gap: 0 24px;
+      height: 96px;      
     }
 
     h1,
@@ -38,6 +41,7 @@
       justify-content: start;
       @include mq("pc"){
         justify-content: start;
+        align-items: center;
       }
       
       > a {
@@ -49,9 +53,8 @@
         @include mq("pc") {
           width: 227px;
           height: 52px;
-          margin-top: 22px;
-          margin-bottom: 22px;
-          margin-left: rem(20);
+          padding-block: rem(22);
+          padding-inline-start: rem(20);
         }
 
         img {
@@ -87,7 +90,7 @@
           flex-direction: row;
           gap: 7px;
           width: auto;
-          height: var(--header-h);
+          height: 96px;
           padding-left: pc-vw(43);
           padding-right: pc-vw(43);
           font-size: 1rem;
