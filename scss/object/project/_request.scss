@@ -14,7 +14,7 @@ request
     padding-bottom: rem(46);
     padding-left: rem(16);
     @include mq("pc") {
-      padding: rem(96) 0 rem(57) ;
+      padding: rem(96) 0 rem(56.5) ;
       max-width: rem(848);
       margin-inline: auto;
     }
@@ -29,7 +29,7 @@ request
       @include mq("pc") {
         flex-direction: row;
         line-height: 1;
-        margin-bottom: rem(79);
+        margin-bottom: rem(80);
       }
     }
 
