@@ -10,15 +10,10 @@ CTA
   padding-bottom: rem(40);
   background-image: url(../img/bg-cta_sp.jpg);
   background-size: cover;
-  margin-bottom: rem(36);
   @include mq("tab") {
     padding-top: rem(60);
     padding-bottom: rem(61);
     background-image: url(../img/bg-cta_pc.jpg);
-    margin-bottom: rem(42);
-  }
-  @include mq("pc") {
-    margin-bottom: rem(48);
   }
 
   &__title {

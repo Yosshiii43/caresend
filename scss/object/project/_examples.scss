@@ -5,10 +5,9 @@ examples
 @use "sass:math";
 
 .p-examples {
-  padding-block: rem(36) rem(25);
+  padding-block: rem(71) rem(25);
   @include mq("pc") { 
-    padding-block: rem(48);
-    padding-bottom: rem(35);
+    padding-block: rem(96) rem(35);
   }
 
   h2 {
@@ -65,7 +64,7 @@ examples
 
           p {
             font-size: rem(12);
-            //line-height: 21.6px;
+            line-height: 22px;
             @include mq("pc") { 
               font-size: rem(14) ;
               line-height: 25.0px;
