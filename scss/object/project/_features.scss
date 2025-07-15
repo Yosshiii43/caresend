@@ -28,16 +28,11 @@ features
 
     .p-features__item {
       border: 1px solid $color-main;
-      padding: rem(109.5) rem(29) rem(21.5);
+      padding: rem(109) rem(29) rem(22);
       @include mq("tab") {
         padding: rem(108.5) rem(31) rem(22.5);
       }
-      &:first-child {
-        padding: rem(109) rem(29) rem(21.5);
-        @include mq("tab") {
-          padding: rem(108.5) rem(31) rem(22.5);
-        }
-      }
+
       h3 {
         font-size: rem(20);
         font-weight: 700;
@@ -47,7 +42,7 @@ features
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-bottom: rem(19);
+        margin-bottom: rem(18.5);
         position: relative;
         @include mq("tab") {
           margin-bottom: rem(18);
