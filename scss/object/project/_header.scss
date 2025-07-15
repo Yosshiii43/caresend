@@ -49,12 +49,12 @@
         align-items: center;
         width: 139px;
         height: 64px;
-        margin-left: 1rem;
+        margin-left: rem(16);
         @include mq("pc") {
           width: 227px;
           height: 52px;
           padding-block: rem(22);
-          padding-inline-start: rem(20);
+          margin-left: rem(20);
         }
 
         img {
