@@ -42,7 +42,7 @@ features
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin-bottom: rem(18.5);
+        margin-bottom: rem(18.875);
         position: relative;
         @include mq("tab") {
           margin-bottom: rem(18);
