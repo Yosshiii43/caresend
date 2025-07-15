@@ -8,3 +8,7 @@
 /css/reset.min.css.map
 .DS_Store
 .vscode/
+package.json
+package-lock.json
+node_modules/
+node_modules/.package-lock.json
