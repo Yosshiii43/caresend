@@ -16,14 +16,14 @@ FAQ
       max-width: rem(1024);
     }
 
-    .p-faq__title{
+    .p-faq__title {
       line-height: 1;
       margin-bottom: rem(48);
       @include mq("pc") {
         margin-bottom: rem(70);
       }
     }
-    .p-faq__accordion{
+    .p-faq__accordion {
       display: flex;
       flex-direction: column;
       gap: 15.75px;
@@ -82,7 +82,7 @@ FAQ
           }
         }
 
-        .p-faq__accordionInnerr{
+        .p-faq__accordionInnerr {
           background: $color-white;
           padding: rem(10);
           border-radius: 0 0 10px 10px;

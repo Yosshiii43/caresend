@@ -7,7 +7,7 @@ request
 .p-request {
   background: linear-gradient(287deg, $color-lightblue 0%, $color-main 100%);
 
-  &__inner{
+  &__inner {
     position: relative;
     padding-top: rem(72);
     padding-right: rem(16);
@@ -105,7 +105,6 @@ request
           }
         }
       }
-
     }
   }
 }

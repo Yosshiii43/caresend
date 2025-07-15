@@ -6,20 +6,17 @@
 .p-nav{
 
   // ─── Off‑canvas (モバイル既定) ─────────────────
-  @media(max-width: 1023px){
+  @media(max-width: 1023px) {
     position: fixed;
     top : var(--header-h);
     left: 0;
     right:0;
     height: calc(100vh - var(--header-h));
-
     transform: translateY(calc(-100% - var(--header-h)));
     transition: transform .35s ease;
-
     overflow-y: auto;
     background: $color-main;
     z-index: $z-navPanel;
-
 
     &.is-open { 
       transform: translateY(0);
@@ -63,7 +60,7 @@
     background-color: transparent;
     padding: 0;
 
-    &__list{
+    &__list {
       display: flex;
       flex-direction: row;
       font-weight: 700;
@@ -85,6 +82,5 @@
         }
       }
     }
-
   }
 }

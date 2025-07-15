@@ -10,12 +10,14 @@ examples
     padding-block: rem(48);
     padding-bottom: rem(35);
   }
+
   h2 {
     color: #222;
     margin-bottom: rem(37);
     @include mq("pc") { margin-bottom: rem(53); }
   }
-  &__swiper{
+
+  &__swiper {
     width: 100%;
     max-width: calc(rem(405) + rem(32) *2);
     margin-inline: auto;
@@ -37,9 +39,6 @@ examples
           position: relative;
           width: calc(100% - rem(32) * 2);
           max-width: calc(rem(405) + rem(32) *2);
-          @include mq("pc") {
-            width: calc(rem(405) + rem(54) + rem(10));
-          }
           height: rem(471);
           padding: rem(31) rem(10) rem(20);
           margin-block: rem(20);
@@ -47,6 +46,7 @@ examples
           background-color: $color-white;
           box-shadow: 0px 5px 8px 3px rgba(51, 51, 51, 0.25);
           @include mq("pc") {
+            width: calc(rem(405) + rem(54) + rem(10));
             height: 488px;
             padding: rem(32) rem(20) rem(20);
           }
@@ -71,6 +71,7 @@ examples
               line-height: 25.0px;
             }
           }
+
           img {
             position: absolute;
             bottom: rem(20);
@@ -122,11 +123,13 @@ examples
         height: rem(34);
       }
     }
+
     .p-examplesSwiper-button-next {
       right: rem(6);
       background-image: url(../img/icon-arrow_right.png);
       @include mq(pc) { right: 0; }
     }
+    
     .p-examplesSwiper-button-prev {
       left: rem(6);
       background-image: url(../img/icon-arrow_left.png);
