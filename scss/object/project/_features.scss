@@ -29,11 +29,17 @@ features
     .p-features__item {
       border: 1px solid $color-main;
       padding: rem(109) rem(29) rem(21);
+      @media (max-width: 335px) {
+        padding: rem(109) rem(20) rem(21);
+      }
       @include mq("tab") {
         padding: rem(108) rem(31) rem(22);
       }
       &:first-of-type {
         padding: rem(108) rem(29) rem(21);
+        @media (max-width: 335px) {
+          padding: rem(108) rem(20) rem(21);
+        }
       }
 
       h3 {
@@ -47,6 +53,9 @@ features
         justify-content: center;
         margin-bottom: rem(19);
         position: relative;
+        @media (max-width: 225px) {
+          font-size: rem(19);
+        }
         @include mq("tab") {
           margin-bottom: rem(18);
         }
