@@ -45,6 +45,10 @@ CTA
       background-color: $color-white;
       border-radius: 25px;
       padding: rem(16) rem(50);
+      @media (max-width: 335px) {
+        padding: rem(16) rem(32);
+      }
+      
     }
   }
 
