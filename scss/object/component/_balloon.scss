@@ -16,6 +16,9 @@ balloon（吹き出し）
   font-weight: 700;
   line-height: 1;
   text-align: center;
+  @media (max-width: 345px) {
+    font-size: rem(14);
+  }
   @include mq("pc") {
     padding-top: rem(16);
     padding-bottom: rem(15.5);
